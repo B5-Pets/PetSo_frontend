@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/login.css" />
     <title>PetSo</title>
 
 </head>
@@ -65,7 +65,29 @@
       </nav>
       <div>
         <!-- 여기에 본문 -->
-        <p>여기에 본문이 들어갑니다</p>
+          <div class="login_box1"></div>
+          
+          <form action="" method="POST">
+          <div class="login_box2" style="background-color: whitesmoke">
+            
+            <input type="text" placeholder="아이디" >
+            <input type="text" placeholder="비밀번호"style="margin-bottom: 20px;">
+
+            <input type="submit" value="로그인">
+            <div class="login_box2-1">
+            <a href="">회원가입</a>
+            <a href="">아이디 비밀번호 찾기</a>
+          </div>
+           -- 소셜로그인 --
+            <button>kakao</button>
+            <button>google</button>
+            <button>naver</button>
+
+          </form>
+          </div>
+
+          <div class="login_box3"></div>
+
       </div>
       <footer>
         <label>
@@ -76,7 +98,6 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/api.js"></script>
       <script src="../static/js/index.js"></script>
 </body>
 </html>
