@@ -1,6 +1,7 @@
 body {
     font-family: "Jua", sans-serif;
     height: 100vh;
+    display: grid;
     background-color: whitesmoke;
     color: black;
   }
@@ -29,6 +30,37 @@ body {
   .nav-item {
     margin-right: 20px;
     font-size: 25px;
+  }
+
+  div.space {
+    display: flex;
+  }
+  
+  .btn-link {
+    color: grey;
+  }
+  
+  button.btn.btn-primary {
+    margin: auto 10px;
+  }
+  
+  form {
+    margin: auto;
+    text-align: center;
+  }
+  
+  .profile_img {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+  }
+  
+  div.main {
+    margin: 100px auto;
+  }
+  
+  button.exit {
+    margin-top: 10px;
   }
 
   label {
@@ -103,30 +135,3 @@ body {
     left: 0;
     text-align: center;
   }
-
- .login_box1{
-  height:100px;
-  width: 100%;
-  }
-
- .login_box2{
-  display: grid;
-  text-align:center;
-  height: 650px;
-  margin: 0 auto;
-  width: 30%;
-
-
-    }
- .login_box2-1{
-    margin-top: 10px;
-    font-size: 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
- }
-
- .login_box3{
-  height: 90px;
-  width: 100%;
-    }
