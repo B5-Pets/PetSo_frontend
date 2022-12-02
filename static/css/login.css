@@ -103,3 +103,30 @@ body {
     left: 0;
     text-align: center;
   }
+
+ .login_box1{
+  height:100px;
+  width: 100%;
+  }
+
+ .login_box2{
+  display: grid;
+  text-align:center;
+  height: 650px;
+  margin: 0 auto;
+  width: 30%;
+
+
+    }
+ .login_box2-1{
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+ }
+
+ .login_box3{
+  height: 90px;
+  width: 100%;
+    }
