@@ -1,10 +1,10 @@
 body {
-    font-family: "Jua", sans-serif;
-    height: 100vh;
-    background-color: whitesmoke;
-    color: black;
-  }
-  
+  font-family: "Jua", sans-serif;
+  height: 100vh;
+  background-color: whitesmoke;
+  color: black;
+}
+
 body.dark {
   background: #1b1d25;
   color: white;
@@ -13,10 +13,10 @@ body.dark {
 nav.navbar {
   width: 100%;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
 }
 
-.logo{
+.logo {
   width: 350px;
   margin-left: -50px;
 }
@@ -28,7 +28,7 @@ a.navbar-brand {
 
 .nav-item {
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 label {
@@ -37,7 +37,25 @@ label {
   gap: 0.5rem;
   cursor: pointer;
 }
+.box {
+  height: 100%;
+  display: grid;
+}
 
+.login_box2 {
+  display: grid;
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+  height: 300px;
+}
+.img {
+  width: 150px;
+  height: 150px;
+  background: url(/static/img/002.png) no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+}
 
 [type="checkbox"] {
   appearance: none;
@@ -94,7 +112,6 @@ label {
   box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
 }
 
-  
 footer {
   width: 100%;
   height: 20px;
@@ -103,5 +120,4 @@ footer {
   bottom: 0;
   left: 0;
   text-align: center;
-  transform: translateY(-100%);
 }
