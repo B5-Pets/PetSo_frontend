@@ -104,12 +104,18 @@ body {
     text-align: center;
   }
 
- .login_box1{
-  height:100px;
-  width: 100%;
+ .inference-box1{
+  padding-top: 10px;
+  font-size: 40px;
+  width: 30%;
+  display: grid;
+  text-align:center;
+  margin: 0 auto;
+  height:70px;
+  width: 30%;
   }
 
- .login_box2{
+ .inference-box2{
   display: grid;
   text-align:center;
   height: 500px;
@@ -118,15 +124,8 @@ body {
 
 
     }
- .login_box2-1{
-    margin-top: 10px;
-    font-size: 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
- }
 
- .login_box3{
+ .inference-box3{
   height: 10px;
   width: 100%;
     }
