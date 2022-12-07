@@ -1,0 +1,39 @@
+body {
+    font-family: "Jua", sans-serif;
+    height: 100vh;
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+  body.dark {
+    background: #1b1d25;
+    color: white;
+  }
+  
+  nav.navbar {
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+  }
+
+  .logo{
+    width: 350px;
+    margin-left: -50px;
+  }
+  
+  a.navbar-brand {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+    font-size: 25px;
+  }
+  .hospital {
+    margin-top: 30px;
+    margin-left: 30px;
+ }
+  .map{
+    background-color: antiquewhite;
+  }
