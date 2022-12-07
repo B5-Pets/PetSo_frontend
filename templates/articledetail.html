@@ -28,8 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/static/css/personalprofile.css" />
-    <title>Personalprofile</title>
+    <link rel="stylesheet" href="/static/css/articledetail.css" />
+    <title>PetSo</title>
 
 </head>
 <body id="body">
@@ -43,7 +43,7 @@
               <a class="nav-link" id="username" href="#"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="personalprofile.html">My</a>
+              <a class="nav-link" href="profile.html">My</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
@@ -64,26 +64,37 @@
         </div>
       </nav>
       <div>
-      <div class="profile-box"> 
-        <nav id="nav1">
-          <ul>
-            <li><a href="#">내가 쓴 글</a></li>
-            <li><a href="#">좋아요한 게시물</a></li>
-            <li><a href="#">북마크</a></li>
-          </ul>
-        </nav>
-      </div>
-      
-      
-      <div class="profile-box2"> 
-        <img class="profile" src="/static/img/profile.jpeg">
-      </div>
-      <div class="name">   
-        금뚠집사
-      </div>
-      <div class="explanation">   
-       앙칼진 고등어태비 고영을 키우고 있어욤
-      </div>
+        <!-- 여기에 본문 -->
+          <div class="article_roundbox_1" >
+            고양이 게시판
+          </div>
+          
+
+          <div class="article_roundbox_2">
+            <div class="title-box">
+          <div class="title-name-box" >중성화 수술 끝난 후</div>
+          <div class="title-user-box" >유저아이디</div>
+        </div>
+          <div class="article_box2" >
+            <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
+            <div class="article_box2_2">안녕하세요. 우리 초코가 최근 중성화 수술을 했는데요.정말 마음이 너무 아팠습니다. 그래도 우리 초코 건강하게 잘 회복하고 있어요. 중성화를 해야하는데 어떻게 준비를 해야할지 모르겠다는 당신 이제 걱정마세요.</div>
+          </div>
+          <div class="article_box3">
+            <div class="right_area">
+              <a href="javascript:;" class="icon heart">
+                 <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기">
+              </a>
+          </div>
+          <div class="article-box4">
+            댓글창
+          </div>
+            
+
+
+          </div>
+
+          <div class="article_roundbox_3"></div>
+
       </div>
       <footer>
         <label>
@@ -94,6 +105,7 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/index.js"></script>
+      <script src="../static/js/api.js"></script>
+      <script src="../static/js/articledetail.js"></script>
 </body>
 </html>

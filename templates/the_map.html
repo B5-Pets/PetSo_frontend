@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,14 +28,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/static/css/personalprofile.css" />
-    <title>Personalprofile</title>
+    <link rel="stylesheet" href="/static/css/the_map.css" />
 
+    <title>Document</title>
 </head>
-<body id="body">
+<body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="space">
-          <img src="/static/img/001.png" class="logo" href="../templates/index.html">
+          <img src="/static/img/001.png" class="logo" href="../templates/personalprofile.html">
         </div>
         <div class="space">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -43,7 +43,7 @@
               <a class="nav-link" id="username" href="#"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="personalprofile.html">My</a>
+              <a class="nav-link" href="profile.html">My</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
@@ -63,37 +63,24 @@
           </ul>
         </div>
       </nav>
-      <div>
-      <div class="profile-box"> 
-        <nav id="nav1">
-          <ul>
-            <li><a href="#">내가 쓴 글</a></li>
-            <li><a href="#">좋아요한 게시물</a></li>
-            <li><a href="#">북마크</a></li>
-          </ul>
-        </nav>
-      </div>
+
+      <!-- 게시글 수정페이지 -->
+        <div class="hospital">
+          <h2>주변 병원 지도💊</h2>
+        </div>
+        <div class="map">
+          <img src="" alt="">
+        </div>
+    <!-- <footer>
+      <label>
+          <input role="switch" type="checkbox" onclick="darkmode()" />
+          <span>다크모드로 전환</span>
+        </label>
+       
+    </footer> -->
+    
+
+
       
-      
-      <div class="profile-box2"> 
-        <img class="profile" src="/static/img/profile.jpeg">
-      </div>
-      <div class="name">   
-        금뚠집사
-      </div>
-      <div class="explanation">   
-       앙칼진 고등어태비 고영을 키우고 있어욤
-      </div>
-      </div>
-      <footer>
-        <label>
-            <input role="switch" type="checkbox" onclick="darkmode()" />
-            <span>다크모드로 전환</span>
-          </label>
-          <p>
-          2022 Team Rocket All Rights Reserved
-          </p>
-      </footer>
-      <script src="../static/js/index.js"></script>
-</body>
+</body> 
 </html>
