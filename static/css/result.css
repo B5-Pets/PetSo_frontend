@@ -104,3 +104,30 @@ footer {
   text-align: center;
 }
 
+.inference-box1{
+padding-top: 10px;
+font-size: 40px;
+width: 30%;
+display: grid;
+text-align:center;
+margin: 0 auto;
+height:70px;
+width: 30%;
+}
+
+.inference-box2{
+display: grid;
+text-align:center;
+height: 500px;
+margin: 0 auto;
+width: 30%;
+
+
+  }
+
+.inference-box3{
+height: 10px;
+width: 100%;
+  }
+
+
