@@ -80,3 +80,70 @@ async function loadCreateArticle(title, content, image) {
 function darkmode() {
     document.getElementById('body').classList.toggle('dark');
   }
+
+
+
+
+
+
+// 게시글 데이터 가져오기
+async function getArticleDetail(){
+
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/`,{
+      method:"GET",
+
+  })
+  response_json = await response.json()
+  console.log(response_json)
+
+
+  return response_json
+  
+}
+
+// 게시글 수정
+
+async function patchArticle(article_id,title,content,image){
+
+  const articleData = {
+      "title":title,
+      "content":content,
+      "image":image,
+  }
+
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/`,{
+      headers:{
+          "Authorization": "Bearer " + localStorage.getItem("access"),
+          'content-type': 'application/json'},
+      method:"PUT",
+      body: JSON.stringify(articleData)
+
+  })
+  if(response.status == 200){
+      response_json = await response.json()
+      return response_json
+  }else{
+      alert(response.status)
+  }
+
+
+}
+
+// 게시글
+async function deleteArticle(){
+
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/`,{
+      headers:{
+          "Authorization": "Bearer " + localStorage.getItem("access")},
+      method: "DELETE",
+
+      }
+  )
+
+  if(response.status==204){
+      // 삭제 이후 이동
+      window.location.replace(`${frontend_base_url}/index.html`);
+  }else{
+      alert(response.status)
+  }
+}
