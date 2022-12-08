@@ -62,16 +62,18 @@
     </nav>
     <div>
         <!-- 여기에 본문 -->
-        
-            피부 증상 탐지
 
-            yolov5 모델을 사용해 AI허브에서 제공하는 반려동물 피부병변 데이터를 학습시켜 어쩌구 저쩌구 이러쿵저러쿵
+        <h1>피부 증상 탐지</h1>
         
+        yolov5 모델을 사용해 AI허브에서 제공하는 반려동물 피부병변 데이터를 학습시켜 어쩌구 저쩌구 이러쿵저러쿵
+        <div class="img_preview">
+            <img id="preview" style="width:250px; height:250px; object-fit:cover; border-radius:50%;" />
+        </div>
         <form>
-        
-            <input type="file" id="img">
-        
-            <span onclick="CreateInference()">확인하기</span>
+
+            <input type="file" id="img" onchange="readURL(this);" />
+
+            <span style="cursor:pointer;"onclick="CreateInference()">확인하기</span>
         </form>
     </div>
     <footer>

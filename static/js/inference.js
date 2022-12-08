@@ -16,3 +16,15 @@ async function CreateInference() {
     window.location.replace(`${frontend_base_url}/result.html`);
   }
 }
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      let reader = new FileReader();
+      reader.onload = function (e) {
+          document.getElementById('preview').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+  } else {
+      document.getElementById('preview').src = "";
+  }
+  }
