@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="../static/js/user.js"></script>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -67,15 +67,15 @@
         <!-- 여기에 본문 -->
           <div class="login_box1"></div>
           
-          <form action="" method="POST">
+          <form name="" action="" method="POST">
           <div class="login_box2" style="background-color: whitesmoke">
             
-            <input type="text" placeholder="아이디" >
-            <input type="text" placeholder="비밀번호"style="margin-bottom: 20px;">
+            <input type="email" id="email" name="email" placeholder="email" >
+            <input type="password" id="password" name="password" placeholder="password"style="margin-bottom: 20px;">
 
-            <input type="submit" value="로그인">
+            <button type="button" onclick="handleLogin()" value="로그인">로그인</button>
             <div class="login_box2-1">
-            <a href="">회원가입</a>
+            <a href="signup.html">회원가입</a>
             <a href="">아이디 비밀번호 찾기</a>
           </div>
            -- 소셜로그인 --
@@ -98,6 +98,6 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/index.js"></script>
+      
 </body>
 </html>
