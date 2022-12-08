@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -33,6 +34,7 @@
 
     <link rel="stylesheet" href="/static/css/signup.css" />
     <title>PetSo</title>
+    <script src="../static/js/user.js"></script>
   </head>
   <body id="body">
     <nav class="navbar navbar-expand-lg bg-light">
@@ -87,10 +89,11 @@
       <div class="box1"></div>
       <div class="login_box2">
         <div class="img">&nbsp;</div>
-        <input type="email" / placeholder="email"> <input type="password" /
+        <input type="email" name="email" id="email" placeholder="email"> 
+        <input type="password" id="password" name="password"
         placeholder="password">
         <br />
-        <button>가입하기</button>
+        <button type="button" onclick="handleSignin()">가입하기</button>
       </div>
       <div class="box3"></div>
     </div>
@@ -101,6 +104,6 @@
       </label>
       <p>2022 Team Rocket All Rights Reserved</p>
     </footer>
-    <script src="../static/js/index.js"></script>
+    
   </body>
 </html>
