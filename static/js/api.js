@@ -86,20 +86,15 @@ function darkmode() {
 // 게시글 리스트
 async function getArticles(){
 
-  const response = await fetch(`${backend_base_url}/articles`,{
+  const response = await fetch(`${backend_base_url}/articles/`,{
       method:"GET"
   })
 
-
-  response_json =await response.json()
+  response_json = await response.json()
   // console.log(response_json)
 
   return response_json
 }
-
-
-
-
 
 
 // 게시글 데이터 가져오기
@@ -112,8 +107,8 @@ async function getArticleDetail(){
   response_json = await response.json()
   console.log(response_json)
 
-
   return response_json
+  
   
 }
 

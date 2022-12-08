@@ -34,67 +34,7 @@ async function loadArticle(article_id){
     }
 
 
-// 게시글 수정하기
 
-function updateMode(){
-
-   const title = document.getElementById("title")
-   const content = document.getElementById("content")
-   title.style.visibility = "hidden"
-   content.style.visibility = "hidden"
-
-
-   const input_titles = document.createElement("textarea")
-   input_titles.setAttribute("id","input_title")
-   input_titles.innerText = title.innerHTML
-
-
-   const input_contents = document.createElement("textarea")
-   input_contents.setAttribute("id","input_contents")
-   input_contents.innerText = content.innerHTML
-   input_contents.rows=10
-
-   const body = document.body
-   body.insertBefore(input_titles, title)
-   body.insertBefore(input_contents, content)
-
-
-   const update_button = document.getElementById("update_button")
-   update_button.setAttribute("onclick","updateArticle()")
-
-}
-
-//  게시글 수정 내용 저장
-
-async function updateArticle(){
-
-   // 새로 입력 받은 값을 가져온다.
-   var input_titles = document.getElementById("input_title")
-   var input_contents = document.getElementById("input_contents")
-   console.log(input_titles.value,input_contents.value)
-
-   // article_id의 게시글에 변경데이터를 보내주다. 이 패치 아티클을 따라가보자.
-   const article = await patchArticle(article_id,input_titles.value,input_contents.value)
-
-   // 이후 ui 변경
-
-   input_titles.remove()
-   input_contents.remove()
-
-   const title = document.getElementById("title")
-   const content =document.getElementById("content")
-
-   title.style.visibility = "visible"
-   content.style.visibility = "visible"
-
-
-   //  수정내용 바로 적용.
-   update_button.setAttribute("onclick","updateMode()")
-   
-   loadArticle(article_id)
-
-
-}
 
 // 게시글 삭제
 
