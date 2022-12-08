@@ -1,10 +1,10 @@
 body {
-    font-family: "Jua", sans-serif;
-    height: 100vh;
-    background-color: whitesmoke;
-    color: black;
-  }
-  
+  font-family: "Jua", sans-serif;
+  height: 100vh;
+  background-color: whitesmoke;
+  color: black;
+}
+
 body.dark {
   background: #1b1d25;
   color: white;
@@ -94,7 +94,6 @@ label {
   box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
 }
 
-  
 footer {
   width: 100%;
   height: 20px;
@@ -103,5 +102,4 @@ footer {
   bottom: 0;
   left: 0;
   text-align: center;
-  transform: translateY(-100%);
 }

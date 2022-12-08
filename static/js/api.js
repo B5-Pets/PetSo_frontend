@@ -33,27 +33,21 @@ async function getMyProfile() {
 const pageurlParams = new URLSearchParams(window.location.search);
 const page_id = pageurlParams.get("page");
 
-// 포스트 리스트 보여주기(페이지네이션 적용시) //
-async function getPostList() {
-  if (!page_id) {
-    var response = await fetch(`${backend_base_url}/post/viewset/`, {
+//아티클 리스트 보여주기
+async function getArticleList() {
+  
+  var response = await fetch(`${backend_base_url}/articles/`, {
       method: "GET",
-    });
-  } else {
-    var response = await fetch(
-      `${backend_base_url}/post/viewset/?page=${page_id}`,
-      {
-        method: "GET",
-      }
-    );
-  }
+  });
+  
   response_json = await response.json();
   return response_json;
 }
 
-// 포스트 디테일 페이지 연결 //
-function PostDetail(post_id) {
-  const url = `${frontend_base_url}/post_detail.html?id=${post_id}`;
+
+// 아티클 디테일 페이지 연결 //
+function ArticleDetail(article_id) {
+  const url = `${frontend_base_url}/articledetail.html?id=${article_id}`;
   location.href = url;
 }
 
