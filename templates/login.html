@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../static/js/user.js"></script>
+    <script src="../static/js/social.js"></script>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -73,14 +74,14 @@
             <input type="email" id="email" name="email" placeholder="email" >
             <input type="password" id="password" name="password" placeholder="password"style="margin-bottom: 20px;">
 
-            <button type="button" onclick="handleLogin()" value="로그인">로그인</button>
+            <button type="button" id="loginbtn" onclick="handleLogin()" value="로그인">로그인</button>
             <div class="login_box2-1">
             <a href="signup.html">회원가입</a>
             <a href="">아이디 비밀번호 찾기</a>
           </div>
            -- 소셜로그인 --
             <button>kakao</button>
-            <button>google</button>
+            <button class="googleloginbtn" type="button" onclick="GoogleLoginApi()">google</button>
             <button>naver</button>
 
           </form>
@@ -90,10 +91,6 @@
 
       </div>
       <footer>
-        <label>
-            <input role="switch" type="checkbox" onclick="darkmode()" />
-            <span>다크모드로 전환</span>
-          </label>
           <p>
           2022 Team Rocket All Rights Reserved
           </p>

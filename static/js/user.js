@@ -1,3 +1,6 @@
+const backend_base_url = "http://127.0.0.1:8000";
+const frontend_base_url = "http://127.0.0.1:5500/templates";
+
 window.onload = () => {
     console.log("로딩되었음");
   };
@@ -7,7 +10,7 @@ window.onload = () => {
     const password = document.getElementById("password").value;
     console.log(email, password);
   
-    const response = await fetch("http://127.0.0.1:8000/user/signup/", {
+    const response = await fetch(`${backend_base_url}/user/signup/`, {
       headers: {
         "content-type": "application/json",
       },
@@ -19,14 +22,19 @@ window.onload = () => {
     });
   
     console.log(response);
+
+    
+
   }
 
   async function handleLogin() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    
+
     console.log(email, password);
   
-    const response = await fetch("http://127.0.0.1:8000/user/api/token/", {
+    const response = await fetch(`${backend_base_url}/user/api/token/`, {
       headers: {
         "content-type": "application/json",
       },
@@ -36,7 +44,9 @@ window.onload = () => {
         password: password,
       }),
     });
-    const response_json = await response.json();
+
+    if(response.status == 200){
+      const response_json = await response.json();
   
     console.log(response_json);
   
@@ -52,12 +62,16 @@ window.onload = () => {
           return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
         })
         .join("")
-    );
-    
-    
-  
+    ); 
+
     localStorage.setItem("payload", jsonPayload);
-    window.location.href='index.html';
+    alert("환영합니다!")
+    window.location.replace(`${frontend_base_url}/index.html`)  
+   }else{
+      alert("회원정보가 일치하지 않습니다.")
+    }
+
+    
       
   }
   
@@ -68,5 +82,9 @@ window.onload = () => {
     localStorage.removeItem("payload");
     window.location.href='login.html';
   }
+
+
+  
+
   
 
