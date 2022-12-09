@@ -7,6 +7,9 @@ const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500/templates";
 
 const token = localStorage.getItem("access");
+ // 개별 게시글 //
+
+
 
 // 로그아웃
 function handleLogout() {
@@ -19,7 +22,7 @@ function handleLogout() {
 
 // 프로필 가져오기
 async function getMyProfile() {
-  const response = await fetch(`${backend_base_url}/users/profile/`, {
+  const response = await fetch(`${backend_base_url}/user/profile/`, {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("access"),
     },
@@ -78,10 +81,43 @@ function PostDetail(post_id) {
 //   }
 // }
 
-// 다크 모드 전환
-function darkmode() {
-    document.getElementById('body').classList.toggle('dark');
+// 좋아요 등록/취소 //
+async function DoLike(article_id) {
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/like/`, {
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "POST",
+  });
+  response_json = await response.json();
+  if (response.status == 200) {
+    window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
+    alert(response_json);
+  } else {
+    alert(response.status);
   }
+}
+
+// 북마크 등록/취소 //
+async function DoBookmark(article_id) {
+  const response = await fetch(`${backend_base_url}/articles/bookmark/${article_id}/`, {
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "POST",
+  });
+  response_json = await response.json();
+  console.log(response_json)
+  if (response.status == 200) {
+    window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
+    alert(response_json["message"]);
+  } else {
+    alert(response.status);
+  }
+}
+
 
 
 
@@ -99,7 +135,7 @@ async function getArticles(){
 }
 
 
-// 게시글 데이터 가져오기
+// 개별 게시글 데이터 가져오기
 async function getArticleDetail(){
 
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`,{
@@ -159,4 +195,9 @@ async function deleteArticle(){
   }else{
       alert(response.status)
   }
+}
+
+// 다크 모드 전환
+function darkmode() {
+  document.getElementById('body').classList.toggle('dark');
 }
