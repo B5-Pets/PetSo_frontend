@@ -23,23 +23,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/static/css/result.css" />
+  <link rel="stylesheet" href="/static/css/index.css" />
   <title>PetSo</title>
+
 </head>
 
 <body id="body">
   <header></header>
-  <div>
-    <!-- 여기에 본문 -->
-    <div class="inference-box1" style="background-color: pink;">피부 검사 결과</div>
-
-    <div class="inference-box2" style="background-color: red">
-      <span class="inference" id="inference"></span>
+  <!-- 헤더 끝 -->
+  <!-- 여기에 본문 -->
+  <form>
+    <div class="main">
+      <p class="profile_img" id="profile_img"></p>
+      <div class="main_profile">
+        <div>
+          <p class="h3" id="email"></p>
+          <p id="name"></p>
+          <p id="introduce"></p>
+          <p>내 펫 리스트</p>
+          <ol class="pet_list" id="pet_list"></ol>
+          <span style="cursor:pointer;" onclick="location.href='add_pet.html'">펫 등록하기</span>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary profile" onclick="location.href='profile_update.html'">프로필 수정</button>
+        </div>
+        <div class="my_bookmarks">
+          <button type="button" class="btn btn-outline-warning" onclick="location.href='my_bookmark.html'">🔖 북마크 모아보기</button>
+        </div>
+      </div>
     </div>
-
-    <div class="inference-box3" style="background-color: black;"></div>
-
-  </div>
+    <br />
+    <ol class="article_list" id="article_list" style="list-style:none;"></ol>
+  </form>
+  <!-- 본문 끝 -->
+  <!-- footer -->
   <footer>
     <label>
       <input role="switch" type="checkbox" onclick="darkmode()" />
@@ -49,9 +66,15 @@
       2022 Team Rocket All Rights Reserved
     </p>
   </footer>
+  <!-- footer 끝 -->
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/myprofile.js"></script>
+  <script src="../static/js/loader.js"></script>
+  <script>
+    if (!token) {
+      window.location.replace(`${frontend_base_url}/login.html`);
+    }
+  </script>
 </body>
-<script src="../static/js/api.js"></script>
-<script src="../static/js/result.js"></script>
-<script src="../static/js/loader.js"></script> 
 
 </html>

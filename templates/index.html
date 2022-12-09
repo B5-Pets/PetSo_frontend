@@ -29,47 +29,21 @@
 </head>
 
 <body id="body">
-  <header>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="space">
-        <img src="/static/img/001.png" class="logo" href="../templates/index.html">
-      </div>
-      <div class="space">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" id="username" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile.html">My</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                기능
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">게시판</a></li>
-                <li><a class="dropdown-item" href="#">피부 증상 탐지</a></li>
-                <li><a class="dropdown-item" href="#">채팅방</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-link" style="font-size:20pt;" onclick="handleLogout()">Logout</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- 헤더 끝 -->
-  <!-- 여기에 본문 -->
-
+  <header></header>
   <div>
-    <p>여기에 본문이 들어갑니다</p>
+    <!-- 여기에 본문 -->
+    <h1>나의 펫을 소개합니다!</h1>
+    <br/>
+    반려동물 커뮤니티 사이트
+    <br/>
+    yolov5 모델을 사용한 강아지의 피부병변 탐지
+    <br/>
+    실시간 채팅방 기능
+    <br/>
+    가까운 동물병원 탐색
+    <br/>
+    PetSo에 어서오세요~
   </div>
-  <!-- 본문 끝 -->
-  <!-- footer -->
   <footer>
     <label>
       <input role="switch" type="checkbox" onclick="darkmode()" />
@@ -79,9 +53,9 @@
       2022 Team Rocket All Rights Reserved
     </p>
   </footer>
-  <!-- footer 끝 -->
-  <script src="../static/js/api.js"></script>
-  <script src="../static/js/index.js"></script>
 </body>
+<script src="../static/js/api.js"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/loader.js"></script>
 
 </html>

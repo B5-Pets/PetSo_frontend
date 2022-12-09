@@ -1,30 +1,10 @@
-// temp_html 형식 만들어서 붙이기(append)
-
-// window.onload() = async function loadProfile() {
-//     const response = await fetch(`${backend_base_url}/users/profile/`, {
-//         headers: {
-//           Authorization: "Bearer " + localStorage.getItem("access"),
-//         },
-//         method: "GET",
-//       });
-//       profile = await response.json();
-//       const email = profile.email
-//       const profile_img = profile.profile_img
-//       const name = profile.name
-//       const introduce = profile.introduce
-//       console.log(email, profile_img, name, introduce)
-//       let temp_html = `<div class="profile">
-//       ${email} ${profile_img}, ${name}, ${introduce}
-//       </div>`
-
-//       $('#profile-cards').append(temp_html)
-// }
+// 주소로 아티클 페이지받기 //
+const pageurlParams = new URLSearchParams(window.location.search);
+const user_id = pageurlParams.get("id");
 
 
-// createElement 이용하기
-
-window.onload = async function loadMyProfile() {
-    const response = await fetch(`${backend_base_url}/user/profile/`, {
+window.onload = async function loadMyProfile(user_id) {
+    const response = await fetch(`${backend_base_url}/user/profile/${user_id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("access"),
       },

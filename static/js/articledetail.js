@@ -15,10 +15,6 @@ async function checkLogin() {
 //  const urlParams = new URLSearchParams(window.location.search);
 //  const article_id = urlParams.get("id");
 //  console.log(article_id)
-
-
-
- 
  async function loadArticle(article_id) {
 
    // 개별 게시글 데이터 가져오기.
