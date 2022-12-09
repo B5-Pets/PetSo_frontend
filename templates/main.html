@@ -23,39 +23,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="stylesheet" href="/static/css/main.css" />
   <title>PetSo</title>
-
 </head>
 
 <body id="body">
   <header></header>
-  <div>
-    <!-- 여기에 본문 -->
-    <h1>나의 펫을 소개합니다!</h1>
-    <br/>
-    반려동물 커뮤니티 사이트
-    <br/>
-    yolov5 모델을 사용한 강아지의 피부병변 탐지
-    <br/>
-    실시간 채팅방 기능
-    <br/>
-    가까운 동물병원 탐색
-    <br/>
-    PetSo에 어서오세요~
+  <div class="kategorie">
+    <ul>
+      <li>반려동물 자랑하기</li>
+      <li>고민 상담소</li>
+      <li>물품 후기</li>
+    </ul>
+  </div>
+  <div class="article_area">
+    <div class="article_box">
+      <ol id="article_list" class="article_list"></ol>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal_body">
+      CHAT
+      <input class="text-box" type="text" placeholder="입력창" />
+      <button class="submit" type="submit">전송</button>
+    </div>
   </div>
   <footer>
     <label>
       <input role="switch" type="checkbox" onclick="darkmode()" />
       <span>다크모드로 전환</span>
     </label>
-    <p>
-      2022 Team Rocket All Rights Reserved
-    </p>
+    <p>2022 Team Rocket All Rights Reserved</p>
   </footer>
+  <script>
+    const modal = document.querySelector(".modal");
+    const btnOpenPopup = document.querySelector(".chat_button");
+
+    btnOpenPopup.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+  </script>
+
 </body>
 <script src="../static/js/api.js"></script>
-<script src="../static/js/index.js"></script>
+<script src="../static/js/main.js"></script>
 <script src="../static/js/loader.js"></script>
 
 </html>

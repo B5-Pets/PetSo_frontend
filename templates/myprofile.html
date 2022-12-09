@@ -30,20 +30,33 @@
 
 <body id="body">
   <header></header>
-  <div>
-    <!-- 여기에 본문 -->
-    <h1>나의 펫을 소개합니다!</h1>
-    <br/>
-    반려동물 커뮤니티 사이트
-    <br/>
-    yolov5 모델을 사용한 강아지의 피부병변 탐지
-    <br/>
-    실시간 채팅방 기능
-    <br/>
-    가까운 동물병원 탐색
-    <br/>
-    PetSo에 어서오세요~
-  </div>
+  <!-- 헤더 끝 -->
+  <!-- 여기에 본문 -->
+  <form>
+    <div class="main">
+      <p class="profile_img" id="profile_img"></p>
+      <div class="main_profile">
+        <div>
+          <p class="h3" id="email"></p>
+          <p id="name"></p>
+          <p id="introduce"></p>
+          <p>내 펫 리스트</p>
+          <ol class="pet_list" id="pet_list"></ol>
+          <span style="cursor:pointer;" onclick="location.href='add_pet.html'">펫 등록하기</span>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary profile" onclick="location.href='profile_update.html'">프로필 수정</button>
+        </div>
+        <div class="my_bookmarks">
+          <button type="button" class="btn btn-outline-warning" onclick="location.href='my_bookmark.html'">🔖 북마크 모아보기</button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <ol class="article_list" id="article_list" style="list-style:none;"></ol>
+  </form>
+  <!-- 본문 끝 -->
+  <!-- footer -->
   <footer>
     <label>
       <input role="switch" type="checkbox" onclick="darkmode()" />
@@ -53,9 +66,15 @@
       2022 Team Rocket All Rights Reserved
     </p>
   </footer>
+  <!-- footer 끝 -->
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/myprofile.js"></script>
+  <script src="../static/js/loader.js"></script>
+  <script>
+    if (!token) {
+      window.location.replace(`${frontend_base_url}/login.html`);
+    }
+  </script>
 </body>
-<script src="../static/js/api.js"></script>
-<script src="../static/js/index.js"></script>
-<script src="../static/js/loader.js"></script>
 
 </html>

@@ -1,10 +1,10 @@
 body {
-    font-family: "Jua", sans-serif;
-    height: 100vh;
-    background-color: whitesmoke;
-    color: black;
-  }
-  
+  font-family: "Jua", sans-serif;
+  height: 100vh;
+  background-color: whitesmoke;
+  color: black;
+}
+
 body.dark {
   background: #1b1d25;
   color: white;
@@ -13,10 +13,10 @@ body.dark {
 nav.navbar {
   width: 100%;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
 }
 
-.logo{
+.logo {
   width: 350px;
   margin-left: -50px;
 }
@@ -28,7 +28,7 @@ a.navbar-brand {
 
 .nav-item {
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 label {
@@ -38,7 +38,46 @@ label {
   cursor: pointer;
 }
 
+.kategorie {
+  width: 300px;
+  height: 100%;
+  background: rgb(20, 33, 100);
+  padding-top: 3%;
+  font-size: 15pt;
+  color: white;
+  float: left;
+}
+.kategorie li {
+  list-style: none;
+  margin-top: 10%;
+}
 
+.article_area .article_box {
+  width: 300px;
+  height: 200px;
+  background: rgb(180, 180, 180);
+  float: left;
+  margin-left: 4%;
+  margin-top: 6%;
+}
+.modal {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 30%;
+  height: 80%;
+  display: none;
+  background-color: white;
+  border-radius: 6%;
+  border: 6px dashed #283b88;
+  font-size: 30pt;
+  color: #2c3e85;
+  padding: 20px 20px 20px 20px;
+}
+
+.chat_button {
+  border: none;
+}
 [type="checkbox"] {
   appearance: none;
   position: relative;
@@ -46,6 +85,24 @@ label {
   border-radius: 1.25em;
   width: 2.25em;
   height: 1.25em;
+}
+.text-box {
+  height: 30px;
+  width: 320px;
+  font-size: 13pt;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+.submit {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background: #2c3e85;
+  color: white;
+  font-size: 15pt;
+  border: none;
+  padding: 10 10 10 10;
 }
 
 [type="checkbox"]::before {
@@ -103,4 +160,3 @@ footer {
   left: 0;
   text-align: center;
 }
-

@@ -9,6 +9,7 @@ window.onload = async function loadMyProfile() {
   
     let image = document.createElement("img");
     image.src = `${backend_base_url}${profile.profile_img}`;
+    image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
     profile_update_img.appendChild(image);
   };
 
@@ -39,7 +40,7 @@ async function updateMyProfile(formdata) {
   
     if (response.status == 200) {
       alert("프로필 변경 완료!");
-      window.location.replace(`${frontend_base_url}/profile.html`);
+      window.location.replace(`${frontend_base_url}/myprofile.html`);
     } else {
       alert("잘못된 입력입니다!");
     }
@@ -48,12 +49,13 @@ async function updateMyProfile(formdata) {
 // 프로필 수정 폼데이터
 async function loadMyProfileUpdate() {
     const profile_img = document.getElementById("profile_img").files[0];
-    const bio = document.getElementById("bio").value;
-  
+    const introduce = document.getElementById("introduce").value;
+    const name = document.getElementById("name").value;
     const formdata = new FormData();
   
     formdata.append("profile_img", profile_img);
-    formdata.append("bio", bio);
+    formdata.append("introduce", introduce);
+    formdata.append("name", name)
   
     updateMyProfile(formdata);
   }

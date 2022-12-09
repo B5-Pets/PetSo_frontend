@@ -1,10 +1,10 @@
 body {
-  font-family: "Jua", sans-serif;
-  height: 100vh;
-  background-color: whitesmoke;
-  color: black;
-}
-
+    font-family: "Jua", sans-serif;
+    height: 100vh;
+    background-color: whitesmoke;
+    color: black;
+  }
+  
 body.dark {
   background: #1b1d25;
   color: white;
@@ -104,125 +104,30 @@ footer {
   text-align: center;
 }
 
-.article_roundbox_1{
+.inference-box1{
+padding-top: 10px;
+font-size: 40px;
+width: 30%;
 display: grid;
 text-align:center;
-height:70px;
 margin: 0 auto;
-padding-top: 50px;
-width: 65%;
-text-align: left;
-
+height:70px;
+width: 30%;
 }
 
-.article_area{
+.inference-box2{
 display: grid;
 text-align:center;
 height: 500px;
 margin: 0 auto;
-width: 65%;
+width: 30%;
 
 
   }
 
-.article_roundbox_3{
-height: 50px;
+.inference-box3{
+height: 10px;
 width: 100%;
   }
-
-.title-name-box{
-padding-top: 20px;
-font-size: 30px;
-height: 70px;
-text-align: left;
-width: 50%;
-
-}
-.article_box2{
-border-style: solid;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-left-width: 0px;
-border-right-width: 0px;
-height: 300px;
-display: flex;
-}
-
-.image{
-width: 50%;
-
-}
-.content{
-padding: 20px;
-width: 50%;
-text-align: left;
-}
-.article_box3{
-margin-top: -15px;
-
-height: 35px;
-}
-
-.article-box4{
-padding: 20px;
-text-align: left;
-
-height: 140px;
-}
-
-.image{
-padding-top: 10px;
-width: 290px;
-height: 290px;
-
-
-}
-
-.article_box{
-display: flex;
-}
-.title-user-box{
-padding-top: 30px;
-font-size: 20px;
-width: 50%;
-text-align: right;
-height: 70px;
-}
-
-.right_area{
-padding-left: 95%;
-text-decoration:none; color:inherit; cursor: pointer;
-}
-.right_area .icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100vw * (45 / 1920));
-  height: calc(100vw * (45 / 1920));
-
-  border-radius: 50%;
-
-}
-
-.icon.heart img{
-  width: calc(130vw * (24 / 1920));
-  height: calc(130vw * (24 / 1920));
-}
-
-.icon.heart.fas{
-color:red
-}
-.heart{
-  transform-origin: center;
-}
-.heart.active img{
-  animation: animateHeart .3s linear forwards;
-}
-
-@keyframes animateHeart{
-  0%{transform:scale(.2);}
-  40%{transform:scale(1.2);}
-  100%{transform:scale(1);}
-}
 
 
