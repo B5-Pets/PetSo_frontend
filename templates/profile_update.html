@@ -65,17 +65,20 @@
     </nav>
      프로필 설정 페이지
       <form>
+        <p>이미지 미리보기</p>
           <img id="preview" style="width:250px; height:250px; object-fit:cover; border-radius:50%;"/>
         <div>
           <p id="profile_update_img"></p>
           <input type="file" class="form-control" id="profile_img" onchange="readURL(this);" />
+          <br />
+          <input name="" placeholder="이름" id="name"></textarea>
           <br />
           <textarea name="" placeholder="나에 대해 설명해주세요" id="introduce" cols="50" rows="10"></textarea>
         </div>
         <br />
         <div>
           <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
-          <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='myprofile.html'">취소</button>
         </div>
       </form>
       <footer class="footer">

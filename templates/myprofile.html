@@ -64,10 +64,29 @@
   </header>
   <!-- 헤더 끝 -->
   <!-- 여기에 본문 -->
-
-  <div>
-    <p>여기에 본문이 들어갑니다</p>
-  </div>
+  <form>
+    <div class="main">
+      <p class="profile_img" id="profile_img"></p>
+      <div class="main_profile">
+        <div>
+          <p class="h3" id="email"></p>
+          <p id="name"></p>
+          <p id="introduce"></p>
+          <p>내 펫 리스트</p>
+          <ol class="pet_list" id="pet_list"></ol>
+          <span style="cursor:pointer;" onclick="location.href='add_pet.html'">펫 등록하기</span>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary profile" onclick="location.href='profile_update.html'">프로필 수정</button>
+        </div>
+        <div class="my_bookmarks">
+          <button type="button" class="btn btn-outline-warning" onclick="location.href='my_bookmark.html'">🔖 북마크 모아보기</button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <ol class="article_list" id="article_list"></ol>
+  </form>
   <!-- 본문 끝 -->
   <!-- footer -->
   <footer>

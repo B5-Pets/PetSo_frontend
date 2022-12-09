@@ -73,26 +73,25 @@
                 <img id="preview" style="width:250px; height:250px; object-fit:cover; border-radius:50%;" />
                 <div>
                     <p id="profile_update_img"></p>
-                    <input type="file" class="form-control" id="pet_img" onchange="readURL(this);" />
+                    <input type="file" class="form-control" id="pet_image" onchange="readURL(this);" />
                     <!-- <input type="file" class="form-control" id="pet_img" /> -->
                     <br />
-                    <input type="text" class="form-control" placeholder="펫 이름" id="pet_name">
+                    <input type="text" class="form-control" placeholder="펫 이름" id="pet_name"></textarea>
                     <br />
-                    <input type="text" class="form-control" placeholder="품/품종" id="pet_name">
+                    <input type="text" class="form-control" placeholder="품/품종" id="pet_spacies"></textarea>
                     <br />
-                    <input type="text" class="form-control" placeholder="성별" id="pet_name">
+                    <input type="text" class="form-control" placeholder="성별" id="pet_sex"></textarea>
                     <br />
-                    <input type="text" class="form-control" placeholder="나이" id="pet_name">
+                    <input type="text" class="form-control" placeholder="나이" id="pet_age"></textarea>
                     <br />
-
-                    <textarea name="" class="form-control" placeholder="펫에 대해 설명해주세요" id="introduce" cols="50"
+                    <textarea type="text" class="form-control" placeholder="펫에 대해 설명해주세요" id="pet_desc" cols="50"
                         rows="10"></textarea>
 
                 </div>
                 <br />
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
-                    <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
+                    <button type="button" class="btn btn-primary" onclick="postMyPet()">확인</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='myprofile.html'">취소</button>
                 </div>
             </form>
         </div>
@@ -109,8 +108,9 @@
         </p>
     </footer>
     <!-- footer 끝 -->
-    <script src="../static/js/api.js"></script>
-    <script src="../static/js/profile_update.js"></script>
+
 </body>
+<script src="../static/js/api.js"></script>
+<script src="../static/js/add_pet.js"></script>
 
 </html>
