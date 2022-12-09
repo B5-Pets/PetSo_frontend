@@ -65,44 +65,93 @@
       </nav>
       <div>
         <!-- 여기에 본문 -->
-          <div class="article_roundbox_1" >
-            고양이 게시판
-            <button type="button" onclick="location.href=`/templates/post_modify.html?id=${article_id}`;" class="article-detail-modify">수정</button>
-            <button type="button" onclick="" class="article-detail-delete">삭제</button>
-          </div>
-          
-
-          <div class="article_roundbox_2">
-            <div class="title-box">
-          <div class="title-name-box" id="title">중성화 수술 끝난 후</div>
-          <div class="title-user-box" id="article_author">유저아이디</div>
+        <div class="article_roundbox_1" >
+          고양이 게시판
+          <button type="button" onclick="location.href=`/templates/post_modify.html?id=${article_id}`;" class="article-detail-modify">수정</button>
+          <button type="button" onclick="" class="article-detail-delete">삭제</button>
         </div>
-          <div class="article_box2" >
-            <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
-            <div class="article_box2_2" id="content">안녕하세요. 우리 초코가 최근 중성화 수술을 했는데요.정말 마음이 너무 아팠습니다. 그래도 우리 초코 건강하게 잘 회복하고 있어요. 중성화를 해야하는데 어떻게 준비를 해야할지 모르겠다는 당신 이제 걱정마세요.</div>
-          </div>
-          <div class="article_box3">
-            <div class="right_area">
-              <div id="dolike"></div>
-              <div id="dobookmark"></div>
-              <div id="user-name"></div>
-              <div id="likes"></div>
-              <div id="bookmarks"></div>
-              <div id="profile_img"></div>
-              <div id="created_at"></div>
+        
 
-          </div>
-          <div class="article-box4">
-            댓글창
-          </div>
-            
-
-
-          </div>
-
-          <div class="article_roundbox_3"></div>
-
+        <div class="article_roundbox_2">
+          <div class="title-box">
+        <div class="title-name-box" id="title">제목</div>
+        <div class="title-user-box" id="article_author">작성자</div>
       </div>
+        <div class="article_box2" >
+          <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
+          <div class="article_box2_2" id="content">게시글 내용</div>
+        </div>
+        <div class="article_box3">
+          <div class="right_area">
+            <div id="dolike"></div>
+            <div id="dobookmark"></div>
+            <div id="user-name"></div>
+            <div id="likes"></div>
+            <div id="bookmarks"></div>
+            <div id="profile_img"></div>
+            <div id="created_at"></div>
+
+        </div>
+    <body>
+      <div class="wrap">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">댓글 수정</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    id="modal_comment"
+                    class="form-control"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">나가기</button>
+                <button type="button" class="btn btn-success" id="save_button">수정하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="comment_box">
+            <h4>댓글</h4>
+            <div>
+              <div id="update_box" class="update_box"></div>
+              <div class="comment_input">
+                <div class="comment_small_box">
+                  <div class="comment_content">
+                    <p id="email" class="email"></p>
+                    <p id="comment" class="comment"></p>
+                    <p id="comment_created_at" class="comment_created_at"></p>
+                  </div>
+                  <div class="comment_button">
+                    <div id="update_button" class="update_button"></div>
+                    <div id="delete_button" class="delete_button"></div>
+                  </div>
+                </div>
+                <div class="comment_input_box">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="comment-input" placeholder="댓글 입력" required />
+                    <label for="floatingInput">댓글 입력</label>
+                  </div>
+                  <button type="button" class="btn btn-secondary comment_input_button" onclick="CreateComment()">게시하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+        <div class="article_roundbox_3"></div>
+
+    </div>
       <footer>
         <label>
             <input role="switch" type="checkbox" onclick="darkmode()" />
