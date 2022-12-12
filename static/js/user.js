@@ -5,6 +5,8 @@ window.onload = () => {
     console.log("로딩되었음");
   };
 
+ 
+
   async function handleSignin() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
