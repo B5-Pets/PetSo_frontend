@@ -33,51 +33,36 @@
 
 </head>
 <body id="body">
-  <nav class="navbar navbar-expand-lg bg-light">
-      <div class="space">
-        <img src="/static/img/001.png" class="logo" href="../templates/index.html">
-      </div>
-      <div class="space">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" id="username" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile.html">My</a>
-          </li>
-          <li class="nav-item">
-              <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
-                    기능
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">게시판</a></li>
-                    <li><a class="dropdown-item" href="#">피부 증상 탐지</a></li>
-                    <li><a class="dropdown-item" href="#">채팅방</a></li>
-                  </ul>
-                </div>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-link" style="font-size:20pt;" onclick="handleLogout()">Logout</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-     프로필 설정 페이지
+  <header></header>
+  <!-- 여기서부터 본문 -->
+
       <form>
-          <img id="preview" style="width:250px; height:250px; object-fit:cover; border-radius:50%;"/>
-        <div>
+        <div class = "box">
+          <h5>프로필 수정</h5>
+          <div class = "image">
           <p id="profile_update_img"></p>
+          <img class="preview" id="preview" style="
+          width:250px;
+          height:250px; 
+          border-radius: 70%; 
+          overflow: hidden; 
+          object-fit:cover; 
+          border-style: solid;
+          border-width: 0.5px;
+
+          "/>
           <input type="file" class="form-control" id="profile_img" onchange="readURL(this);" />
-          <br />
-          <textarea name="" placeholder="나에 대해 설명해주세요" id="introduce" cols="50" rows="10"></textarea>
+          </div>
+          <input class="update-profile-name" placeholder="이름" id="name">
+          <textarea class="update-profile" name="" placeholder="나에 대해 설명해주세요" id="introduce" cols="50" rows="10"></textarea>
         </div>
         <br />
         <div>
-          <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
-          <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
+          <button type="button" class="underline-btn" onclick="loadMyProfileUpdate()">변경하기</button>
+          <button type="button" class="underline-btn" onclick="location.href='myprofile.html'">취소하기</button>
         </div>
       </form>
+      <!-- footer -->
       <footer class="footer">
         <label>
             <input role="switch" type="checkbox" onclick="darkmode()" />
@@ -87,7 +72,10 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/api.js"></script>
-      <script src="../static/js/profile_update.js"></script>
+      
+
 </body>
+<script src="../static/js/api.js"></script>
+<script src="../static/js/profile_update.js"></script>
+<script src="../static/js/loader.js"></script> 
 </html>

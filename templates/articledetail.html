@@ -29,73 +29,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/static/css/articledetail.css" />
-    <title>PetSo</title>
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    <link rel="stylesheet" href="/static/css/like.css" />
+    <title>articledetail</title>
 
 </head>
 <body id="body">
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="space">
-          <img src="/static/img/001.png" class="logo" href="../templates/index.html">
-        </div>
-        <div class="space">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" id="username" href="#"></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.html">My</a>
-            </li>
-            <li class="nav-item">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
-                      기능
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">게시판</a></li>
-                      <li><a class="dropdown-item" href="#">피부 증상 탐지</a></li>
-                      <li><a class="dropdown-item" href="#">채팅방</a></li>
-                    </ul>
-                  </div>
-            </li>
-            <li class="nav-item">
-              <button type="button" class="btn btn-link" style="font-size:20pt;" onclick="handleLogout()">Logout</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div>
+  <header></header>
+      <div class="detail-body">
         <!-- 여기에 본문 -->
-          <div class="article_roundbox_1" >
-            고양이 게시판
-          </div>
-          
-
-          <div class="article_roundbox_2">
-            <div class="title-box">
-          <div class="title-name-box" >중성화 수술 끝난 후</div>
-          <div class="title-user-box" >유저아이디</div>
+        <div class="article_roundbox_1" >
+          <span>일상</span>
         </div>
-          <div class="article_box2" >
-            <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
-            <div class="article_box2_2">안녕하세요. 우리 초코가 최근 중성화 수술을 했는데요.정말 마음이 너무 아팠습니다. 그래도 우리 초코 건강하게 잘 회복하고 있어요. 중성화를 해야하는데 어떻게 준비를 해야할지 모르겠다는 당신 이제 걱정마세요.</div>
-          </div>
-          <div class="article_box3">
-            <div class="right_area">
-              <a href="javascript:;" class="icon heart">
-                 <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기">
-              </a>
-          </div>
-          <div class="article-box4">
-            댓글창
-          </div>
-            
+      
+      <div class="article_roundbox_2">
+        <div class="title-box">
+          <div class="title-name-box" id="title">제목</div>
+          
+          <div class="title-user-box" id="article_author"><img class="profile_img" id="profile_img" src="/static/img/profile.jpeg"> </img>작성자</div>
+        </div>
+        <div class="article_box2" >
+          <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
+          <div class="article_box2_2" id="content">게시글 내용</div>
+        </div>
+        <div class="like-bookmark-box">좋아요 북마크
+          <button class="tweet-heart" id="like"></button>
+          <span id="dolike"></span>
+          <sapn id="likes"></sapn>
+          <span id="dobookmark"></span>
+          <sapn id="bookmarks"></sapn>
+        </div>
+        
+        
+        
 
+        <div class="article_box3">
+        <div class="right_area">
 
-          </div>
+            <sapn id="user-name"></sapn>
+            <sapn id="created_at"></sapn>
 
-          <div class="article_roundbox_3"></div>
-
+        </div>
       </div>
+    </div>
+
+      <div class="wrap">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">댓글 수정</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    id="modal_comment"
+                    class="form-control"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">나가기</button>
+                <button type="button" class="btn btn-success" id="save_button">수정하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="comment_box">
+
+            <div>
+              <div id="update_box" class="update_box"></div>
+              <div class="comment_input">
+                <div class="comment_small_box">
+                  <div class="comment_content">
+                    <p id="email" class="email"></p>
+                    <p id="comment" class="comment"></p>
+                    <p id="comment_created_at" class="comment_created_at"></p>
+                  </div>
+                  <div class="comment_button">
+                    <div id="update_button" class="update_button"></div>
+                    <div id="delete_button" class="delete_button"></div>
+                  </div>
+                </div>
+                <div class="comment_input_box">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="comment-input" placeholder="댓글 입력" required />
+                    <label for="floatingInput">댓글 입력</label>
+                  </div>
+                  <button type="button" class="btn btn-secondary comment_input_button" onclick="CreateComment()">게시하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
       <footer>
         <label>
             <input role="switch" type="checkbox" onclick="darkmode()" />
@@ -108,4 +141,5 @@
       <script src="../static/js/api.js"></script>
       <script src="../static/js/articledetail.js"></script>
 </body>
+<script src="../static/js/loader.js"></script>
 </html>
