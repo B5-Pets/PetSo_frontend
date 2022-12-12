@@ -44,13 +44,7 @@ async function checkLogin() {
    articleImage.src = `${backend_base_url}${article.image}`;
    image.appendChild(articleImage);
  
-   const content = document.getElementById("content");
-   const likes = document.getElementById("likes");
-   const bookmarks = document.getElementById("bookmarks");
-   const created_at = document.getElementById("created_at");
-
-
-
+   
   //  좋아요
    const dolike = document.getElementById("dolike");
    const dolike_button = document.createElement("button");
