@@ -1,0 +1,29 @@
+nav.navbar {
+  width: 100%;
+  justify-content: space-between;
+  height: 100px;
+  position: fixed;
+}
+
+.logo {
+  width: 250px;
+  margin-left: 70px;
+}
+
+#navbar-right {
+  margin-right: 70px;
+}
+a.navbar-brand {
+  margin: 0 20px;
+  font-size: 30px;
+}
+
+.nav-item {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.bg-light {
+  background-color: rgb(249, 248, 248) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.119), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
