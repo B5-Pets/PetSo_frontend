@@ -29,6 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/static/css/post_modify.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
 
     <title>Document</title>
 </head>
@@ -36,28 +37,47 @@
     <header></header>
 
       <!-- 게시글 수정페이지 -->
-
-      <form>
-        <img id="preview" style="width:400px; height:300px; margin-top:20px; object-fit:cover; border-radius:20%;"/>
-      <div >
-        <!-- <p id="profile_update_img"></p> -->
-        <div class="img_update_box">
-          <input type="file" class="form-control" id="image" onchange="readURL(this);" />
-      </div>
-
-        <textarea name="" placeholder="제목" id="title" cols="50" rows="10"> </textarea>
-        
-        <br/>
-
-        <textarea name="" placeholder="내용" id="content" cols="50" rows="10"></textarea>
       
+      
+    <form>
+      
+        
+      <div class="box">
+        <div class="category-radio-box">
+          <h5>글 작성</h5>
+          <br/>
+          <label class="category-radio">
+            <input id="category-radio-life" type="radio" name="category" value="일상" checked>
+            <span>일상</span>
+          </label>
+        
+          <label class="category-radio">
+            <input id="category-radio-community" type="radio" name="category" value="커뮤니티">
+            <span>커뮤니티</span>
+          </label>
+         
+          <label class="category-radio">
+            <input id="category-radio-QnA" type="radio" name="category" value="QnA">
+            <span>QnA</span>
+          </label>
+
+        </div>
+
+        <input class="title" type="text" name="" placeholder="제목" id="title">
+        <textarea class="content" name="" placeholder="내용" id="content" cols="50" rows="10"></textarea>
+        
+        <div class="img_update_box">
+          <p>사진 업로드</p>
+          <img id="preview" style="width:400px; height:300px; margin-top:20px; object-fit:cover;"/>
+          <input value="사진 첨부" type="file" class="form-control" id="image" onchange="readURL(this);" />
+        </div>  
       </div>
-
         <br/>
-
       <div>
-        <button id="edit-button" type="button" class="btn btn-primary" >수정하기</button>
-        <button type="button" class="btn btn-primary_delete" onclick="location.href=''">삭제하기</button>
+        <a id="edit-button" class="underline-btn" href="#">수정하기</a>
+        <a id="edit-button" class="underline-btn" href="#">삭제하기</a>
+        <!-- <button id="edit-button" type="button" class="btn btn-primary" >수정하기</button> 
+        <button type="button" class="btn btn-primary_delete" onclick="location.href=''">삭제하기</button> !-->
       </div>
 
     </form>

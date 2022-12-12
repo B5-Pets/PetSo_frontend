@@ -140,8 +140,16 @@ async function checkLogin() {
 loadArticle(article_id);
 
 
-
 //Like
+const $like = document.getElementById('like');
+$like.addEventListener('click', () => {
+  $like.classList.toggle('is-liked');
+});
+
+
+
+
+
 // $(function(){
 //     var $likeBtn =$('.icon.heart');
 
@@ -188,3 +196,4 @@ loadArticle(article_id);
  // 댓글 삭제하기 //
  async function DeleteComment(article_id) {
    await loadDeleteComment(article_id);}
+
