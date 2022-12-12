@@ -45,16 +45,6 @@ async function checkLogin() {
    image.appendChild(articleImage);
  
    
-  //  좋아요
-   const dolike = document.getElementById("dolike");
-   const dolike_button = document.createElement("button");
-   dolike_button.innerText = "❤️";
-   dolike_button.setAttribute("id", article_id);
-   dolike_button.setAttribute("class", "btn btn-outline-danger");
-   dolike_button.setAttribute("onclick", "DoLike"+`(${article_id})`);
-
-   dolike.appendChild(dolike_button);
-   
  
  
    // 북마크
