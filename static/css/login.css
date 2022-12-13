@@ -108,22 +108,145 @@ footer {
 }
 
 .login_box2 {
-  margin-top: 100px;
   display: grid;
   text-align: center;
   height: 500px;
+  width: 35%;
   margin: 0 auto;
-  width: 30%;
+  margin-top: 60px;
+  background: linear-gradient(
+    0deg,
+    rgba(210, 160, 160, 0.5),
+    rgba(170, 136, 136, 0.1)
+  );
+  border-radius: 20px;
 }
 .login_box2-1 {
+  margin: 0 auto;
   margin-top: 10px;
   font-size: 20px;
   display: flex;
-  width: 100%;
+  width: 60%;
   justify-content: space-between;
+}
+.login_box2-1 a {
+  color: #5a5a5a;
+  font-size: 13pt;
+}
+.login_box2-1 a:hover {
+  text-decoration: underline;
 }
 
 .login_box3 {
   height: 10px;
   width: 100%;
+}
+
+.email_area {
+  background-color: white;
+  opacity: 0.8;
+  height: 80px;
+  width: 450px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 10px 10px 0 0;
+}
+
+.password_area {
+  background-color: white;
+  opacity: 0.8;
+  height: 80px;
+  width: 450px;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 0 0 10px 10px;
+}
+
+.email_icon1 {
+  width: 30px;
+  height: 30px;
+  margin-top: 23px;
+  margin-left: 30px;
+  background: url(/static/img/email.png) no-repeat center;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.email_icon2 {
+  width: 30px;
+  height: 30px;
+  margin-top: 23px;
+  margin-left: 30px;
+  background: url(/static/img/password.png) no-repeat center;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.account_text {
+  height: 80px;
+  width: 350px;
+  margin: 0 auto;
+  margin-left: 15px;
+  margin-top: 12px;
+}
+
+.account_text input {
+  width: 350px;
+  height: 55px;
+  margin-bottom: 50px;
+  border: none;
+}
+
+.loginbtn {
+  width: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 0ex;
+  background-color: rgb(255, 255, 255);
+  color: #5a5a5a;
+  font-size: 17pt;
+  opacity: 0.8;
+}
+
+.loginbtn:hover {
+  width: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 0ex;
+  background-color: rgb(233, 178, 178);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.119), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.social {
+  height: 150px;
+  display: grid;
+}
+.kakao {
+  width: 230px;
+  border: none;
+  border-radius: 10px;
+  background: url(/static/img/kakao.png) no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+}
+.google {
+  width: 230px;
+  border: none;
+  border-radius: 10px;
+  background: url(/static/img/google.png) no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.naver {
+  width: 230px;
+  border: none;
+  border-radius: 10px;
+  background: url(/static/img/naver.png) no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 20px;
 }

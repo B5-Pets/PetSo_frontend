@@ -132,13 +132,18 @@ body {
 .team_box1 .one {
   width: 300px;
   position: relative;
-
+  border-radius: 20px;
   background: rgb(220, 119, 119);
+}
+
+.one img {
+  border-radius: 20px;
 }
 .team_box2 .one {
   width: 300px;
   background: rgb(87, 171, 144);
   position: relative;
+  border-radius: 20px;
 }
 
 .member .over {
