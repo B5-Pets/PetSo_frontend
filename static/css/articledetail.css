@@ -192,94 +192,12 @@ footer {
   color: black;
   position: relative;
   background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
-}
 
-body.dark {
-  background: #1b1d25;
-  color: white;
-}
-
-nav.navbar {
-  width: 100%;
-  justify-content: space-between;
-  height: 100px;
-}
-
-.logo {
-  width: 350px;
-  margin-left: -50px;
-}
-
-a.navbar-brand {
-  margin: 0 20px;
-  font-size: 30px;
-}
-
-.nav-item {
-  margin-right: 20px;
-  font-size: 25px;
-}
-
-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-[type="checkbox"] {
-  appearance: none;
+  font-family: "Jua", sans-serif;
+  height: 300vh;
+  color: black;
   position: relative;
-  border: max(2px, 0.1em) solid gray;
-  border-radius: 1.25em;
-  width: 2.25em;
-  height: 1.25em;
-}
-
-[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  transform: scale(0.8);
-  background-color: gray;
-  transition: left 250ms linear;
-}
-
-[type="checkbox"]:checked {
-  background-color: gray;
-  border-color: gray;
-}
-
-[type="checkbox"]:checked::before {
-  background-color: white;
-  left: 1em;
-}
-
-[type="checkbox"]:disabled {
-  border-color: lightgray;
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-[type="checkbox"]:disabled:before {
-  background-color: lightgray;
-}
-
-[type="checkbox"]:disabled + span {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-[type="checkbox"]:focus-visible {
-  outline-offset: max(2px, 0.1em);
-  outline: max(2px, 0.1em) solid gray;
-}
-
-[type="checkbox"]:enabled:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  background: whitesmoke;
 }
 
 footer {
@@ -295,7 +213,27 @@ footer {
 .article_roundbox_1 {
   text-align: center;
   height: 700px;
+}
+.detail-body {
+  padding-top: 170px;
 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article_roundbox_1 {
+  margin: 0 auto;
+  display: flex;
+  height: 40px;
+  width: 50%;
+  font-size: 20px;
+  padding-top: 7px;
+  text-decoration: underline;
+}
+
+.article-detail-buttons {
+  width: 50px;
+  height: 30px;
   padding-top: 500px;
   width: 65%;
   text-align: left;
@@ -343,6 +281,57 @@ footer {
   margin-top: -15px;
 
   height: 35px;
+}
+
+.article_area {
+  display: grid;
+  text-align: center;
+  height: 500px;
+  margin: 0 auto;
+  width: 65%;
+}
+.article_roundbox_2 {
+  margin: 0 auto;
+  height: 500px;
+  width: 50%;
+  border: none;
+}
+
+.article_imgs {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article_roundbox_3 {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title-box {
+  margin: auto;
+  width: 800px;
+  display: flex;
+}
+
+/* 작성자 */
+.title-user-box {
+  padding-top: 20px;
+  font-size: 15px;
+  width: 50%;
+  text-align: right;
+  height: 70px;
+}
+/* 게시글 제목 */
+.title-name-box {
+  padding-top: 15px;
+  font-size: 30px;
+  height: 70px;
+  text-align: left;
+  width: 50%;
 }
 
 .article-box4 {
@@ -460,6 +449,29 @@ label {
   cursor: not-allowed;
 }
 
+.profile_img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.article_box2 {
+  border-style: groove;
+  border-top-width: 1px;
+  border-bottom-width: 0.01px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  height: 400px;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+}
+
+.article_box2_1 {
+  margin-left: 0;
+}
+
 [type="checkbox"]:focus-visible {
   outline-offset: max(2px, 0.1em);
   outline: max(2px, 0.1em) solid gray;
@@ -477,6 +489,22 @@ footer {
   bottom: 0;
   left: 0;
   text-align: center;
+}
+
+.article_box2_2 {
+  width: 460px;
+}
+
+.like-bookmark-box {
+  margin: 10px auto;
+  padding: 15px;
+  height: 50px;
+}
+
+.content {
+  padding: 20px;
+  width: 50%;
+  text-align: left;
 }
 
 .article_roundbox_1 {
@@ -539,6 +567,11 @@ footer {
   text-align: left;
 
   height: 140px;
+}
+.comment_input {
+  margin: 0 auto;
+  padding-top: 25px;
+  width: 800px;
 }
 
 .image {
