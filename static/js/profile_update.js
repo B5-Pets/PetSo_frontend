@@ -14,12 +14,19 @@ window.onload = async function loadMyProfile() {
   };
 
 
+
 // 올린 이미지 확인하기 (테스트용)
 function readURL(input) {
+$('#profile_update_img').empty()
+
 if (input.files && input.files[0]) {
     let reader = new FileReader();
     reader.onload = function (e) {
-        document.getElementById('preview').src = e.target.result;
+      const profile_update_img = document.getElementById("profile_update_img");
+      let image = document.createElement("img");
+      image.src = e.target.result;
+      image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
+      profile_update_img.appendChild(image);
     };
     reader.readAsDataURL(input.files[0]);
 } else {

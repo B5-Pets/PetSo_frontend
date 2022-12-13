@@ -39,19 +39,27 @@
 
       <form>
         <img id="preview" style="width:400px; height:300px; margin-top:20px; object-fit:cover; border-radius:20%;"/>
-      <div>
+      <div >
         <!-- <p id="profile_update_img"></p> -->
         <div class="img_update_box">
-        <input type="file" class="form-control" id="post_img" onchange="readURL(this);" />
-        </div>
-        <br />
-        <textarea name="" placeholder="게시물 내용" id="introduce" cols="50" rows="10"></textarea>
+          <input type="file" class="form-control" id="image" onchange="readURL(this);" />
       </div>
-      <br />
+
+        <textarea name="" placeholder="제목" id="title" cols="50" rows="10"> </textarea>
+        
+        <br/>
+
+        <textarea name="" placeholder="내용" id="content" cols="50" rows="10"></textarea>
+      
+      </div>
+
+        <br/>
+
       <div>
-        <button type="button" class="btn btn-primary" onclick="">수정하기</button>
+        <button id="edit-button" type="button" class="btn btn-primary" >수정하기</button>
         <button type="button" class="btn btn-primary_delete" onclick="location.href=''">삭제하기</button>
       </div>
+
     </form>
     <!-- <footer>
       <label>
@@ -60,11 +68,11 @@
         </label>
        
     </footer> -->
-    
-    
 
-      
+
 </body>
+
+<script src="/static/js/api.js"></script>
 <script src="../static/js/post_modify.js"></script>
 <script src="../static/js/loader.js"></script> 
 </html>
