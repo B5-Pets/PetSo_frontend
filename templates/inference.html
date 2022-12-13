@@ -35,14 +35,18 @@
         <h1>피부 증상 탐지</h1>
         
         yolov5 모델을 사용해 AI허브에서 제공하는 반려동물 피부병변 데이터를 학습시켜 어쩌구 저쩌구 이러쿵저러쿵
-        <div class="img_preview">
-            <div>사진 업로드 </div>
-            <img id="preview" style="width:250px; height:250px; object-fit:cover;" />
+        <div class="box-2">
+            <div class="img_preview">
+                <div>사진 업로드 </div>
+                <img id="preview" style="width:250px; height:250px; object-fit:cover;" />
+            </div>
+            <div class="inference-box3">검사 예시</div>
         </div>
         <form class="inference-box">   
             <input name="inference-file" type="file" id="img" class="img-upload" onchange="readURL(this);" />
             <span class="underline-btn" style="cursor:pointer;"onclick="CreateInference()">탐지하기</span>
         </form>
+        
     </div>
     <br/>
         <footer>
