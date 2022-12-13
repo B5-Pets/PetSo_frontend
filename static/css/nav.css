@@ -25,5 +25,6 @@ a.navbar-brand {
 
 .bg-light {
   background-color: rgb(249, 248, 248) !important;
+  z-index: 10000;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.119), 0 6px 6px rgba(0, 0, 0, 0.23);
 }

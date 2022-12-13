@@ -16,6 +16,10 @@
       crossorigin="anonymous"
     />
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -39,20 +43,38 @@
           <div class="login_box1"></div>
           
           <form name="" action="" method="POST">
-          <div class="login_box2" style="background-color: whitesmoke">
-            
-            <input type="email" id="email" name="email" placeholder="email" >
-            <input type="password" id="password" name="password" placeholder="password"style="margin-bottom: 20px;">
+          <div class="login_box2" >
 
-            <button type="button" id="loginbtn" onclick="handleLogin()" value="로그인">로그인</button>
+            <div class="account_area">
+            <div class="email_area">
+              <div class="email_icon1" id="email_icon1">
+                <span class="id_icon" id="id_icon"></span>
+              </div>
+              <div class="account_text" id="account_text">
+            <input type="eamil" name="email" id="email" placeholder="Enter email" >
+            </div>
+            </div> 
+
+            <div class="password_area">
+              <div class="email_icon2" id="email_icon2">
+                <span class="password_icon" id="password_icon"></span>
+              </div>
+              <div class="account_text" id="account_text">
+            <input type="password" name="password" id="password" placeholder="password" >
+            </div>
+            </div> 
+
+            </div>
+            
+            <button type="button" id="loginbtn" class="loginbtn" onclick="handleLogin()" value="로그인">로그인</button>
             <div class="login_box2-1">
             <a href="signup.html">회원가입</a>
-            <a href="">아이디 비밀번호 찾기</a>
+            <a href="">비밀번호 찾기</a>
           </div>
-           -- 소셜로그인 --
-            <button>kakao</button>
-            <button class="googleloginbtn" type="button" onclick="location.href='http://127.0.0.1:8000/user/google/login'">google</button>
-            <button>naver</button>
+          <div class="social">   <button class="kakao"></button>
+            <button class="google" type="button" onclick="location.href='http://127.0.0.1:8000/user/google/login'"></button>
+            <button class="naver"></button></div>
+         
 
           </form>
           </div>
