@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- CSS -->
     <link
@@ -46,23 +49,48 @@
       <!-- 여기에 본문 -->
       <div class="box1"></div>
       <div class="login_box2">
-        <div class="img">&nbsp;</div>
         <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>    
+          <label for="exampleInputEmail1"></label>
+          <div class="div">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+          </div>
 
-        <div class="form-group">
-         <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+          <div class="form-group">
+            <label for="exampleInputPassword1"></label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Reconfirm Password"
+            />
+          </div>
         </div>
 
-        <!-- <div class="form-group">
-          <label for="exampleInputPassword1">Password_check</label>
-           <input type="password" class="form-control" id="password" name="password" placeholder="Password_check">
-        </div> -->
         <div class="signup_btn">
-        <button type="button" class="btn btn-outline-primary" onclick="handleSigninButton()">가입하기</button>
+          <button
+            type="button"
+            id="signupbtn"
+            class="signupbtn"
+            onclick="handleSigninButton()"
+            value="회원가입"
+          >
+            가입하기
+          </button>
         </div>
       </div>
       <div class="box3"></div>
@@ -74,8 +102,6 @@
       </label>
       <p>2022 Team Rocket All Rights Reserved</p>
     </footer>
-    
   </body>
-<script src="../static/js/loader.js"></script> 
-
+  <script src="../static/js/loader.js"></script>
 </html>

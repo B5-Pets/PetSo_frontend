@@ -15,7 +15,7 @@
 }
 body {
   font-family: "Jua", sans-serif;
-  height: 700vh;
+  height: 550vh;
   color: black;
   position: relative;
   background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
@@ -56,6 +56,121 @@ body {
 .container2 .icon img {
   width: 150px;
   margin-left: 15px;
+}
+.main-function {
+  margin: 0 auto;
+  width: 100%;
+  height: 240vh;
+  text-align: center;
+  margin-top: 190px;
+  margin-bottom: 100px;
+}
+
+.function_box {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 90%;
+  height: 85%;
+}
+
+.functions {
+  width: 70%;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  box-shadow: rgb(0 0 0 / 10%) 0px 6px 12px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.function_pic {
+  width: 300px;
+  height: 250px;
+  margin: 25px 100px 25px 35px;
+}
+
+.function_text {
+  width: 450px;
+  height: 250px;
+  margin: 25px 30px 25px 20px;
+}
+
+.function_pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.main-team {
+  text-align: center;
+}
+.team_box1 {
+  width: 70%;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.team_box2 {
+  width: 45%;
+  height: 250px;
+  display: flex;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.team_box1 .one {
+  width: 300px;
+  position: relative;
+  border-radius: 20px;
+  background: rgb(220, 119, 119);
+}
+
+.one img {
+  border-radius: 20px;
+}
+.team_box2 .one {
+  width: 300px;
+  background: rgb(87, 171, 144);
+  position: relative;
+  border-radius: 20px;
+}
+
+.member .over {
+  position: absolute;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.679);
+  width: 100%;
+  height: 250px;
+  border-radius: 10%;
+  top: 0;
+  left: 0;
+  font-family: "Pretendard-Regular";
+  color: rgb(255, 0, 0);
+  display: none;
+  padding-top: 20%;
+  text-align: center;
+  font-size: 15pt;
+}
+
+.member .one:hover .over {
+  position: absolute;
+  display: block;
+}
+
+.member div img {
+  width: 100%;
+  height: 100%;
 }
 
 span {
@@ -155,5 +270,3 @@ footer {
   text-align: center;
   font-size: 15pt;
 }
-
-
