@@ -173,3 +173,13 @@ footer {
   transition: all 0s ease;
   
 }
+.inference-box3{
+  border: inset 1px gray;
+  height: 300px;
+  width: 500px;
+  margin-left: 200px;
+  margin-top: 70px;
+}
+.box-2{
+  display: flex;
+}
