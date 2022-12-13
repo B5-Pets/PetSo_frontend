@@ -10,6 +10,26 @@ body.dark {
   color: white;
 }
 
+.result-box{
+  padding-top: 150px;
+}
+.text{
+  margin-top: 20px;
+  margin-left: 320px;
+  margin-bottom: 20px;
+  font-size: 20pt;
+}
+
+.inference{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  padding-bottom: 50px;
+  margin-left: -140px;
+
+}
+
 nav.navbar {
   width: 100%;
   justify-content: space-between;
@@ -116,18 +136,17 @@ width: 30%;
 }
 
 .inference-box2{
-display: grid;
+display: flex;
 text-align:center;
 height: 500px;
 margin: 0 auto;
-width: 30%;
-
-
-  }
-
+width: 700px;
+margin-left: 530px;
+}
 .inference-box3{
-height: 10px;
-width: 100%;
-  }
-
-
+  background-color: aquamarine;
+  height: 455px;
+  width: 700px;
+  margin-left: -50px;
+  
+}

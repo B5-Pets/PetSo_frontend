@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="stylesheet" href="/static/css/myprofile.css" />
   <title>PetSo</title>
 
 </head>
@@ -32,37 +32,59 @@
   <header></header>
   <!-- 헤더 끝 -->
   <!-- 여기에 본문 -->
+
+  <!-- (div - main)
+div - 1
+- 프로필
+div - 2
+- 내 프로필(My profile)                                             프로필 수정
+div -3  
+  프로핀사진, 이름, 인사글
+div -4
+- 팻리스트
+이름, 펫 등록하기 버튼
+
+div- 5
+- 내가 작성한 글 목록 -->
+
   <form>
     <div class="main">
-      <p class="profile_img" id="profile_img"></p>
-      <div class="main_profile">
-        <div>
-          <p class="h3" id="email"></p>
-          <p id="name"></p>
-          <p id="introduce"></p>
-          <p>내 펫 리스트</p>
-          <ol class="pet_list" id="pet_list"></ol>
-          <span style="cursor:pointer;" onclick="location.href='add_pet.html'">펫 등록하기</span>
-        </div>
-        <div>
-          <button type="button" class="btn btn-primary profile" onclick="location.href='profile_update.html'">프로필 수정</button>
-        </div>
+      <div class="myprofile">      
+        <div class="myprofile-title" style="font-size:27px">내 프로필</div> 
         <div class="my_bookmarks">
-          <button type="button" class="btn btn-outline-warning" onclick="location.href='my_bookmark.html'">🔖 북마크 모아보기</button>
+          <button type="button" class="gradient-btn" onclick="location.href='my_bookmark.html'">북마크</button>
         </div>
+        <div class="myprofile-edit" ><button type="button" class="gradient-btn" onclick="location.href='profile_update.html'">프로필 수정하기</button></div>
+      </div>
+
+        
+    <div class="main_profile">
+      <div class="profile-content">
+
+        <div class="profile_img" id="profile_img"></div>
+        <div class="profile_1">
+          <div class="h5" id="email"><label></label> 이메일</div>
+          <div class="username" id="name">이름</div>
+          <div class="introduce" id="introduce">자기소개글</div>
+        <div class="pet">
+          <div>내 펫 리스트</div>
+          <ol class="pet_list" id="pet_list"></ol>
+          <span style="cursor:pointer;" onclick="location.href='add_pet.html'">👉 펫 등록하러가기</span>
+        </div>
+        </div>    
+    </div>  
+  </div>
+
+      <div class="article-box">
+        내 게시글
+        <ol class="article_list" id="article_list" style="list-style:none;">1</ol>
+      </div>  
+
       </div>
     </div>
-    <br />
-    내 글 목록
-    <ol class="article_list" id="article_list" style="list-style:none;"></ol>
   </form>
-  <!-- 본문 끝 -->
-  <!-- footer -->
+
   <footer>
-    <label>
-      <input role="switch" type="checkbox" onclick="darkmode()" />
-      <span>다크모드로 전환</span>
-    </label>
     <p>
       2022 Team Rocket All Rights Reserved
     </p>

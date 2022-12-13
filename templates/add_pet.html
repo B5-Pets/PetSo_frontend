@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/static/css/profile_update.css" />
+    <link rel="stylesheet" href="/static/css/add_pet.css" />
     <title>PetSo | 펫 등록하기</title>
 
 </head>
@@ -42,23 +42,21 @@
                     <p id="profile_update_img"></p>
                     <input type="file" class="form-control" id="pet_image" onchange="readURL(this);" />
                     <!-- <input type="file" class="form-control" id="pet_img" /> -->
-                    <br />
                     <input type="text" class="form-control" placeholder="펫 이름" id="pet_name"></textarea>
-                    <br />
+
                     <input type="text" class="form-control" placeholder="품/품종" id="pet_spacies"></textarea>
-                    <br />
+
                     <input type="text" class="form-control" placeholder="성별" id="pet_sex"></textarea>
-                    <br />
+
                     <input type="text" class="form-control" placeholder="나이" id="pet_age"></textarea>
-                    <br />
+
                     <textarea type="text" class="form-control" placeholder="펫에 대해 설명해주세요" id="pet_desc" cols="50"
                         rows="10"></textarea>
 
                 </div>
-                <br />
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="postMyPet()">확인</button>
-                    <button type="button" class="btn btn-primary" onclick="location.href='myprofile.html'">취소</button>
+                    <button type="button" class="underline-btn" onclick="postMyPet()">등록하기</button>
+                    <button type="button" class="underline-btn" onclick="location.href='myprofile.html'">취소하기</button>
                 </div>
             </form>
         </div>

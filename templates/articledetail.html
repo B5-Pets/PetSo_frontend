@@ -29,69 +29,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/static/css/articledetail.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    <link rel="stylesheet" href="/static/css/like.css" />
     <title>articledetail</title>
 
 </head>
 <body id="body">
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="space">
-          <img id ="image" src="/static/img/001.png" class="logo" href="../templates/index.html">
-        </div>
-        <div class="space">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" id="username" href="#"></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.html">My</a>
-            </li>
-            <li class="nav-item">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
-                      기능
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">게시판</a></li>
-                      <li><a class="dropdown-item" href="#">피부 증상 탐지</a></li>
-                      <li><a class="dropdown-item" href="#">채팅방</a></li>
-                    </ul>
-                  </div>
-            </li>
-            <li class="nav-item">
-              <button type="button" class="btn btn-link" style="font-size:20pt;" onclick="handleLogout()">Logout</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div>
+  <header></header>
+      <div class="detail-body">
         <!-- 여기에 본문 -->
         <div class="article_roundbox_1" >
-          고양이 게시판
-          <button type="button" onclick="location.href=`/templates/post_modify.html?id=${article_id}`;" class="article-detail-modify">수정</button>
-          <button type="button" onclick="" class="article-detail-delete">삭제</button>
+          <span>일상</span>
         </div>
       
-        <div class="article_roundbox_2">
-          <div class="title-box">
-        <div class="title-name-box" id="title">제목</div>
-        <div class="title-user-box" id="article_author">작성자</div>
-      </div>
+      <div class="article_roundbox_2">
+        <div class="title-box">
+          <div class="title-name-box" id="title">제목</div>
+          
+          <div class="title-user-box" id="article_author"><img class="profile_img" id="profile_img" src="/static/img/profile.jpeg"> </img>작성자</div>
+        </div>
         <div class="article_box2" >
           <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
           <div class="article_box2_2" id="content">게시글 내용</div>
         </div>
+        <div class="like-bookmark-box">좋아요 북마크
+          <button class="tweet-heart" id="like"></button>
+          <span id="dolike"></span>
+          <sapn id="likes"></sapn>
+          <span id="dobookmark"></span>
+          <sapn id="bookmarks"></sapn>
+        </div>
+        
+        
+        
+
         <div class="article_box3">
-          <div class="right_area">
-            <div id="dolike"></div>
-            <div id="dobookmark"></div>
-            <div id="user-name"></div>
-            <div id="likes"></div>
-            <div id="bookmarks"></div>
-            <div id="profile_img"></div>
-            <div id="created_at"></div>
+        <div class="right_area">
+
+            <sapn id="user-name"></sapn>
+            <sapn id="created_at"></sapn>
 
         </div>
-    <body>
+      </div>
+    </div>
+
       <div class="wrap">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -119,7 +100,7 @@
           </div>
         </div>
           <div class="comment_box">
-            <h4>댓글</h4>
+
             <div>
               <div id="update_box" class="update_box"></div>
               <div class="comment_input">
@@ -146,10 +127,7 @@
           </div>
         </div>
       </div>
-        </div>
-
-        <div class="article_roundbox_3"></div>
-
+        
     </div>
       <footer>
         <label>

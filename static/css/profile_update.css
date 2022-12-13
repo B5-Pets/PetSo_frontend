@@ -46,7 +46,7 @@ button.btn.btn-primary {
 
 form {
   width: 500px;
-  height: 500px;
+  height: 1500px;
   margin: auto;
   text-align: center;
 }
@@ -137,4 +137,90 @@ footer {
   left: 0;
   text-align: center;
   transform: translateY(-100%);
+}
+
+
+.update-profile-name{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 86.3%;
+  height: 50px;
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding-left: 30px;
+}
+
+.update-profile{
+  width: 86.3%;
+  height: 300px;
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.form-control{
+  margin: 20px auto;
+  width: 430px;
+}
+
+
+.box{
+  margin-top: 170px;
+}
+
+.image{
+  margin-top: 50px;
+}
+
+
+
+.underline-btn {
+  display: inline-block;
+  padding: 40px;
+  color: #b2876f;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  border: 0px;
+  background: none;
+}
+.underline-btn:before, .underline-btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 0;
+
+}
+.underline-btn:before {
+  transition: width 0s ease, background 0.4s ease;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+}
+.underline-btn:after {
+  right: 2.2%;
+  bottom: 6px;
+  background: #b2876f;
+  transition: width 0.4s ease;
+}
+.underline-btn:hover:before {
+  width: 97.8%;
+  background: #b2876f;
+  transition: width 0.4s ease;
+}
+.underline-btn:hover:after {
+  width: 97.8%;
+  background: 0 0;
+  transition: all 0s ease;
+  
 }
