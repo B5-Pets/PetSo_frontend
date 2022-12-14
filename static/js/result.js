@@ -4,7 +4,7 @@ window.onload = async function Inference() {
     });
     inference = await response.json();
     img = inference.output_img
-    let temp_html = `<span class="result"><img src="data:image/jpeg;base64, ${img}")</span>`
+    let temp_html = `<span class="result"><img class="result_3" src="data:image/jpeg;base64, ${img}")</span>`
     console.log(temp_html)
     $('#inference').append(temp_html)
 }
