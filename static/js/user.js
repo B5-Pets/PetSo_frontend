@@ -1,6 +1,3 @@
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5501/templates";
-
 async function handleSignin() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
