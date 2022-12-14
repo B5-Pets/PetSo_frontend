@@ -79,7 +79,7 @@ async function handlegoogle() {
   localStorage.setItem('access', response_json.access_token);
   localStorage.setItem('refresh', response_json.refresh_token);
 
-  const base64Url = response_json.access.split(".")[1];
+  const base64Url = response_json.access_token.split(".")[1];
   const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   const jsonPayload = decodeURIComponent(
     atob(base64)
