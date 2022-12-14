@@ -2,12 +2,8 @@
 // EC2 인스턴스 연결 시
 // const backend_base_url = "http://ec2인스턴스ip주소";
 // 백엔드 서버 연결 시
-const urlParams = new URLSearchParams(window.location.search);
-const article_id = urlParams.get("id");
-console.log(article_id)
-
 const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5501/templates";
+const frontend_base_url = "http://127.0.0.1:5500/templates";
 
 const token = localStorage.getItem("access");
  // 개별 게시글 //
@@ -85,8 +81,38 @@ async function getArticleList() {
   return response_json;
 }
 
+// // 게시글 리스트
+// async function getArticles(){
+
+//   const response = await fetch(`${backend_base_url}/articles/`,{
+//       method:"GET"
+//   })
+
+//   response_json = await response.json()
+
+//   return response_json
+// }
+
+
+//아티클 리스트 가져오기
+async function getArticles() {
+  const response = await fetch(`${backend_base_url}/articles/`,{
+    method:"GET"
+  }) 
+  console.log(response)
+  if(response.status==200){
+    const response_json = await response.json()
+    return response_json
+  }else{
+    alert("오류 : 게시물 불러오기 실패")
+  }
+} 
 
 // 아티클 디테일 페이지 연결 //
+const urlParams = new URLSearchParams(window.location.search);
+const article_id = urlParams.get("id");
+
+
 function ArticleDetail(article_id) {
 
   const url = `${frontend_base_url}/articledetail.html?id=${article_id}`;
@@ -153,7 +179,6 @@ async function DoBookmark(article_id) {
     method: "POST",
   });
   response_json = await response.json();
-  console.log(response_json)
   if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
     alert(response_json["message"]);
@@ -165,18 +190,7 @@ async function DoBookmark(article_id) {
 
 
 
-// 게시글 리스트
-async function getArticles(){
 
-  const response = await fetch(`${backend_base_url}/articles/`,{
-      method:"GET"
-  })
-
-  response_json = await response.json()
-  // console.log(response_json)
-
-  return response_json
-}
 
 
 // 개별 게시글 데이터 가져오기
@@ -187,7 +201,6 @@ async function getArticleDetail(){
 
   })
   response_json = await response.json()
-  console.log(response_json)
 
   return response_json
   
@@ -202,14 +215,12 @@ async function GetComment(article_id) {
     method: "GET",
   });
   response_json = await response.json();
-  console.log(response_json)
   return response_json;
 }
 
 // 댓글 작성하기
 async function loadCreateComment(comment) {
 
-  console.log(comment)
   const response = await fetch(`${backend_base_url}/articles/${article_id}/comment/`, {
     headers: {
       "content-type": "application/json",
@@ -224,11 +235,9 @@ async function loadCreateComment(comment) {
     }),
 
   });
-  console.log(response)
   response_json = await response.json();
-  console.log(response_json)
 
-  if (response.status == 200) {
+  if (response.status == 201) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
   } else {
     alert(response.status);
@@ -262,7 +271,6 @@ async function loadUpdateComment(comment_id) {
 // 댓글 삭제하기 //
 async function loadDeleteComment(comment_id) {
 
-  console.log(comment_id)
 
   const response = await fetch(`${backend_base_url}/articles/${article_id}/comment/${comment_id}/`, {
     headers: {
@@ -272,7 +280,6 @@ async function loadDeleteComment(comment_id) {
     method: "DELETE",
   });
 
-  console.log(response)
 
   if (response.status == 404) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
@@ -320,7 +327,6 @@ async function loadUpdateArticle(article_id) {
   formdata.append("image", image);
 
 
-  console.log(formdata)
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("access"),
@@ -330,7 +336,6 @@ async function loadUpdateArticle(article_id) {
   });
 
   response_json = await response.json();
-  console.log(response_json)
   alert(response.status);
   if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
@@ -342,8 +347,6 @@ async function loadUpdateArticle(article_id) {
 // 게시글 삭제하기 //
 
 async function DeleteArticle(article_id) {
-  console.log(article_id)  
-  console.log("안녕")
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
     headers: {
       "content-type": "application/json",
@@ -351,7 +354,6 @@ async function DeleteArticle(article_id) {
     },
     method: "DELETE",
   });
-  console.log(response)
 
   if (response.status == 204) {
     window.location.replace(`${frontend_base_url}/myprofile.html?id=${user_id}`);
@@ -359,9 +361,10 @@ async function DeleteArticle(article_id) {
     alert(response.status);
   }
 }
-console.log(DeleteArticle)
 
 // 다크 모드 전환
 function darkmode() {
   document.getElementById('body').classList.toggle('dark');
 }
+
+

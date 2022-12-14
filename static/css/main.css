@@ -73,6 +73,7 @@ position: absolute;
 top:9%;
 left: 25%;
 width: 70%;
+height: 500px;
 }
 [type="checkbox"] {
   appearance: none;
