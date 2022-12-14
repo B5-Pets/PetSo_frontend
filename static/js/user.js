@@ -1,5 +1,5 @@
 const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500/templates";
+const frontend_base_url = "http://127.0.0.1:5501/templates";
 
 async function handleSignin() {
   const email = document.getElementById("email").value;
@@ -16,12 +16,12 @@ async function handleSignin() {
       password: password,
     }),
   });
-
-  console.log(response);
-
   
+  return response
+
 
 }
+
 
 async function handleLogin() {
   const email = document.getElementById("email").value;
@@ -43,13 +43,17 @@ async function handleLogin() {
 
   if(response.status == 200){
     const response_json = await response.json();
-
+  
+  console.log(response)
   console.log(response_json);
-
+  
+  
   localStorage.setItem("access", response_json.access);
   localStorage.setItem("refresh", response_json.refresh);
 
-  const base64Url = response_json.access_token.split(".")[1];
+  
+
+  const base64Url = response_json.access.split(".")[1];
   const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   const jsonPayload = decodeURIComponent(
     atob(base64)
@@ -57,8 +61,7 @@ async function handleLogin() {
       .map(function (c) {
         return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
       })
-      .join("")
-  ); 
+      .join("")); 
 
   localStorage.setItem("payload", jsonPayload);
   alert("환영합니다!")

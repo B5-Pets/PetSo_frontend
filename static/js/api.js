@@ -7,7 +7,7 @@ const article_id = urlParams.get("id");
 console.log(article_id)
 
 const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500/templates";
+const frontend_base_url = "http://127.0.0.1:5501/templates";
 
 const token = localStorage.getItem("access");
  // 개별 게시글 //

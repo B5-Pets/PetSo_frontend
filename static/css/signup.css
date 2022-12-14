@@ -145,10 +145,10 @@ footer {
 }
 
 .signupbtn:hover {
-  width: 450px;rgb(129, 237, 247)
+  width: 450px;
   margin: 0 auto;
   border-radius: 10px;
   border: 0ex;
-  background-color: rgb(134, 201, 207)
+  background-color: rgb(134, 201, 207);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.119), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
