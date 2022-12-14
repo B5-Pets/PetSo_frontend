@@ -25,7 +25,7 @@ window.onload = async function loadArticleList() {
     articles.forEach(article=> {
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
-      newCol.setAttribute("oneclick", "articleDetail()")
+      newCol.setAttribute("onclick", "articleDetail(this.id)")
 
       const newCard = document.createElement("div")
       newCard.setAttribute("class", "card")
@@ -62,12 +62,3 @@ window.onload = async function loadArticleList() {
     );
     }
 
-
-
-window.onload = async function loadArticleList() {
-  articles = await getArticleList();
-  console.log(articles);
-  const article_list = document.getElementById("article_list");
-  articles.forEach(article =>
-    )
-  }
