@@ -90,9 +90,10 @@ body {
 }
 
 .function_pic {
-  width: 300px;g
+  width: 300px;
   height: 250px;
 }
+
 .functions p {
   position: absolute;
   right: 30%;
