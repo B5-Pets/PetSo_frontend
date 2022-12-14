@@ -5,12 +5,18 @@ body {
   position: relative;
   background: whitesmoke;
 }
-
+header {
+  position: fixed;
+  top: 0;
+}
 body.dark {
   background: #1b1d25;
   color: white;
 }
 
+.img_box {
+  margin-top: 160px;
+}
 nav.navbar {
   width: 100%;
   justify-content: space-between;
