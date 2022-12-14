@@ -22,8 +22,9 @@
 
 // createElement 이용하기
 
-window.onload = async function loadMyProfile() {
-    profile = await getMyProfile();
+window.onload = async function loadMyProfile(user_id) {
+    profile = await getMyProfile(user_id);
+    console.log(profile)
    
     // const profile_img = document.getElementById("profile_img");
     const email = document.getElementById("email");
@@ -60,12 +61,15 @@ async function loadMyPet() {
 // 아티클 리스트 보여주기
 async function loadMyArticle() {
   articles = await getMyArticle();
+
   const article_list = document.getElementById("article_list");
   articles.forEach((article) => {
+    console.log(article)
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
+    console.log(article.id)
     newImage.setAttribute("class", "article_image");
-    newImage.setAttribute("onclick", "ArticleDetail(this.id)");
+    newImage.setAttribute("onclick", "ArticleDetail"+`(${article.id})`);
     newImage.src = `${backend_base_url}${article.image}`;
     newImage.setAttribute("style", "width:200px; height:200px;")
     article_list.appendChild(newImage);
