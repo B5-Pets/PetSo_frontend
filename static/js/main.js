@@ -26,6 +26,7 @@ window.onload = async function loadArticleList() {
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
 
+
       const newCard = document.createElement("div")
       newCard.setAttribute("class", "card")
       newCard.setAttribute("id", article.pk)
@@ -38,6 +39,7 @@ window.onload = async function loadArticleList() {
 
       if(article.image){
         articleImage.setAttribute("src", `${backend_base_url}${article.image}`)
+        articleImage.setAttribute("style", "width:150px; height:150px;")
       }else{
         articleImage.setAttribute("src", "http://horimmuseum.org/sillim/wp-content/uploads/sites/2/2015/07/%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC.png") // 빈 "" 안에 이미지 url 입력
       }
@@ -63,26 +65,3 @@ window.onload = async function loadArticleList() {
     }
 
 
-
-    // article_list.appendChild(newimage);
-
-    // 제목+내용까지
-    const newuser = document.createElement("ol");
-    const newtitle = document.createElement("ol");
-    newtitle.setAttribute("id", article.pk);
-    newuser.innerText = article.user;
-    newtitle.innerText = article.title;
-    newtitle.setAttribute("onclick", "ArticleDetail(this.id)");
-    article_list.appendChild(newuser);
-    article_list.appendChild(newtitle);
-  });
-};
-
-
-window.onload = async function loadArticleList() {
-  articles = await getArticleList();
-  console.log(articles);
-  const article_list = document.getElementById("article_list");
-  articles.forEach(article =>
-    )
-  }
