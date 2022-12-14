@@ -64,21 +64,6 @@ window.onload = async function loadArticleList() {
 
 
 
-    // article_list.appendChild(newimage);
-
-    // 제목+내용까지
-    const newuser = document.createElement("ol");
-    const newtitle = document.createElement("ol");
-    newtitle.setAttribute("id", article.pk);
-    newuser.innerText = article.user;
-    newtitle.innerText = article.title;
-    newtitle.setAttribute("onclick", "ArticleDetail(this.id)");
-    article_list.appendChild(newuser);
-    article_list.appendChild(newtitle);
-  });
-};
-
-
 window.onload = async function loadArticleList() {
   articles = await getArticleList();
   console.log(articles);
