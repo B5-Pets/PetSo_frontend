@@ -30,7 +30,7 @@ window.onload = async function loadArticleList() {
         articleImage.setAttribute("style", "width: 200px;", "height: 200px;")
       }else{
         articleImage.setAttribute("src", "http://horimmuseum.org/sillim/wp-content/uploads/sites/2/2015/07/%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC.png") // 빈 "" 안에 이미지 url 입력
-        articleImage.setAttribute("style", "width: 200px;", "height: 200px;")
+        articleImage.setAttribute("style", "width: 200px;", "height: 200px;", )
       }
       
       
