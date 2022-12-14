@@ -31,6 +31,7 @@ window.onload = async function loadArticleList() {
       newCard.setAttribute("class", "card")
       newCard.setAttribute("id", article.pk)
       newCard.setAttribute("onclick", "ArticleDetail(this.id)")
+
       newCol.appendChild(newCard)
 
       const articleImage = document.createElement("img")
