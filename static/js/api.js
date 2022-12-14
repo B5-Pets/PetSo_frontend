@@ -221,7 +221,7 @@ async function loadCreateComment(comment) {
   });
   response_json = await response.json();
 
-  if (response.status == 200) {
+  if (response.status == 201) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
   } else {
     alert(response.status);

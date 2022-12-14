@@ -25,11 +25,11 @@ window.onload = async function loadArticleList() {
     articles.forEach(article=> {
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
-      newCol.setAttribute("oneclick", "articleDetail()")
 
       const newCard = document.createElement("div")
       newCard.setAttribute("class", "card")
       newCard.setAttribute("id", article.pk)
+      newCard.setAttribute("onclick", "ArticleDetail(this.id)")
 
       newCol.appendChild(newCard)
 
