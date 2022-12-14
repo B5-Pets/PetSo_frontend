@@ -42,7 +42,7 @@ label {
 .kategorie {
   width: 300px;
   height: 100%;
-  background: rgb(245, 198, 215);
+  background: rgba(245, 198, 215, 0.703);
   padding-top: 3%;
   font-size: 15pt;
   color: rgb(95, 95, 95);
@@ -56,13 +56,14 @@ label {
   margin-top: 10%;
 }
 
-.article_area .article_box {
+.article_area .article_box1 {
   width: 300px;
   height: 200px;
   background: rgb(180, 180, 180);
   float: left;
   margin-left: 4%;
   margin-top: 11%;
+  border-radius: 15px;
 }
 
 
@@ -137,4 +138,20 @@ footer {
   position: absolute;
   bottom: 0;
   text-align: center;
+}
+
+.pagenavigation {
+  width: 200px;
+  position: absolute;
+  bottom: 1.5%;
+  left: 50%;
+}
+
+
+
+.line {
+  width: 200px;
+  height: 2px;
+  border: 2px dashed rgba(255, 255, 255, 0.765);
+  margin-top: 15px;
 }

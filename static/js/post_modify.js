@@ -1,4 +1,3 @@
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         let reader = new FileReader();
@@ -53,6 +52,31 @@ function updateArticle(article_id) {
 
 updateArticle(article_id)
 
+// 게시글 삭제하기 //
+function loadDeleteArticle(article_id) {
+    console.log(article_id)
+
+    const delete_button = document.getElementById("delete-button");
+    
+    delete_button.setAttribute("id", "article-delete"+`${article_id}`);
+    console.log(delete_button)
+    delete_button.setAttribute("onclick", "DeleteArticle"+`(${article_id})`)
+
+}
+
+// // 기존 게시글 이미지 보여주기
+// window.onload = async function loadMyArticle() {
+//     artice_img = await getArticleDetail();
+//     console.log(artice_img)
+  
+//     const preview = document.getElementById("img_update_box");
+  
+//     let image = document.createElement("img");
+//     image.src = `${backend_base_url}${artice_img.image}`;
+//     console.log(image.src)
+//     image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
+//     preview.appendChild(image);
+//   };
 
 
 
@@ -154,10 +178,3 @@ updateArticle(article_id)
 
 
 // getName()
-
-
-
-
-
-
-

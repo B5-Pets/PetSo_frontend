@@ -8,7 +8,7 @@ async function checkLogin() {
    const name = await getMyProfile();
  
    const username = document.getElementById("username");
-   username.innerText = name.email + " 님 환영합니다!";
+   username.innerText = name.email
  }
  checkLogin();
  
@@ -23,12 +23,11 @@ async function checkLogin() {
 
    const title = document.getElementById("title");
    const user_name = document.getElementById("user-name")
-   const image = document.getElementById("image");
+   const image = document.getElementById("article_imgs");
 
   const content = document.getElementById("content");
   const likes = document.getElementById("likes");
   const bookmarks = document.getElementById("bookmarks");
-  const created_at = document.getElementById("created_at");
 
   const dolike = document.getElementById("dolike");
   const dolike_button = document.createElement("button");
@@ -41,11 +40,10 @@ async function checkLogin() {
 
 
    let articleImage = document.createElement("img");
+   articleImage.setAttribute("class","article_imgs2")
    articleImage.src = `${backend_base_url}${article.image}`;
+   console.log(articleImage)
    image.appendChild(articleImage);
- 
-   
- 
  
    // 북마크
    const dobookmark = document.getElementById("dobookmark");
@@ -69,9 +67,12 @@ async function checkLogin() {
  // 아티클 유저 프로필 보여주기 //
  async function loadGetProfile(article_id) {
    user = await getMyProfile(article_id);
-   const profile = document.getElementById("profile_img");
+   console.log(user)
+   const profile = document.getElementById("profile-img");
+   console.log(profile)
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
+   console.log(profileImage)
    profileImage.setAttribute("class", "profile_img");
    profile.appendChild(profileImage);
  }
@@ -81,12 +82,13 @@ async function checkLogin() {
 //  // 댓글 리스트 보여주기 //
 
  async function loadGetComment(article_id) {
+
    comments = await GetComment(article_id);
+   console.log(comments)
    const userinfo = await getName();
 
    const user_list = document.getElementById("email");
    const comment_list = document.getElementById("comment");
-   const created_at_list = document.getElementById("created_at");
    const update_button_list = document.getElementById("update_button");
    const delete_button_list = document.getElementById("delete_button");
 
@@ -98,14 +100,11 @@ async function checkLogin() {
 
    const newUser = document.createElement("li");
    const newComment = document.createElement("li");
-   const newCreatedat = document.createElement("li");
    newUser.setAttribute("id", comment.id);
    newUser.innerText = comment.user;
    newComment.innerText = comment.content;
-   newCreatedat.innerText = comment.created_at.replace("T", " ").substr(0, 16);
    user_list.appendChild(newUser);
    comment_list.appendChild(newComment);
-   created_at_list.appendChild(newCreatedat);
 
   
 
@@ -137,7 +136,19 @@ async function checkLogin() {
 });
 }
 
-loadArticle(article_id);
+loadGetComment(article_id);
+
+ 
+
+async function loadArticleEdit(article_id) {
+
+  // 개별 게시글 데이터 가져오기.
+  const article = await getArticleDetail(article_id);
+  console.log(article)
+
+  ArticleEdit(article.id)
+
+}
 
 
 //Like
@@ -175,13 +186,12 @@ $like.addEventListener('click', () => {
 
 
 
- loadGetComment(article_id);
- 
  // 댓글 작성하기 //
  function CreateComment() {
-   const comment = document.getElementById("comment-input").value;
-   loadCreateComment(comment);
- }
+  const comment = document.getElementById("comment-input").value;
+  console.log(comment)
+  loadCreateComment(comment);
+}
 
 
  
