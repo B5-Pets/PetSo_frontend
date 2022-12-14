@@ -81,6 +81,32 @@ async function getArticleList() {
   return response_json;
 }
 
+// // 게시글 리스트
+// async function getArticles(){
+
+//   const response = await fetch(`${backend_base_url}/articles/`,{
+//       method:"GET"
+//   })
+
+//   response_json = await response.json()
+
+//   return response_json
+// }
+
+
+//아티클 리스트 가져오기
+async function getArticles() {
+  const response = await fetch(`${backend_base_url}/articles/`,{
+    method:"GET"
+  }) 
+  console.log(response)
+  if(response.status==200){
+    const response_json = await response.json()
+    return response_json
+  }else{
+    alert("오류 : 게시물 불러오기 실패")
+  }
+} 
 
 // 아티클 디테일 페이지 연결 //
 const urlParams = new URLSearchParams(window.location.search);
@@ -164,17 +190,7 @@ async function DoBookmark(article_id) {
 
 
 
-// 게시글 리스트
-async function getArticles(){
 
-  const response = await fetch(`${backend_base_url}/articles/`,{
-      method:"GET"
-  })
-
-  response_json = await response.json()
-
-  return response_json
-}
 
 
 // 개별 게시글 데이터 가져오기
@@ -350,3 +366,5 @@ async function DeleteArticle(article_id) {
 function darkmode() {
   document.getElementById('body').classList.toggle('dark');
 }
+
+

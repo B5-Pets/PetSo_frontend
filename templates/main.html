@@ -55,7 +55,10 @@
 
     <link rel="stylesheet" href="/static/css/main.css" />
     <title>PetSo</title>
-  </head>
+    <script src="../static/js/api.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/loader.js"></script>
+    </head>
 
   <body id="body">
     <header></header>
@@ -70,16 +73,7 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" id="article-list"></div>
     </div>
 
-    <script>
-      const modal = document.querySelector(".modal");
-      const btnOpenPopup = document.querySelector(".chat_button");
-
-      btnOpenPopup.addEventListener("click", () => {
-        modal.style.display = "block";
-      });
-    </script>
+    
   </body>
-  <script src="../static/js/api.js"></script>
-  <script src="../static/js/main.js"></script>
-  <script src="../static/js/loader.js"></script>
+  
 </html>
