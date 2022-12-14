@@ -101,16 +101,10 @@ window.onload = () => {
 };
 
 
+
 function handleLogout() {
-  
   localStorage.removeItem("access");
   localStorage.removeItem("refresh");
   localStorage.removeItem("payload");
   window.location.href='login.html';
 }
-
-
-  
-
-  
-
