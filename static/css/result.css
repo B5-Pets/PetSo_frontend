@@ -21,13 +21,17 @@ body.dark {
 }
 
 .inference{
-  height: 500px;
+  height: 100px;
   width: 100%;
   object-fit: cover;
   background-size: cover;
   padding-bottom: 50px;
-  margin-left: -140px;
+  margin-left: -400px;
 
+}
+.result_3{
+  width: 300px;
+  height: 300px;
 }
 
 nav.navbar {
@@ -144,9 +148,8 @@ width: 700px;
 margin-left: 530px;
 }
 .inference-box3{
-  background-color: aquamarine;
   height: 455px;
-  width: 700px;
+  width: 900px;
   margin-left: -50px;
   
 }

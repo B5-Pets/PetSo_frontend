@@ -34,13 +34,27 @@
 
         <h1>피부 증상 탐지</h1>
         
-        AI허브에서 제공하는 반려동물 피부병변 데이터를 YOLOv5 모델을 사용해 학습시켜 사용자가 업로드한 이미지를 분석해 어떤 증상인지 확인할 수 있도록 도와주는 서비스입니다.   
+
+        AI허브에서 제공하는 반려동물 피부병변 데이터를 YOLOv5 모델을 사용해 학습시켜 사용자가 업로드한 이미지를 분석해 어떤 증상인지 확인할 수 있도록 도와주는 서비스입니다.
+
         <div class="box-2">
             <div class="img_preview">
-                <div>사진 업로드 </div>
+                <div class="upload">사진 업로드 </div>
                 <img id="preview" style="width:250px; height:250px; object-fit:cover;" />
+                
             </div>
-            <div class="inference-box3">검사 예시</div>
+            
+            <div class="inference-box4">
+                <div class="example">검사 예시</div>
+                <p> ✔️ 숫자 = confident</p>
+                <p> ✔️ 신뢰도 0.25 이하로는 표시되지 않음</p> 
+                <div class="inference-box3">  
+                <img class="object" src="/static/img/object.jpg" style="width:250px; height:250px;">                
+                <!-- <img class="arrow" src="/static/img/100.png" style="width:150px; height:150px;">-->
+                <img class="object2" src="/static/img/result.jpg" style="width:250px; height:250px; margin-left: 10px;">
+            </div>
+            </div>
+            
         </div>
         <form class="inference-box">   
             <input name="inference-file" type="file" id="img" class="img-upload" onchange="readURL(this);" />
@@ -49,7 +63,8 @@
         <div id="process"></div>
     </div>
     <br/>
-        <footer>
+    
+        <!--<footer>
             <label>
                 <input role="switch" type="checkbox" onclick="darkmode()" />
                 <span>다크모드로 전환</span>
@@ -57,7 +72,7 @@
             <p>
                 2022 Team Rocket All Rights Reserved
             </p>
-        </footer>
+        </footer>-->
 </body>
 <script src="../static/js/api.js"></script>
 <script src="../static/js/inference.js"></script>

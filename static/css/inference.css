@@ -116,10 +116,12 @@ footer {
 
 }
 
+
 .img_preview{
   margin-top: 80px;
+  text-align: center;
+  flex-direction: column;
 }
-
 
 .inference-box{
   margin: 0 auto;
@@ -173,13 +175,42 @@ footer {
   transition: all 0s ease;
   
 }
+
+.box-2{
+  display: flex;
+  margin-left: 100px;
+}
+.upload{
+  background-color: #dbe9f6;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 15px;
+
+}
+.example{
+  background-color: #dbe9f6;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 15px;
+  margin-left: 100px;
+
+}
+.inference-box4{
+  margin-top: 80px;
+  margin-left: 100px;
+  text-align: center;
+}
 .inference-box3{
-  border: inset 1px gray;
   height: 300px;
   width: 500px;
-  margin-left: 200px;
-  margin-top: 70px;
-}
-.box-2{
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 20px;
   display: flex;
 }
