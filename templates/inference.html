@@ -37,10 +37,22 @@
         yolov5 모델을 사용해 AI허브에서 제공하는 반려동물 피부병변 데이터를 학습시켜 어쩌구 저쩌구 이러쿵저러쿵
         <div class="box-2">
             <div class="img_preview">
-                <div>사진 업로드 </div>
+                <div class="upload">사진 업로드 </div>
                 <img id="preview" style="width:250px; height:250px; object-fit:cover;" />
+                
             </div>
-            <div class="inference-box3">검사 예시</div>
+            
+            <div class="inference-box4">
+                <div class="example">검사 예시</div>
+                <p> ✔️ 숫자 = confident</p>
+                <p> ✔️ 신뢰도 0.25 이하로는 표시되지 않음</p> 
+                <div class="inference-box3">  
+                <img class="object" src="/static/img/object.jpg" style="width:250px; height:250px;">
+                <p>→</p>
+                <img class="object2" src="/static/img/result.jpg" style="width:250px; height:250px;">
+            </div>
+            </div>
+            
         </div>
         <form class="inference-box">   
             <input name="inference-file" type="file" id="img" class="img-upload" onchange="readURL(this);" />
@@ -49,7 +61,8 @@
         
     </div>
     <br/>
-        <footer>
+    
+        <!--<footer>
             <label>
                 <input role="switch" type="checkbox" onclick="darkmode()" />
                 <span>다크모드로 전환</span>
@@ -57,7 +70,7 @@
             <p>
                 2022 Team Rocket All Rights Reserved
             </p>
-        </footer>
+        </footer>-->
 </body>
 <script src="../static/js/api.js"></script>
 <script src="../static/js/inference.js"></script>
