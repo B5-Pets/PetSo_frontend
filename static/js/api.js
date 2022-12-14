@@ -7,7 +7,7 @@ const article_id = urlParams.get("id");
 console.log(article_id)
 
 const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500/templates";
+const frontend_base_url = "http://127.0.0.1:5501/templates";
 
 const token = localStorage.getItem("access");
  // 개별 게시글 //
@@ -88,6 +88,7 @@ async function getArticleList() {
 
 // 아티클 디테일 페이지 연결 //
 function ArticleDetail(article_id) {
+
   const url = `${frontend_base_url}/articledetail.html?id=${article_id}`;
   location.href = url;
 }
@@ -205,10 +206,10 @@ async function GetComment(article_id) {
   return response_json;
 }
 
-
-// 댓글 작성하기 //
+// 댓글 작성하기
 async function loadCreateComment(comment) {
 
+  console.log(comment)
   const response = await fetch(`${backend_base_url}/articles/${article_id}/comment/`, {
     headers: {
       "content-type": "application/json",
@@ -218,10 +219,10 @@ async function loadCreateComment(comment) {
     body: JSON.stringify({
       articles: article_id,
       content: comment,
-      
-      
+
+
     }),
-    
+
   });
   console.log(response)
   response_json = await response.json();
@@ -280,6 +281,14 @@ async function loadDeleteComment(comment_id) {
   }
 }
 
+// 게시글 수정 페이지로 이동
+function ArticleEdit(article_id) {
+
+  const url = `${frontend_base_url}/post_modify.html?id=${article_id}`;
+
+  location.href = url;
+}
+
 
 // 로그인한 유저 가져오기 //
 async function getName() {
@@ -300,24 +309,29 @@ async function getName() {
 
 // 게시글 수정하기 //
 async function loadUpdateArticle(article_id) {
-  const input_content = document.getElementById("content").value;
-  const input_title = document.getElementById("title").value;
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+  const image = document.getElementById("image").files[0];
 
-  console.log(input_content)
+  const formdata = new FormData();
+
+  formdata.append("title", title);
+  formdata.append("content", content);
+  formdata.append("image", image);
+
+
+  console.log(formdata)
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
     headers: {
-      "content-type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("access"),
     },
     method: "PUT",
-    body: JSON.stringify({
-      articles: article_id,
-      title : input_title,
-      content: input_content,
-    }),
+    body: formdata,
   });
+
   response_json = await response.json();
   console.log(response_json)
+  alert(response.status);
   if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
   } else {
@@ -325,18 +339,27 @@ async function loadUpdateArticle(article_id) {
   }
 }
 
+// 게시글 삭제하기 //
 
+async function DeleteArticle(article_id) {
+  console.log(article_id)  
+  console.log("안녕")
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "DELETE",
+  });
+  console.log(response)
 
-
-
-
-
-
-
-
-
-
-
+  if (response.status == 204) {
+    window.location.replace(`${frontend_base_url}/myprofile.html?id=${user_id}`);
+  } else {
+    alert(response.status);
+  }
+}
+console.log(DeleteArticle)
 
 // 다크 모드 전환
 function darkmode() {

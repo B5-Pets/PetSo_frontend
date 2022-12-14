@@ -63,10 +63,10 @@
 
         </div>
 
-        <input class="title" type="text" name="" placeholder="제목" id="title">
+        <textarea class="title" type="text" name="" placeholder="제목" id="title"></textarea>
         <textarea class="content" name="" placeholder="내용" id="content" cols="50" rows="10"></textarea>
         
-        <div class="img_update_box">
+        <div class="img_update_box" id="img_update_box">
           <p>사진 업로드</p>
           <img id="preview" style="width:400px; height:300px; margin-top:20px; object-fit:cover;"/>
           <input value="사진 첨부" type="file" class="form-control" id="image" onchange="readURL(this);" />
@@ -75,19 +75,11 @@
         <br/>
       <div>
         <a id="edit-button" class="underline-btn" href="#">수정하기</a>
-        <a id="edit-button" class="underline-btn" href="#">삭제하기</a>
-        <!-- <button id="edit-button" type="button" class="btn btn-primary" >수정하기</button> 
-        <button type="button" class="btn btn-primary_delete" onclick="location.href=''">삭제하기</button> !-->
+        <button id="delete-button" type="button" class="underline-btn" onclick="loadDeleteArticle(article_id)">삭제하기</button>
+      
       </div>
 
     </form>
-    <!-- <footer>
-      <label>
-          <input role="switch" type="checkbox" onclick="darkmode()" />
-          <span>다크모드로 전환</span>
-        </label>
-       
-    </footer> -->
 
 
 </body>

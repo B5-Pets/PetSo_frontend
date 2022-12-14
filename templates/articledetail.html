@@ -30,7 +30,6 @@
 
     <link rel="stylesheet" href="/static/css/articledetail.css" />
     <link rel="stylesheet" href="/static/css/nav.css" />
-    <link rel="stylesheet" href="/static/css/like.css" />
     <title>articledetail</title>
 
 </head>
@@ -40,20 +39,26 @@
         <!-- 여기에 본문 -->
         <div class="article_roundbox_1" >
           <span>일상</span>
+          <button type="button" onclick="loadArticleEdit(this.id)">수정</button>
         </div>
       
       <div class="article_roundbox_2">
         <div class="title-box">
           <div class="title-name-box" id="title">제목</div>
           
-          <div class="title-user-box" id="article_author"><img class="profile_img" id="profile_img" src="/static/img/profile.jpeg"> </img>작성자</div>
+          <div class="title-user-box" id="user-name">
+            <sapn id="username" ></sapn>
+            <div id="profile-img"></div>           
+          작성자
         </div>
+        </div>
+
         <div class="article_box2" >
-          <div class="article_box2_1" ><img class="article_imgs" src="/static/img/profile.jpeg" id="article_imgs"></div>
+          <div class="article_box2_1" ><div class="article_imgs" id="article_imgs"></div></div>
           <div class="article_box2_2" id="content">게시글 내용</div>
         </div>
-        <div class="like-bookmark-box">좋아요 북마크
-          <button class="tweet-heart" id="like"></button>
+        <div class="like-bookmark-box">
+          <!-- <button class="tweet-heart" id="like"></button> -->
           <span id="dolike"></span>
           <sapn id="likes"></sapn>
           <span id="dobookmark"></span>
@@ -66,7 +71,7 @@
         <div class="article_box3">
         <div class="right_area">
 
-            <sapn id="user-name"></sapn>
+
             <sapn id="created_at"></sapn>
 
         </div>
