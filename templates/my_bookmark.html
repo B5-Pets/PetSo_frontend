@@ -22,40 +22,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="/static/css/petpage.css" />
-  <title>Petpage</title>
+  <link rel="stylesheet" href="/static/css/mybookmark.css" />
+  <title>PetSo</title>
 
 </head>
 
 <body id="body">
   <header></header>
-  <!--프로필 상자-->>
+  <!-- 헤더 끝 -->
+  <!-- 여기에 본문 -->
   <form>
-    <h1>내 펫 프로필</h1>
-    <div class="main_profile">
-      <div class="profile-content">
-
-        <div class="pet_image" id="pet_image"></div>
-        <div class="profile_1">
-          <div class="pet_name" id="pet_name">이름</div>
-          <div class="pet_spacies" id="pet_spacies">품종</div>
-          <div class="pet_sex" id="pet_sex">성별</div>
-          <div class="pet_age" id="pet_age"></div>
-          <div class="pet_desc" id="pet_desc">펫 설명</div>
-        </div>
-      </div>
-    </div>
+    <h1>🔖My Bookmark List</h1>
+    <ol class="article_list" id="article_list" style="list-style: none;"></ol>
   </form>
-  <!--프로필 상자 끝-->
+
   <footer>
     <p>
       2022 Team Rocket All Rights Reserved
     </p>
   </footer>
+  <!-- footer 끝 -->
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/mybookmark.js"></script>
+  <script src="../static/js/loader.js"></script>
+  <script>
+    if (!token) {
+      window.location.replace(`${frontend_base_url}/login.html`);
+    }
+  </script>
 </body>
-<script src="../static/js/api.js"></script>
-<script src="../static/js/petpage.js"></script>
-<script src="../static/js/loader.js"></script>
 
 </html>
