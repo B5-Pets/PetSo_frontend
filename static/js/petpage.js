@@ -1,66 +1,35 @@
-body {
-    font-family: sans-serif;
-    background-color: #dedede;
-    color: #333;
-    padding: 20px 0 28px 0;
-    margin: 0;
-  }
+const peturlParams = new URLSearchParams(window.location.search);
+const pet_id = pageurlParams.get("id");
+
+async function getPet() {
+  const response = await fetch(`${backend_base_url}/user/pet/${pet_id}/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "GET",
+  });
+  response_json = await response.json();
+  return response_json;
+}
+
+window.onload = async function loadPet(pet_id) {
+  profile = await getPet(pet_id);
+  console.log(profile)
+ 
+  const pet_image = document.getElementById("pet_image");
+  const pet_name = document.getElementById("pet_name");
+  const pet_spacies = document.getElementById("pet_spacies");
+  const pet_sex = document.getElementById("pet_sex");
+  const pet_desc = document.getElementById("pet_desc")
   
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .app-title {
-    text-align: center;
-    font-weight: normal;
-    font-size: 2.6rem;
-  }
-  
-  .animal {
-    max-width: 650px;
-    padding: 20px;
-    margin: 30px auto;
-    background-color: #fff;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .animal h4 {
-    margin: 0 0 6px 0;
-  }
-  
-  .pet-photo {
-    float: left;
-    width: 40%;
-    margin-right: 15px;
-  }
-  
-  .pet-name {
-    font-size: 2rem;
-    font-weight: normal;
-    margin: 0 0 1rem 0;
-  }
-  
-  .species {
-    font-size: 0.9rem;
-    color: #888;
-    vertical-align: middle;
-  }
-  
-  .foods-list {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 17px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  
-  .footer {
-    font-size: 0.7rem;
-    color: #888;
-    text-align: center;
-    margin: 0;
-  }
-  
+  let image = document.createElement("img");
+  image.setAttribute("class", "pet_image");
+  image.src = `${backend_base_url}${profile.pet_image}`;
+  image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
+  pet_image.appendChild(image);
+  pet_name.innerText = profile.pet_name;
+  pet_spacies.innerText = profile.pet_spacies;
+  pet_sex.innerText = profile.pet_sex;
+  pet_desc.innerText = profile.pet_desc;
+
+};
