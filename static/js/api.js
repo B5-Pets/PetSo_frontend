@@ -94,12 +94,24 @@ async function getArticleList() {
 // }
 
 
-//아티클 리스트 가져오기
+// 아티클 리스트 가져오기
 async function getArticles() {
   const response = await fetch(`${backend_base_url}/articles/`,{
     method:"GET"
   }) 
-  console.log(response)
+  if(response.status==200){
+    const response_json = await response.json()
+    return response_json
+  }else{
+    alert("오류 : 게시물 불러오기 실패")
+  }
+} 
+
+// 아티클 리스트 페이지네이션 적용시켜 가져오기
+async function getArticleswithPage() {
+  const response = await fetch(`${backend_base_url}/articles/viewset/`,{
+    method:"GET"
+  }) 
   if(response.status==200){
     const response_json = await response.json()
     return response_json
