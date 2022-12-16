@@ -28,9 +28,17 @@ window.onload = async function loadProfile() {
     introduce.innerText = "[ " + profile.introduce + " ]";
   };
 
-  // 펫 리스트 보여주기
+  // 이 유저의 펫 리스트 보여주기
 async function loadPet() {
-  pets = await getPet();
+  const response = await fetch(`${backend_base_url}/user/${user_id}/pet/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "GET",
+  });
+
+  pets = await response.json();
+  console.log(pets)
   const pets_list = document.getElementById("pet_list");
   pets.forEach((pet) => {
     const newPet = document.createElement("pet");
@@ -44,16 +52,23 @@ async function loadPet() {
   })
 }
 
-// 아티클 리스트 보여주기
-async function loadMyArticle() {
-  articles = await getMyArticle();
+// 이 유저의 아티클 리스트 보여주기
+async function loadArticle() {
+  const response = await fetch(`${backend_base_url}/articles/user/${user_id}`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "GET",
+  });
+
+  articles = await response.json();
+  console.log(articles)
 
   const article_list = document.getElementById("article_list");
   articles.forEach((article) => {
     console.log(article)
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
-    console.log(article.id)
     newImage.setAttribute("class", "article_image");
     newImage.setAttribute("onclick", "ArticleDetail"+`(${article.id})`);
     newImage.src = `${backend_base_url}${article.image}`;
@@ -74,3 +89,6 @@ async function loadMyArticle() {
     article_list.appendChild(newContent);
   });
 }
+
+loadPet();
+loadArticle();
