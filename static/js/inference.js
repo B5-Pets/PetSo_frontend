@@ -1,5 +1,6 @@
 async function CreateInference() {
-  $("#process").after('<div id="load"><img src="/static/img/loading.gif"></div>');
+  var con = document.getElementById("process");
+  con.style.display = 'block';
   const img = document.getElementById('img').files[0];
   const formdata = new FormData();
   formdata.append("input_img", img)
