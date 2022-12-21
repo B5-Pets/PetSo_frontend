@@ -109,9 +109,15 @@ async function getArticles() {
 
 // 아티클 리스트 페이지네이션 적용시켜 가져오기
 async function getArticleswithPage() {
-  const response = await fetch(`${backend_base_url}/articles/viewset/`,{
-    method:"GET"
-  }) 
+  if (!page_id) {
+    var response = await fetch(`${backend_base_url}/articles/viewset/`, {
+      method: "GET",
+    });
+  } else {
+    var response = await fetch(`${backend_base_url}/articles/viewset/?page=${page_id}`, {
+      method: "GET",
+    });
+  }
   if(response.status==200){
     const response_json = await response.json()
     return response_json
