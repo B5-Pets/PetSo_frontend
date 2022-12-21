@@ -337,12 +337,15 @@ async function loadUpdateArticle(article_id) {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
   const image = document.getElementById("image").files[0];
+  const category = document.querySelector('input[name="category"]:checked').value;
 
+  // 일상
   const formdata = new FormData();
 
   formdata.append("title", title);
   formdata.append("content", content);
   formdata.append("image", image);
+  formdata.append("category", category)
 
 
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
@@ -354,8 +357,7 @@ async function loadUpdateArticle(article_id) {
   });
 
   response_json = await response.json();
-  alert(response.status);
-  if (response.status == 200) {
+  if (response.status == 201) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
   } else {
     alert(response.status);
@@ -386,3 +388,24 @@ function darkmode() {
 }
 
 
+async function getProfile(article_id) {
+  const response = await fetch(`${backend_base_url}/articles/${article_id}/user/`, {
+    method: "GET",
+  });
+  response_json = await response.json();
+  return response_json;
+}
+
+
+// 임의데이터 수정 요망
+// 카테고리 데이터 가져오기
+async function getCategoryArticle(category) {
+  const response = await fetch(`${backend_base_url}/articles/${category}/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "GET",
+  });
+  response_json = await response.json();
+  return response_json;
+}

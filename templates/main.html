@@ -23,8 +23,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/static/css/main.css" />
-  <title>PetSo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <title>PetSo</title>
+  </head>
+
+  <body id="body">
+    <header></header>
+    <div class="article_area">
+      <div class="category-box">
+        <div class="category-radio-box">
+        <label class="category-radio">
+          <input id="category-radio-life" type="radio" name="category" value="일상" checked>
+          <span>일상</span>
+        </label>
+      
+        <label class="category-radio">
+          <input id="category-radio-community" type="radio" name="category" value="커뮤니티">
+          <span>커뮤니티</span>
+        </label>
+       
+        <label class="category-radio">
+          <input id="category-radio-QnA" type="radio" name="category" value="QnA">
+          <span>QnA</span>
+        </label></div>
+      <div class="article-card">
+         <div class="row row-cols-1 row-cols-md-3 g-4" id="article-list"></div> 
+         <div class="article-list" id="article-list"></div>
+
+
+          
+
+
+    </div>
+
+    <script>
+      const modal = document.querySelector(".modal");
+      const btnOpenPopup = document.querySelector(".chat_button");
+
+      btnOpenPopup.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+    </script>
+  </body>
+
   <script src="../static/js/api.js"></script>
   <script src="../static/js/main.js"></script>
   <script src="../static/js/loader.js"></script>

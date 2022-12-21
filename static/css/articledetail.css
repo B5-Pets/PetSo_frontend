@@ -1,5 +1,5 @@
 body {
-  font-family: "Jua", sans-serif;
+  
   height: 300vh;
   color: black;
   position: relative;
@@ -37,6 +37,10 @@ label {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+}
+
+.button{
+  margin-left: 750px;
 }
 
 [type="checkbox"] {
@@ -106,24 +110,20 @@ footer {
 
 .detail-body {
   padding-top: 170px;
-
   margin: 0 auto;
   text-align: center;
 }
 
 .article_roundbox_1 {
   margin: 0 auto;
-  display: flex;
-  height: 40px;
-  width: 50%;
-  font-size: 20px;
-  padding-top: 7px;
-  text-decoration: underline;
 }
 
 .article-detail-buttons {
-  width: 50px;
-  height: 30px;
+
+  border: 0px;
+  color: orange;
+  text-decoration : underline;
+
 }
 
 .article_area {
@@ -170,9 +170,11 @@ footer {
 .title-user-box {
   padding-top: 20px;
   font-size: 15px;
-  width: 50%;
-  text-align: right;
+  width: 37%;
   height: 70px;
+  text-align: right;
+
+
 }
 /* 게시글 제목 */
 .title-name-box {
@@ -188,7 +190,7 @@ footer {
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 300px;
+  margin-left: 300px;
 }
 
 .article_box2 {
@@ -207,13 +209,18 @@ footer {
   margin-left: 0;
 }
 .article_box2_2 {
+  padding-top: 50px;
+  text-align: left;
+  padding: 45px;
   width: 460px;
 }
 
 .like-bookmark-box {
-  margin: 10px auto;
+  text-align: right;
+  margin-top: 10px;
   padding: 15px;
   height: 50px;
+  width: 820px
 }
 
 .content {
@@ -286,25 +293,112 @@ footer {
     transform: scale(1);
   }
 }
-
 .comment_input {
   display: grid;
   flex-direction: column;
-  align-items: center;
-}
-
-.comment_small_box {
-  display: flex;
-  flex-direction: row;
+  margin: 0 370px;
   margin-top: 50px;
 }
 
+.comment_small_box{
+  display: flex;
+}
+
+
 .comment_button {
-  display: grid;
+  display: flex;
   flex-direction: row;
-  margin-left: 50px;
+
 }
 .comment_content {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
+  text-align: left;
+
+}
+
+
+
+.update_button{
+  display: grid;
+  width: 55px;
+}
+
+.delete_button{
+  font-size: 5px;
+  display: grid;
+  width: 55px;
+}
+
+.button-edit{
+
+  background-color: whitesmoke;
+  font-size: 10px;
+  border: 0px;
+  width: 30px;
+  height: 10px;
+  margin-top: -10px;
+
+  
+  
+}
+
+.button-delete{
+  background-color: whitesmoke;
+  font-size: 10px;
+  border: 0px;
+  width: 30px;
+  height: 10px;
+  margin-top: -10px;
+  margin-left: -30px;
+}
+
+.content{
+  padding: 10px;
+}
+.comment-email{
+  margin-top: -5px;
+}
+
+.comment{
+  margin-left: 20px;
+  margin-top: -3px;
+  font-size: 10pt;
+}
+
+
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+          display: inline-block;
+          vertical-align: middle;
+          content: " ";
+          height: 100%;
+
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+
+}
+.modal-header{
+
+  height: 50px;
+}
+
+.modal-content{
+  width: 400px;
+  height: 150px;
+}
+
+.form-control{
+
+  width: 780px;
 }

@@ -34,6 +34,7 @@ window.onload = async function loadArticleList() {
     const article_list = document.getElementById("article-list");
    
     articles.forEach(article=> {
+      console.log(article)
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
 
@@ -49,6 +50,7 @@ window.onload = async function loadArticleList() {
       articleImage.setAttribute("class", "card-img-top")
 
       if(article.image){
+
         articleImage.setAttribute("src", `${article.image}`)
         articleImage.setAttribute("style", "width: 200px;", "height: 200px;")
 
@@ -66,8 +68,24 @@ window.onload = async function loadArticleList() {
 
       const newCardTitle = document.createElement("h5")
       newCardTitle.setAttribute("class", "card-title")
+      newCardTitle.setAttribute("style", "margin-top: -100px; width:200px" )
       newCardTitle.innerText = article.title
       newCardBody.appendChild(newCardTitle)
+
+      const newCardText = document.createElement("div")
+      newCardText.setAttribute("class", "card-text")
+      newCardText.setAttribute("style", "margin-top: 0px color:lightgray;")
+      newCardText.setAttribute("id","content")
+      newCardText.innerText = article.content
+      newCardBody.appendChild(newCardText)
+
+      const newCardName = document.createElement("div")
+      newCardName.setAttribute("class", "card-user")
+      newCardName.setAttribute("style", "margin-top: 0px;")
+      newCardName.setAttribute("id","user")
+      newCardName.innerText = article.user
+      newCardBody.appendChild(newCardName)
+      console.log(newCardName)
 
 
 
@@ -104,3 +122,4 @@ window.onload = async function loadArticleList() {
     location.replace(`${frontend_base_url}/main.html?page=${newpage_id}`);
     }
   }
+

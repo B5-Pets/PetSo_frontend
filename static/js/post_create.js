@@ -14,12 +14,14 @@ async function postArticle() {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
   const image = document.getElementById("image").files[0];
+  const category = document.querySelector('input[name="category"]:checked').value;
 
   const formdata = new FormData();
 
   formdata.append("title", title);
   formdata.append("content", content);
   formdata.append("image", image);
+  formdata.append("category", category);
 
   const response = await fetch(`${backend_base_url}/articles/`, {
     headers: {
