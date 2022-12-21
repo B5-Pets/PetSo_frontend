@@ -1,9 +1,9 @@
 body {
-  font-family: "Jua", sans-serif;
+  /* font-family: "Jua", sans-serif; */
   height: 250vh;
   color: black;
   position: relative;
-  background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
+  background: whitesmoke;
 }
 
 body.dark {
@@ -66,14 +66,25 @@ label {
   border-radius: 15px;
 }
 
+.article-card{
+  height: 800px;
 
+}
+
+h5:hover{
+  color: #ffd5a1;
+}
 
 #article-list{
 position: absolute;
-top:9%;
-left: 25%;
-width: 70%;
+top: 20%;
+
+display: grid;
 }
+
+
+
+
 [type="checkbox"] {
   appearance: none;
   position: relative;
@@ -82,9 +93,6 @@ width: 70%;
   width: 2.25em;
   height: 1.25em;
 }
-
-
-
 
 [type="checkbox"]::before {
   content: "";
@@ -154,4 +162,57 @@ footer {
   height: 2px;
   border: 2px dashed rgba(255, 255, 255, 0.765);
   margin-top: 15px;
+}
+
+.category-box{
+  width: 60%;
+  margin: 0 auto;
+  height: 300px;
+
+}
+.category-radio-box{
+  height: 300px;
+  padding-top: 200px;
+}
+
+/* 라디오 숨기기 */
+.category-radio input[type="radio"] {
+  display: none;
+}
+
+.category-radio input[type="radio"] + span {
+  display: inline-block;
+  padding: 15px 10px;
+  border: 1px solid #dfdfdf;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.4s;
+  width: 100px;
+
+  
+}
+
+.category-radio input[type="radio"]:checked + span {
+  background-color: #ffd5a1;
+  text-decoration : underline;
+  color: #000000;
+}
+
+.category-title{
+  padding-left: 20px;
+  font-size: 30px;
+  text-decoration : underline;
+
+}
+
+.card{
+  width: 750px;
+  height: 150px;
+}
+
+.card-text{
+
+  color: rgb(158, 158, 158);
 }
