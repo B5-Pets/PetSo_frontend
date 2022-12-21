@@ -15,15 +15,17 @@ function readURL(input) {
 // 펫 등록하기
 async function postMyPet() {
     const pet_image = document.getElementById("pet_image").files[0];
+    const pet_age = document.getElementById("pet_age").value;
     const pet_name = document.getElementById("pet_name").value;
-    const pet_spacies = document.getElementById("pet_spacies").value;
+    const pet_species = document.getElementById("pet_species").value;
     const pet_sex = document.getElementById("pet_sex").value;
     const pet_desc = document.getElementById("pet_desc").value;
     const formdata = new FormData();
     
     formdata.append("pet_image", pet_image);
     formdata.append("pet_name", pet_name);
-    formdata.append("pet_spacies", pet_spacies)
+    formdata.append("pet_age", pet_age)
+    formdata.append("pet_species", pet_species)
     formdata.append("pet_sex", pet_sex)
     formdata.append("pet_desc", pet_desc)
     

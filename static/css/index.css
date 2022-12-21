@@ -22,8 +22,9 @@ body {
 }
 
 .main {
+  width: 1100px;
+  margin: 0 auto;
   padding-top: 200px;
-  margin-left: 100px;
   display: flex;
 }
 .main h1 {
@@ -89,9 +90,10 @@ body {
 }
 
 .function_pic {
-  width: 300px;g
+  width: 300px;
   height: 250px;
 }
+
 .functions p {
   position: absolute;
   right: 30%;

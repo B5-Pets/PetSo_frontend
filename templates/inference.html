@@ -60,7 +60,9 @@
             <input name="inference-file" type="file" id="img" class="img-upload" onchange="readURL(this);" />
             <span class="underline-btn" style="cursor:pointer;"onclick="CreateInference()">탐지하기</span>
         </form>
-        <div id="process"></div>
+        <div id="process">
+            <img src="/static/img/loading.gif">
+        </div>
     </div>
     <br/>
     
