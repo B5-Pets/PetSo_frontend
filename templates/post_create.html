@@ -35,8 +35,9 @@
 
     <title>Post_create</title>
   </head>
+  <header></header>
   <body>
-    <header></header>
+
 
     <!-- 게시글 수정페이지 -->
     <form>
@@ -70,7 +71,48 @@
           <img id="preview" style="width: 400px; height: 300px; margin-top: 20px; object-fit: cover; border-radius: 20%;"/>
           <input type="file" class="form-control" id="image" onchange="readURL(this);"/>
         </div>
-      <br />
+
+      <div class="img_box">  <img
+        id="preview"
+        style="
+          width: 400px;
+          height: 300px;
+          margin-top: 20px;
+          object-fit: cover;
+          border-radius: 20%;
+        "
+      /></div>
+    
+
+      <div>
+        <!-- <p id="profile_update_img"></p> -->
+        <div class="img_update_box">
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            onchange="readURL(this);"
+          />
+        </div>
+        <br />
+        <div class="create_box"> <input
+        type="text"
+          class="title"
+          placeholder="제목"
+          id="title"
+
+        ></input>
+        <input
+        type="text"
+        class="content"
+          placeholder="내용"
+          id="content"
+          cols="50"
+          rows="10"
+        ></input></div>
+       
+      </div>
+      <br/>
       <div>
         <button id="edit-button" class="underline-btn" type="button" class="btn btn-primary" onclick="postArticle()">
           작성하기
@@ -81,10 +123,8 @@
       </div>
     </form>
 
-    
   </body>
-<script src="../static/js/api.js"></script>
-<script src="../static/js/post_create.js"></script>
-<script src="../static/js/loader.js"></script>
-
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/post_create.js"></script>
+  <script src="../static/js/loader.js"></script>
 </html>

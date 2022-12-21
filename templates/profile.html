@@ -50,12 +50,8 @@ div- 5
   <form>
     <div class="main">
       <div class="myprofile">
-        <div class="myprofile-title" style="font-size:27px">내 프로필</div>
-        <div class="my_bookmarks">
-          <button type="button" class="gradient-btn" onclick="location.href='my_bookmark.html'">북마크</button>
-        </div>
-        <div class="myprofile-edit"><button type="button" class="gradient-btn"
-            onclick="location.href='profile_update.html'">프로필 수정하기</button></div>
+        <div class="myprofile-title" style="font-size:27px">이 유저의 프로필</div>
+       
       </div>
 
 
@@ -68,20 +64,18 @@ div- 5
             <div class="username" id="name">이름</div>
             <div class="introduce" id="introduce">자기소개글</div>
             <div class="pet">
-              <div>내 펫 리스트</div>
+              <div>이 유저의 펫 리스트</div>
               <ol class="pet_list" id="pet_list"></ol>
-              <span style="cursor:pointer;" onclick="location.href='add_pet.html'">👉 펫 등록하러가기</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="article-box">
-        내 게시글
+        이 유저의 게시글
         <ol class="article_list" id="article_list" style="list-style:none;"></ol>
       </div>
-      <!-- 임의로 넣은 test1 -->
-          <div id="test1">
+
     </div>
     </div>
   </form>
@@ -93,7 +87,7 @@ div- 5
   </footer>
   <!-- footer 끝 -->
   <script src="../static/js/api.js"></script>
-  <script src="../static/js/myprofile.js"></script>
+  <script src="../static/js/profile.js"></script>
   <script src="../static/js/loader.js"></script>
   <script>
     if (!token) {
