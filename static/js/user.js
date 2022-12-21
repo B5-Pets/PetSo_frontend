@@ -109,3 +109,10 @@ function handleLogout() {
   localStorage.removeItem("payload");
   window.location.href='login.html';
 }
+
+
+async function handlepasswordreset() {
+  const response = await fetch(`{backend_base_url}/user/password_reset/`)
+
+  return response
+}
