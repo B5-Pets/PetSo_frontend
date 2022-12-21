@@ -35,12 +35,13 @@
 
     <title>Document</title>
   </head>
+  <header></header>
   <body>
-    <header></header>
+
 
     <!-- 게시글 수정페이지 -->
     <form>
-      <img
+      <div class="img_box">  <img
         id="preview"
         style="
           width: 400px;
@@ -49,7 +50,9 @@
           object-fit: cover;
           border-radius: 20%;
         "
-      />
+      /></div>
+    
+
       <div>
         <!-- <p id="profile_update_img"></p> -->
         <div class="img_update_box">
@@ -61,20 +64,22 @@
           />
         </div>
         <br />
-        <textarea
-          name=""
-          placeholder="게시물 내용"
+        <div class="create_box"> <input
+        type="text"
+          class="title"
+          placeholder="제목"
           id="title"
-          cols="50"
-          rows="10"
-        ></textarea>
-        <textarea
-          name=""
-          placeholder="게시물 내용"
+
+        ></input>
+        <input
+        type="text"
+        class="content"
+          placeholder="내용"
           id="content"
           cols="50"
           rows="10"
-        ></textarea>
+        ></input></div>
+       
       </div>
       <br />
       <div>
@@ -90,10 +95,8 @@
         </label>
        
     </footer> -->
-    
   </body>
-<script src="../static/js/api.js"></script>
-<script src="../static/js/post_create.js"></script>
-<script src="../static/js/loader.js"></script>
-
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/post_create.js"></script>
+  <script src="../static/js/loader.js"></script>
 </html>
