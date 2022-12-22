@@ -2,8 +2,10 @@
 // EC2 인스턴스 연결 시
 // const backend_base_url = "http://ec2인스턴스ip주소";
 // 백엔드 서버 연결 시
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500/templates";
+// const backend_base_url = "http://127.0.0.1:8000";
+// const frontend_base_url = "http://127.0.0.1:5500/templates";
+const backend_base_url = "http://13.125.224.113";
+const frontend_base_url = "http://petso.tk.s3-website.ap-northeast-2.amazonaws.com";
 
 const token = localStorage.getItem("access");
  // 개별 게시글 //
@@ -103,7 +105,7 @@ async function getArticles() {
     const response_json = await response.json()
     return response_json
   }else{
-    alert("오류 : 게시물 불러오기 실패")
+    alert("오류 : 게시물 불러오기 실패!!")
   }
 } 
 
