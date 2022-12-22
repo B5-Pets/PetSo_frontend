@@ -6,7 +6,17 @@ const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500/templates";
 
 const token = localStorage.getItem("access");
- // 개별 게시글 //
+
+// 주소로 포스트 페이지받기(페이지네이션 적용시) //
+const pageurlParams = new URLSearchParams(window.location.search);
+const page_id = pageurlParams.get("page");
+
+// 아티클 디테일 페이지 연결 //
+const urlParams = new URLSearchParams(window.location.search);
+const article_id = urlParams.get("id");
+
+
+// 개별 게시글 //
 
 // 로그아웃
 function handleLogout() {
@@ -66,9 +76,6 @@ async function loadGetMyBookmark() {
 }
 
 
-// 주소로 포스트 페이지받기(페이지네이션 적용시) //
-const pageurlParams = new URLSearchParams(window.location.search);
-const page_id = pageurlParams.get("page");
 
 //아티클 리스트 보여주기
 async function getArticleList() {
@@ -118,6 +125,7 @@ async function getArticleswithPage() {
       method: "GET",
     });
   }
+
   if(response.status==200){
     const response_json = await response.json()
     return response_json
@@ -126,9 +134,7 @@ async function getArticleswithPage() {
   }
 } 
 
-// 아티클 디테일 페이지 연결 //
-const urlParams = new URLSearchParams(window.location.search);
-const article_id = urlParams.get("id");
+
 
 
 function ArticleDetail(article_id) {
@@ -347,7 +353,6 @@ async function loadUpdateArticle(article_id) {
   formdata.append("image", image);
   formdata.append("category", category)
 
-
   const response = await fetch(`${backend_base_url}/articles/${article_id}/`, {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("access"),
@@ -356,8 +361,11 @@ async function loadUpdateArticle(article_id) {
     body: formdata,
   });
 
+  console.log(response)
+  console.log(response.status)
+  alert(response.status)
   response_json = await response.json();
-  if (response.status == 201) {
+  if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/articledetail.html?id=${article_id}`);
   } else {
     alert(response.status);
@@ -374,9 +382,8 @@ async function DeleteArticle(article_id) {
     },
     method: "DELETE",
   });
-
   if (response.status == 204) {
-    window.location.replace(`${frontend_base_url}/myprofile.html?id=${user_id}`);
+    window.location.replace(`${frontend_base_url}/myprofile.html`);
   } else {
     alert(response.status);
   }

@@ -12,8 +12,6 @@ window.onload = async function loadProfile() {
     });
     profile = await response.json();
 
-    console.log(profile)
-  
     const profile_img = document.getElementById("profile_img");
     const email = document.getElementById("email");
     const name = document.getElementById("name")
@@ -38,7 +36,6 @@ async function loadPet() {
   });
 
   pets = await response.json();
-  console.log(pets)
   const pets_list = document.getElementById("pet_list");
   pets.forEach((pet) => {
     const newPet = document.createElement("pet");

@@ -68,16 +68,13 @@ async function checkLogin() {
 //유저 프로필 가져오기
  async function loadGetProfile(article_id) {
    user = await getProfile(article_id);
-   console.log(user)
 
    const profile = document.getElementById("user-name");
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
-   console.log(profileImage)
    
    profileImage.setAttribute("class", "profile_img");
    profile.appendChild(profileImage);
-   console.log(profile)
  }
 
  loadGetProfile(article_id);
