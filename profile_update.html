@@ -68,4 +68,9 @@
 <script src="../static/js/api.js"></script>
 <script src="../static/js/profile_update.js"></script>
 <script src="../static/js/loader.js"></script> 
+<script>
+  if (!token) {
+    window.location.replace(`${frontend_base_url}/login.html`);
+  }
+</script>
 </html>
