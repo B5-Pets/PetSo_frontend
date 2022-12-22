@@ -7,6 +7,7 @@
 const backend_base_url = "http://13.125.224.113";
 const frontend_base_url = "https://pet-so.net/login.html";
 
+
 const token = localStorage.getItem("access");
 
 // 주소로 포스트 페이지받기(페이지네이션 적용시) //
