@@ -24,7 +24,6 @@
 
 window.onload = async function loadMyProfile(user_id) {
     profile = await getMyProfile(user_id);
-    console.log(profile)
    
     // const profile_img = document.getElementById("profile_img");
     const email = document.getElementById("email");
@@ -92,44 +91,3 @@ async function loadMyArticle() {
 loadMyArticle();
 loadMyPet();
 
-
-
-
-//임의로 만듬
-
-// 카테고리 게시글 리스트
-async function loadCategoryArticle(categorys) {
-  console.log(categorys)
-  
-  articles = await getCategoryArticle(categorys);
-
-  const test1 = document.getElementById("test1");
-  articles.forEach((article) => {
-    console.log(article)
-    const newImage = document.createElement("img");
-    newImage.setAttribute("id", article.id);
-    console.log(article.id)
-    newImage.setAttribute("class", "article_image");
-    newImage.setAttribute("onclick", "ArticleDetail"+`(${article.id})`);
-    newImage.src = `${backend_base_url}${article.image}`;
-    newImage.setAttribute("style", "width:200px; height:200px;")
-    test1.appendChild(newImage);
-    
-
-    const newTitle = document.createElement("li");
-    newTitle.setAttribute("id", article.id);
-    newTitle.setAttribute("class", "article_title");
-    newTitle.innerText = "제목\n" + article.title;
-    test1.appendChild(newTitle);
-
-    const newContent = document.createElement("li");
-    newContent.setAttribute("id", article.id);
-    newContent.setAttribute("class", "article_content");
-    newContent.innerText = "내용\n\n" + article.content;
-    test1.appendChild(newContent);
-  });
-}
-// 게시글 만들 때 카테고리를 선택하잖아요. 그거랑 같은 내용입니다. 
-// 카테고리 안에 있는 일상,커뮤니티,QnA 라는 글자가 넘어와요.
-
-loadCategoryArticle("커뮤니티");

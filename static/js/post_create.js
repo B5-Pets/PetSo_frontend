@@ -34,9 +34,9 @@ async function postArticle() {
   response_json = await response.json();
   console.log(response_json);
 
-  if (response.status == 200) {
+  if (response.status == 201) {
     alert("게시글 작성 완료!");
-    window.location.reload(`${frontend_base_url}/main.html`);
+    window.location.replace(`${frontend_base_url}/main.html`);
   } else {
     alert(response.status);
   }
