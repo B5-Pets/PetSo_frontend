@@ -46,7 +46,7 @@
         <div class="category-radio-box">
           <h5>게시글 수정</h5>
           <br/>
-          <label class="category-radio">
+          <!-- <label class="category-radio">
             <input id="category-radio-life" type="radio" name="category" value="일상" checked>
             <span>일상</span>
           </label>
@@ -54,10 +54,10 @@
           <label class="category-radio">
             <input id="category-radio-community" type="radio" name="category" value="커뮤니티">
             <span>커뮤니티</span>
-          </label>
+          </label> -->
          
           <label class="category-radio">
-            <input id="category-radio-QnA" type="radio" name="category" value="QnA">
+            <input id="category-radio-QnA" type="radio" name="category" value="QnA" checked>
             <span>QnA</span>
           </label>
 
@@ -88,4 +88,9 @@
 <script src="/static/js/api.js"></script>
 <script src="../static/js/post_modify.js"></script>
 <script src="../static/js/loader.js"></script> 
+<script>
+  if (!token) {
+    window.location.replace(`${frontend_base_url}/login.html`);
+  }
+</script>
 </html>
