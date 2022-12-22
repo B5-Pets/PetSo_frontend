@@ -15,7 +15,7 @@
 }
 body {
   font-family: "Jua", sans-serif;
-  height: 550vh;
+  height: 570vh;
   color: black;
   position: relative;
   background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
@@ -89,8 +89,19 @@ body {
   display: flex;
 }
 
+.function_text {
+  width: 500px;
+  margin-left: 30px;
+  margin-top: 25px;
+  margin-right: 30px;
+  text-align: center;
+  font-size: 17px;
+}
+
 .function_pic {
-  width: 300px;
+  margin-top: 23px;
+  margin-left: 23px;
+  width: 360px;
   height: 250px;
 }
 
@@ -109,6 +120,7 @@ body {
 
 .main-team {
   text-align: center;
+  
 }
 .team_box1 {
   width: 70%;
