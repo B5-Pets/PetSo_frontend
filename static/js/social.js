@@ -23,7 +23,7 @@ async function handlegoogle() {
 
     let code = new URL(window.location.href).searchParams.get('code')
     if (code) {
-    const response = await fetch(`http://13.125.224.113/user/google/callback/?code=${code}`)
+    const response = await fetch(`https://api.pet-so.net//user/google/callback/?code=${code}`)
     // const response = await fetch(`http://127.0.0.1:8000/user/google/callback/?code=${code}`)
     const response_json = await response.json()
     localStorage.setItem('access', response_json.access_token);

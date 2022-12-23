@@ -102,6 +102,7 @@ async function checkLogin() {
    newUser.setAttribute("id", comment.id);
    newUser.setAttribute("class", "comment-email")
    newUser.innerText = comment.user;
+   user_list.innerText = comment.email;
    newComment.innerText = comment.content;
    comment_list.appendChild(newComment);
 
