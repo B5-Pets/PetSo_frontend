@@ -19,6 +19,7 @@ window.onload = async function loadProfile() {
   
     let image = document.createElement("img");
     image.setAttribute("class", "profile_image");
+    image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
     image.src = `${backend_base_url}${profile.profile_img}`;
     profile_img.appendChild(image);
     name.innerText = profile.name;

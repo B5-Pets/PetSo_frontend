@@ -19,7 +19,7 @@ async function checkLogin() {
 
    // 개별 게시글 데이터 가져오기.
    const article = await getArticleDetail(article_id);
- 
+  
 
    const title = document.getElementById("title");
   //  const user_name = document.getElementById("user-name")
@@ -36,7 +36,6 @@ async function checkLogin() {
   dolike_button.setAttribute("id", article_id);
   dolike_button.setAttribute("class", "btn btn-outline-danger");
   dolike_button.setAttribute("onclick", "DoLike(this.id)");
-  console.log(dolike_button)
   dolike.appendChild(dolike_button);
 
 
@@ -68,12 +67,16 @@ async function checkLogin() {
 //유저 프로필 가져오기
  async function loadGetProfile(article_id) {
    user = await getProfile(article_id);
-
    const profile = document.getElementById("user-name");
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
    
    profileImage.setAttribute("class", "profile_img");
+   profileImage.setAttribute("id", user.id);
+   profileImage.setAttribute("style", "cursor:pointer;");
+   profileImage.setAttribute("onclick", "userProfile(this.id)");
+
+
    profile.appendChild(profileImage);
  }
 
@@ -84,7 +87,6 @@ async function checkLogin() {
  async function loadGetComment(article_id) {
 
    comments = await GetComment(article_id);
-   console.log(comments)
    const userinfo = await getName();
 
    const user_list = document.getElementById("email");
@@ -145,7 +147,6 @@ async function loadArticleEdit(article_id) {
 
   // 개별 게시글 데이터 가져오기.
   const article = await getArticleDetail(article_id);
-  console.log(article)
 
   ArticleEdit(article.id)
 
