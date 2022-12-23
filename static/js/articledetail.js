@@ -4,13 +4,13 @@ if (!token) {
  }
 
  // 유저 정보 가져오기 //
-async function checkLogin() {
-   const name = await getMyProfile();
+// async function checkLogin() {
+//    const name = await getMyProfile();
  
-   const username = document.getElementById("username");
-   username.innerText = name.name
- }
- checkLogin();
+//    const username = document.getElementById("username");
+//    username.innerText = name.name
+//  }
+//  checkLogin();
  
 //  const urlParams = new URLSearchParams(window.location.search);
 //  const article_id = urlParams.get("id");
@@ -43,7 +43,7 @@ async function checkLogin() {
    articleImage.setAttribute("class","article_imgs2")
    articleImage.src = `${backend_base_url}${article.image}`;
    image.appendChild(articleImage);
- 
+  
    // 북마크
    const dobookmark = document.getElementById("dobookmark");
    const dobookmark_button = document.createElement("button");
@@ -60,6 +60,16 @@ async function checkLogin() {
    bookmarks.innerText = article.bookmarks;
    category.innerText = article.category;
   //  created_at.innerText = article.created_at.replace("T", " ").substr(0, 16);
+  const editbtn = document.getElementById("article-detail-buttons");
+  const userinfo = await getName();
+  console.log(article)
+  console.log(userinfo)
+  if (userinfo.name != article.user) {
+    editbtn.style.visibility ="hidden";
+    
+  }userinfo
+
+
  }
  
  loadArticle(article_id);
@@ -67,7 +77,8 @@ async function checkLogin() {
 //유저 프로필 가져오기
  async function loadGetProfile(article_id) {
    user = await getProfile(article_id);
-   const profile = document.getElementById("user-name");
+   const username1 = document.getElementById("user-name");
+   username1.innerText = user.name;
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
    
@@ -77,7 +88,7 @@ async function checkLogin() {
    profileImage.setAttribute("onclick", "userProfile(this.id)");
 
 
-   profile.appendChild(profileImage);
+   username1.appendChild(profileImage);
  }
 
  loadGetProfile(article_id);
@@ -103,10 +114,15 @@ async function checkLogin() {
 
    newUser.setAttribute("id", comment.id);
    newUser.setAttribute("class", "comment-email")
+   console.log(comment)
+  //  user_list.setAttribute("id", "user"+comment.id)
    newUser.innerText = comment.user;
+  //  user_list.innerText = comment.user;
+
+
    newComment.innerText = comment.content;
    comment_list.appendChild(newComment);
-
+   user_list.appendChild(newUser);
   
 
    const update_comment_button = document.createElement("button");
@@ -191,7 +207,6 @@ $like.addEventListener('click', () => {
  // 댓글 작성하기 //
  function CreateComment() {
   const comment = document.getElementById("comment-input").value;
-  console.log(comment)
   loadCreateComment(comment);
 }
 

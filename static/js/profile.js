@@ -1,7 +1,7 @@
 // 주소로 아티클 페이지받기 //
 const userurlParams = new URLSearchParams(window.location.search);
 const user_id = userurlParams.get("id");
-
+console.log(user_id)
 
 window.onload = async function loadProfile() {
     const response = await fetch(`${backend_base_url}/user/profile/${user_id}`, {

@@ -32,27 +32,29 @@
   <header></header>
   <!--프로필 상자-->>
   <form>
-    <h1>내 펫 프로필</h1>
+          
     <div class="main_profile">
       <div class="profile-content">
 
         <div class="pet_image" id="pet_image"></div>
-        <div class="profile_1">
-          <div class="pet_name" id="pet_name"></div>
-          <div class="pet_species" id="pet_species"></div>
-          <div class="pet_sex" id="pet_sex"></div>
-          <div class="pet_age" id="pet_age"></div>
-          <div class="pet_desc" id="pet_desc"></div>
+            <div class="profile_1">
+            <div class="petintro"><div class="pet_name" id="pet_name"></div></div>
+            <div class="petintro"><div class="pet_species" id="pet_species"></div></div>
+            <div class="petintro"><div class="pet_sex" id="pet_sex"></div></div>
+            <div class="petintro"><div class="pet_age" id="pet_age"></div></div>
+            <div class="petintro"> <div class="pet_desc" id="pet_desc"></div></div>
+            
+            <div class="petprofilebtn">
+               <!-- <button type="button" class="pet-edit" id="pet-edit">수정</button>  -->
+                  <button type="button" class="pet_delete_btn" id="pet_delete_btn"
+                  onclick="deleteMyPet(pet_id)">삭제</button>
+            </div>
+            
         </div>
       </div>
     </div>
   </form>
   <!--프로필 상자 끝-->
-  <footer>
-    <p>
-      2022 Team Rocket All Rights Reserved
-    </p>
-  </footer>
 </body>
 <script src="../static/js/api.js"></script>
 <script src="../static/js/petpage.js"></script>

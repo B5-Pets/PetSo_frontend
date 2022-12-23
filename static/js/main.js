@@ -5,7 +5,6 @@ function articleDetail() {
 window.onload = async function loadArticleList() {
     viewset = await getArticleswithPage()
     // 아티클 받아오기 //
-    console.log(viewset)
     articles = viewset["results"];
     // 페이지 수 가져오기 // 
     totalCount = viewset['count']
@@ -33,7 +32,6 @@ window.onload = async function loadArticleList() {
     const article_list = document.getElementById("article-list");
    
     articles.forEach(article=> {
-      console.log(article)
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
 

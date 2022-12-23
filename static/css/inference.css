@@ -188,18 +188,17 @@ footer {
 }
 
 .upload {
-  background-color: #dbe9f6;
+  background-color: #ffd5a1;
   width: 300px;
   height: 40px;
   margin-bottom: 10px;
   text-align: center;
   padding-top: 10px;
   border-radius: 15px;
-
 }
 
 .example {
-  background-color: #dbe9f6;
+  background-color: #ffd5a1;
   width: 300px;
   height: 40px;
   margin-bottom: 10px;
@@ -207,7 +206,6 @@ footer {
   padding-top: 10px;
   border-radius: 15px;
   margin-left: 100px;
-
 }
 
 .inference-box4 {
