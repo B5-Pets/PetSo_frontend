@@ -127,13 +127,18 @@
     font-size: 15px;
   }
   
-  .pet{
+  .petbox{
     margin-top: -200px;
     margin-left: 250px;
     border-style: solid;
     border-width: 0.5px;
-    width: 300px;
+    width: 350px;
     border: gainsboro solid 1px;
+  }
+  .pet_list{
+    
+    text-align: left;
+
   }
 
   span:hover{

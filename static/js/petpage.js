@@ -14,8 +14,7 @@ async function getPet() {
 
 window.onload = async function loadPet(pet_id) {
   profile = await getPet(pet_id);
-  console.log(profile)
- 
+
   const pet_image = document.getElementById("pet_image");
   const pet_name = document.getElementById("pet_name");
   const pet_species = document.getElementById("pet_species");
@@ -33,5 +32,14 @@ window.onload = async function loadPet(pet_id) {
   pet_age.innerText = profile.pet_age;
   pet_sex.innerText = profile.pet_sex;
   pet_desc.innerText = profile.pet_desc;
+
+  pet_delete_btn = document.getElementById("pet_delete_btn")
+
+  const userinfo = await getName();
+
+  if (userinfo.name != profile.user) {
+    pet_delete_btn.style.visibility ="hidden";
+    
+  }
 
 };

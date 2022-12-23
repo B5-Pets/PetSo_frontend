@@ -224,3 +224,23 @@ footer {
   transition: all 0s ease;
   
 }
+
+.signoutbox{
+  margin-top: 20px;
+}
+
+.signout{
+  width: 300px;
+  height: 40px;
+  border: 2px none;
+  border-radius: 20px;
+  background-color: rgb(255, 182, 182);
+}
+.signout:hover{
+  width: 300px;
+  height: 40px;
+  border: 2px none;
+  border-radius: 20px;
+  background-color: rgb(255, 0, 0);
+}
+

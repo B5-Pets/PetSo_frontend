@@ -40,7 +40,7 @@
         <div class="article_roundbox_1" >
           <span id="article-category"></span>
 
-          <button class="article-detail-buttons" type="button" onclick="loadArticleEdit(this.id)">수정</button>
+          <button class="article-detail-buttons" id = "article-detail-buttons" type="button" onclick="loadArticleEdit(this.id)">수정</button>
         </div>
 
       
@@ -144,8 +144,14 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/api.js"></script>
-      <script src="../static/js/articledetail.js"></script>
+      
 </body>
+<script src="../static/js/api.js"></script>
+<script src="../static/js/articledetail.js"></script>
 <script src="../static/js/loader.js"></script>
+<script>
+  if (!token) {
+    window.location.replace(`${frontend_base_url}/login.html`);
+  }
+</script>
 </html>
