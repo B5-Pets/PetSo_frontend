@@ -2,10 +2,10 @@
 // EC2 인스턴스 연결 시
 // const backend_base_url = "http://ec2인스턴스ip주소";
 // 백엔드 서버 연결 시
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500";
-// const backend_base_url = "https://api.pet-so.net/";
-// const frontend_base_url = "https://pet-so.net/";
+// const backend_base_url = "http://127.0.0.1:8000";
+// const frontend_base_url = "http://127.0.0.1:5500";
+const backend_base_url = "https://api.pet-so.net/";
+const frontend_base_url = "https://pet-so.net/";
 
 
 const token = localStorage.getItem("access");
