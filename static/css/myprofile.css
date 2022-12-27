@@ -1,284 +1,273 @@
 @font-face {
-    font-family: "NEXON Lv2 Gothic Bold";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "SBAggroB";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  body {
-    font-family: "Jua", sans-serif;
-    height: 700vh;
-    color: black;
-    position: relative;
-    /* background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%); */
-  }
-  
-  .main {
-    padding-top: 200px;
-    margin-left: 100px;
-  }
-  .main h1 {
-    margin-top: 100px;
-    background: linear-gradient(-10deg, #9759bb 30%, #fca6c6 65%, #f6af97 80%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-size: 150pt;
-    font-family: NEXON Lv2 Gothic Bold;
-  }
-  
-  .main h2 {
-    color: #a274b7;
-    font-size: 20pt;
-    line-height: 40px;
-  }
-  
-  .main-image img {
-    margin-left: 60px;
-    width: 500px;
-    height: 500px;
+  font-family: "NEXON Lv2 Gothic Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  }
-  .container2 {
-    text-align: center;
-    margin-top: 200px;
-  }
-  .container2 .icon {
-    margin-top: 50px;
-  }
-  .container2 .icon img {
-    width: 150px;
-    margin-left: 15px;
-  }
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .myprofile{
-    margin: 0 169px;
-    width: 80%;
-    display: flex;
-    border-bottom: #1b1d25 1px solid;
-  }
+body {
+  font-family: "Jua", sans-serif;
+  height: 700vh;
+  color: black;
+  position: relative;
+  /* background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%); */
+}
 
-  .myprofile-title{
-    width: 80%;
-    padding-left: 15px;
+.main {
+  padding-top: 200px;
+  margin-left: 100px;
+}
+.main h1 {
+  margin-top: 100px;
+  background: linear-gradient(-10deg, #9759bb 30%, #fca6c6 65%, #f6af97 80%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 150pt;
+  font-family: NEXON Lv2 Gothic Bold;
+}
 
-  }
-  .myprofile-edit{
-    width: 10%;
-    text-align: center;
-  }
+.main h2 {
+  color: #a274b7;
+  font-size: 20pt;
+  line-height: 40px;
+}
 
-  .main_profile{
+.main-image img {
+  margin-left: 60px;
+  width: 500px;
+  height: 500px;
+}
+.container2 {
+  text-align: center;
+  margin-top: 200px;
+}
+.container2 .icon {
+  margin-top: 50px;
+}
+.container2 .icon img {
+  width: 150px;
+  margin-left: 15px;
+}
+
+.myprofile {
+  margin: 0 169px;
+  width: 80%;
+  display: flex;
+  border-bottom: #1b1d25 1px solid;
+}
+
+.myprofile-title {
+  width: 80%;
+  padding-left: 15px;
+}
+.myprofile-edit {
+  width: 10%;
+  text-align: center;
+}
+
+.main_profile {
   margin: 30px 170px;
   width: 100%;
-  
-  }
+}
 
-  /* .profile-image{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+/* .profile-image{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
-  } */
-  .my_bookmarks{
-    width: 8%;
-    text-align: center;
-  }
-  
-  .profile-content{
-    display: flex;
-    padding-bottom: 15px;
-    width: 80%;
-    margin-left: 10%;
-  }
+} */
+.my_bookmarks {
+  width: 8%;
+  text-align: center;
+}
 
-  .profile_1{
-    display: grid;
-    padding-left: 20px;
-    
-  }
+.profile-content {
+  display: flex;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
+}
 
-  .article-box{
-    margin: 0 169px;
-    padding-top: 20px;
-    font-size: 20px;
-    width: 80%;
-    border-top: #1b1d25 solid 1px;
+.profile_1 {
+  display: grid;
+  padding-left: 20px;
+}
 
-  }
+.article-box {
+  margin: 0 169px;
+  padding-top: 20px;
+  font-size: 20px;
+  width: 80%;
+  border-top: #1b1d25 solid 1px;
+}
 
-  .title{
-    display: flex;
-    /* border-style: solid;
-    border-width: 1px 0px 0px 0px; */
-    border-color: lightgray;
-    margin-top: 30px;
-  }
+.title {
+  display: flex;
+  /* border-style: solid;
+  border-width: 1px 0px 0px 0px; */
+  border-color: lightgray;
+  margin-top: 30px;
+}
 
-  .article_list{
-    width: 100%;
-    padding-top: 10px;
-    font-size: 15px;
-  }
-  
-  .petbox{
-    margin-top: -200px;
-    margin-left: 250px;
-    border-style: solid;
-    border-width: 0.5px;
-    width: 350px;
-    border: gainsboro solid 1px;
-  }
-  .pet_list{
-    
-    text-align: left;
+.article_list {
+  width: 100%;
+  padding-top: 10px;
+  font-size: 15px;
+}
 
-  }
+.petbox {
+  margin-top: -200px;
+  margin-left: 250px;
+  border-style: solid;
+  border-width: 0.5px;
+  width: 350px;
+  border: gainsboro solid 1px;
+}
+.pet_list {
+  text-align: left;
+}
 
-  span:hover{
-    color:  #fca6c6;
-  }
+span:hover {
+  color: #fca6c6;
+}
 
-  body.dark {
-    background: #1b1d25;
-    color: white;
-  }
-  
-  label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-  }
-  
-  [type="checkbox"] {
-    appearance: none;
-    position: relative;
-    border: max(2px, 0.1em) solid gray;
-    border-radius: 1.25em;
-    width: 2.25em;
-    height: 1.25em;
-  }
-  
-  [type="checkbox"]::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    transform: scale(0.8);
-    background-color: gray;
-    transition: left 250ms linear;
-  }
-  
-  [type="checkbox"]:checked {
-    background-color: gray;
-    border-color: gray;
-  }
-  
-  [type="checkbox"]:checked::before {
-    background-color: white;
-    left: 1em;
-  }
-  
-  [type="checkbox"]:disabled {
-    border-color: lightgray;
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-  
-  [type="checkbox"]:disabled:before {
-    background-color: lightgray;
-  }
-  
-  [type="checkbox"]:disabled + span {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-  
-  [type="checkbox"]:focus-visible {
-    outline-offset: max(2px, 0.1em);
-    outline: max(2px, 0.1em) solid gray;
-  }
-  
-  [type="checkbox"]:enabled:hover {
-    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
-  }
-  
-  footer {
-    width: 100%;
-    /* footer의 높이 */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-  }
-  
-  .member .over {
-    position: absolute;
-    z-index: 10000;
-    background: rgba(0, 0, 0, 0.679);
-    width: 100%;
-    height: 250px;
-    border-radius: 10%;
-    top: 12%;
-    left: -3%;
-    font-family: "Pretendard-Regular";
-    color: white;
-    display: none;
-    padding-top: 20%;
-    text-align: center;
-    font-size: 15pt;
-  }
+body.dark {
+  background: #1b1d25;
+  color: white;
+}
 
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
 
+[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 1.25em;
+  width: 2.25em;
+  height: 1.25em;
+}
 
+[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
 
-  .gradient-btn{
-      display: inline-block;
-      border-radius: 0;
-      color: rgb(255, 184, 131);
-      font-weight: bold;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-decoration: none;
-      background: linear-gradient(to right, rgba(#b2876f, 0) 25%, rgba(#b2876f, .8) 75%);
-      background-position: 1% 50%;
-      background-size: 400% 300%;
-      border: 0px;
-      width: 130px;
-      height: 100%;
-      margin-right: 10px;
-      background-color: white;
-  
-    
-     
-  }
-  
-.gradient-btn:hover{
-    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-    color: rgb(255, 255, 255);
-    color: #e2ae92;
-    background-position: 99% 50%;
-  }
-.h5{
+[type="checkbox"]:checked {
+  background-color: gray;
+  border-color: gray;
+}
 
+[type="checkbox"]:checked::before {
+  background-color: white;
+  left: 1em;
+}
+
+[type="checkbox"]:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:disabled:before {
+  background-color: lightgray;
+}
+
+[type="checkbox"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid gray;
+}
+
+[type="checkbox"]:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+}
+
+footer {
+  width: 100%;
+  /* footer의 높이 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.member .over {
+  position: absolute;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.679);
+  width: 100%;
+  height: 250px;
+  border-radius: 10%;
+  top: 12%;
+  left: -3%;
+  font-family: "Pretendard-Regular";
+  color: white;
+  display: none;
+  padding-top: 20%;
+  text-align: center;
+  font-size: 15pt;
+}
+
+.gradient-btn {
+  display: inline-block;
+  border-radius: 0;
+  color: rgb(255, 184, 131);
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(
+    to right,
+    rgba(#b2876f, 0) 25%,
+    rgba(#b2876f, 0.8) 75%
+  );
+  background-position: 1% 50%;
+  background-size: 400% 300%;
+  border: 0px;
+  width: 130px;
+  height: 100%;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.gradient-btn:hover {
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: rgb(255, 255, 255);
+  color: #e2ae92;
+  background-position: 99% 50%;
+}
+.h5 {
   padding-top: 12px;
   padding-left: 10px;
   width: 240px;
   height: 40px;
 }
 
-.username{
-
+.username {
   padding-top: 12px;
   padding-left: 10px;
   width: 240px;
@@ -286,8 +275,7 @@
   margin-top: -50px;
 }
 
-.introduce{
-
+.introduce {
   padding-top: 12px;
   padding-left: 10px;
   width: 240px;
