@@ -19,28 +19,29 @@
 //       $('#profile-cards').append(temp_html)
 // }
 
-
 // createElement 이용하기
 
 window.onload = async function loadMyProfile(user_id) {
-    profile = await getMyProfile(user_id);
-    console.log(profile)
-   
-    // const profile_img = document.getElementById("profile_img");
-    const email = document.getElementById("email");
-    const name = document.getElementById("name")
-    const introduce = document.getElementById("introduce");
-    
-    let image = document.createElement("img");
-    image.setAttribute("class", "profile_image");
-    image.src = `${backend_base_url}${profile.profile_img}`;
-    image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
-    profile_img.appendChild(image);
-    name.innerText = profile.name;
-    email.innerText = profile.email;
-    introduce.innerText = "[ " + profile.introduce + " ]";
+  profile = await getMyProfile(user_id);
+  console.log(profile);
 
-  };
+  // const profile_img = document.getElementById("profile_img");
+  const email = document.getElementById("email");
+  const name = document.getElementById("name");
+  const introduce = document.getElementById("introduce");
+
+  let image = document.createElement("img");
+  image.setAttribute("class", "profile_image");
+  image.src = `${backend_base_url}${profile.profile_img}`;
+  image.setAttribute(
+    "style",
+    "width:250px; height:250px; object-fit:cover; border-radius:50%;"
+  );
+  profile_img.appendChild(image);
+  name.innerText = profile.name;
+  email.innerText = profile.email;
+  introduce.innerText = "[ " + profile.introduce + " ]";
+};
 
 // 펫 리스트 보여주기
 async function loadMyPet() {
@@ -48,14 +49,14 @@ async function loadMyPet() {
   const pets_list = document.getElementById("pet_list");
   pets.forEach((pet) => {
     const newPet = document.createElement("pet");
-    newPet.innerText = pet.pet_name + " "
-    newPet.setAttribute("id", pet.id)
+    newPet.innerText = pet.pet_name + " ";
+    newPet.setAttribute("id", pet.id);
     newPet.setAttribute("class", "pet");
     // 클릭 시 펫 프로필 페이지로
-    newPet.setAttribute("onclick", "PetDetail(this.id)")
-    newPet.setAttribute("style", "cursor:pointer;")
+    newPet.setAttribute("onclick", "PetDetail(this.id)");
+    newPet.setAttribute("style", "cursor:pointer;");
     pets_list.appendChild(newPet);
-  })
+  });
 }
 
 // 아티클 리스트 보여주기
@@ -64,16 +65,15 @@ async function loadMyArticle() {
 
   const article_list = document.getElementById("article_list");
   articles.forEach((article) => {
-    console.log(article)
+    console.log(article);
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
-    console.log(article.id)
+    console.log(article.id);
     newImage.setAttribute("class", "article_image");
-    newImage.setAttribute("onclick", "ArticleDetail"+`(${article.id})`);
+    newImage.setAttribute("onclick", "ArticleDetail" + `(${article.id})`);
     newImage.src = `${backend_base_url}${article.image}`;
-    newImage.setAttribute("style", "width:200px; height:200px;")
+    newImage.setAttribute("style", "width:200px; height:200px;");
     article_list.appendChild(newImage);
-    
 
     const newTitle = document.createElement("li");
     newTitle.setAttribute("id", article.id);
