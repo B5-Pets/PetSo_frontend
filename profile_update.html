@@ -53,13 +53,23 @@
         </div>
 
         <div class="signoutbox">
-          <button type="button" class="signout" onclick="handleUnsignup()" >회원 탈퇴</button>
+          <button type="button" class="signout"  id="open" >회원 탈퇴</button>
+          <div class="modal hidden">
+            <div class="modal_overlay"></div>
+            <div class="modal_content">
+              <p>⚠️회원을 탈퇴하시면 계정에 관한 정보</p>
+              <p>또한 모두 삭제됩니다.</p>
+              <button type="button" class="signout_1" onclick="handleUnsignup()" >회원 탈퇴</button>
+            </div>
+          </div>
         </div>
+
+        
 
       
 
       </form>
-      <!-- footer -->
+      
       
       
 

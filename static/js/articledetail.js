@@ -77,7 +77,7 @@ if (!token) {
 //유저 프로필 가져오기
  async function loadGetProfile(article_id) {
    user = await getProfile(article_id);
-   const username1 = document.getElementById("user-name");
+   const username1 = document.getElementById("uDser-name");
    username1.innerText = user.name;
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
