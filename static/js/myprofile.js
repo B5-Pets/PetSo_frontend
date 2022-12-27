@@ -33,6 +33,9 @@ window.onload = async function loadMyProfile(user_id) {
     let image = document.createElement("img");
     image.setAttribute("class", "profile_image");
     image.src = `${backend_base_url}${profile.profile_img}`;
+    if (image.src = `${backend_base_url}/media/profile/default.jpeg`) {
+      image.src = `${frontend_base_url}/static/img/default.jpeg`
+    }
     image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
     profile_img.appendChild(image);
     name.innerText = "이름 : "+profile.name;

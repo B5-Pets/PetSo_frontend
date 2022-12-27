@@ -81,6 +81,9 @@ if (!token) {
    username1.innerText = user.name;
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
+   if (image.src = `${backend_base_url}/media/profile/default.jpeg`) {
+    image.src = `${frontend_base_url}/static/img/default.jpeg`
+  }
    
    profileImage.setAttribute("class", "profile_img");
    profileImage.setAttribute("id", user.id);

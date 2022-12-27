@@ -281,3 +281,10 @@ footer {
   text-align: center;
   font-size: 15pt;
 }
+.text{
+  text-decoration-line:none;
+  color:#1b1d25;
+}
+.text:hover{
+  color: #ffd5a1;
+}
