@@ -6,10 +6,9 @@ window.onload = async function loadArticleList() {
     viewset = await getArticleswithPage()
     // 아티클 받아오기 //
     articles = viewset["results"];
-    
     // 페이지 수 가져오기 // 
     totalCount = viewset['count']
-    console.log(totalCount)
+    
     // 페이지네이션 연습중 //
     pageCount = 5
     pages = Math.ceil(Number(totalCount)/Number(pageCount))
@@ -30,7 +29,6 @@ window.onload = async function loadArticleList() {
     }
 
 
-
     const article_list = document.getElementById("article-list");
    
     articles.forEach(article=> {
@@ -49,12 +47,14 @@ window.onload = async function loadArticleList() {
       articleImage.setAttribute("class", "card-img-top")
 
       if(article.image){
-        articleImage.setAttribute("src", `${article.image}`)
-        articleImage.setAttribute("style", "width: 200px;", "height: 200px;")
+        article_url = article.image.substr(19)
+        // article_url = article.image.substr(21) 로컬 개발환경
+        articleImage.setAttribute("src", `${backend_base_url}${article_url}`)
+        articleImage.setAttribute("style", "width:150px; height:150px; object-fit:cover; margin-left:650px; margin-top:25px; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);  ")
 
       }else{
         articleImage.setAttribute("src", "http://horimmuseum.org/sillim/wp-content/uploads/sites/2/2015/07/%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC.png") // 빈 "" 안에 이미지 url 입력
-        articleImage.setAttribute("style", "width: 200px;", "height: 200px;", )
+        articleImage.setAttribute("style", "width:150px; height:150px; object-fit:cover; margin-left:560px; margin-top:25px; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);" )
       }
       
       
@@ -62,13 +62,31 @@ window.onload = async function loadArticleList() {
 
       const newCardBody = document.createElement("div")
       newCardBody.setAttribute("class", "card-body")
+      newCardBody.setAttribute("style", "margin-left:40px;" )
       newCard.appendChild(newCardBody)
 
       const newCardTitle = document.createElement("h5")
       newCardTitle.setAttribute("class", "card-title")
+      newCardTitle.setAttribute("style", "margin-top: -140px; width:200px;" )
       newCardTitle.innerText = article.title
       newCardBody.appendChild(newCardTitle)
 
+      const newCardText = document.createElement("div")
+      newCardText.setAttribute("class", "card-text")
+      newCardText.setAttribute("style", "margin-top: -15px; color:lightgray; ")
+      newCardText.setAttribute("id","content")
+      newCardText.innerText = article.content
+      newCardBody.appendChild(newCardText)
+
+      const newCardName = document.createElement("div")
+      newCardName.setAttribute("class", "card-user")
+      newCardName.setAttribute("style", "margin-top: 20px;")
+      newCardName.setAttribute("id","user")
+      newCardName.innerText = article.user
+      newCardBody.appendChild(newCardName)
+
+      // const newCardCategory = document.createElement("div")
+      // newCardCategory.setAttribute("class", "card-")
 
 
       article_list.appendChild(newCol)
@@ -103,4 +121,112 @@ window.onload = async function loadArticleList() {
     var newpage_id = Number(page_id) + 1;
     location.replace(`${frontend_base_url}/main.html?page=${newpage_id}`);
     }
-  }
+  }  
+
+
+
+
+
+
+
+// 페이지 네이션
+
+// const paginationNumbers = document.getElementById("pagination-numbers");
+// const paginatedList = document.getElementById("article-list");
+// const listItems = paginatedList.querySelectorAll(".card-body");
+// const nextButton = document.getElementById("next-button");
+// const prevButton = document.getElementById("prev-button");
+
+// const paginationLimit = 5;
+// const pageCount = Math.ceil(listItems.length / paginationLimit);
+// let currentPage = 1;
+
+// const disableButton = (button) => {
+//   button.classList.add("disabled");
+//   button.setAttribute("disabled", true);
+// };
+
+// const enableButton = (button) => {
+//   button.classList.remove("disabled");
+//   button.removeAttribute("disabled");
+// };
+
+// const handlePageButtonsStatus = () => {
+//   if (currentPage === 1) {
+//     disableButton(prevButton);
+//   } else {
+//     enableButton(prevButton);
+//   }
+
+//   if (pageCount === currentPage) {
+//     disableButton(nextButton);
+//   } else {
+//     enableButton(nextButton);
+//   }
+// };
+
+// const handleActivePageNumber = () => {
+//   document.querySelectorAll(".pagination-number").forEach((button) => {
+//     button.classList.remove("active");
+//     const pageIndex = Number(button.getAttribute("page-index"));
+//     if (pageIndex == currentPage) {
+//       button.classList.add("active");
+//     }
+//   });
+// };
+
+// const appendPageNumber = (index) => {
+//   const pageNumber = document.createElement("button");
+//   pageNumber.className = "pagination-number";
+//   pageNumber.innerHTML = index;
+//   pageNumber.setAttribute("page-index", index);
+//   pageNumber.setAttribute("aria-label", "Page " + index);
+
+//   paginationNumbers.appendChild(pageNumber);
+// };
+
+// const getPaginationNumbers = () => {
+//   for (let i = 1; i <= pageCount; i++) {
+//     appendPageNumber(i);
+//   }
+// };
+
+// const setCurrentPage = (pageNum) => {
+//   currentPage = pageNum;
+
+//   handleActivePageNumber();
+//   handlePageButtonsStatus();
+  
+//   const prevRange = (pageNum - 1) * paginationLimit;
+//   const currRange = pageNum * paginationLimit;
+
+//   listItems.forEach((item, index) => {
+//     item.classList.add("hidden");
+//     if (index >= prevRange && index < currRange) {
+//       item.classList.remove("hidden");
+//     }
+//   });
+// };
+
+// window.addEventListener("load", () => {
+//   getPaginationNumbers();
+//   setCurrentPage(1);
+
+//   prevButton.addEventListener("click", () => {
+//     setCurrentPage(currentPage - 1);
+//   });
+
+//   nextButton.addEventListener("click", () => {
+//     setCurrentPage(currentPage + 1);
+//   });
+
+//   document.querySelectorAll(".pagination-number").forEach((button) => {
+//     const pageIndex = Number(button.getAttribute("page-index"));
+
+//     if (pageIndex) {
+//       button.addEventListener("click", () => {
+//         setCurrentPage(pageIndex);
+//       });
+//     }
+//   });
+// });

@@ -23,7 +23,6 @@
 
 window.onload = async function loadMyProfile(user_id) {
   profile = await getMyProfile(user_id);
-  console.log(profile);
 
   // const profile_img = document.getElementById("profile_img");
   const email = document.getElementById("email");
@@ -38,9 +37,9 @@ window.onload = async function loadMyProfile(user_id) {
     "width:250px; height:250px; object-fit:cover; border-radius:50%;"
   );
   profile_img.appendChild(image);
-  name.innerText = profile.name;
+  name.innerText = "이름 : " + profile.name;
   email.innerText = profile.email;
-  introduce.innerText = "[ " + profile.introduce + " ]";
+  introduce.innerText = "자기소개\n  [  " + profile.introduce + "  ]";
 };
 
 // 펫 리스트 보여주기
@@ -49,7 +48,7 @@ async function loadMyPet() {
   const pets_list = document.getElementById("pet_list");
   pets.forEach((pet) => {
     const newPet = document.createElement("pet");
-    newPet.innerText = pet.pet_name + " ";
+    newPet.innerText = " - " + pet.pet_name + "\n";
     newPet.setAttribute("id", pet.id);
     newPet.setAttribute("class", "pet");
     // 클릭 시 펫 프로필 페이지로
@@ -78,14 +77,14 @@ async function loadMyArticle() {
     const newTitle = document.createElement("li");
     newTitle.setAttribute("id", article.id);
     newTitle.setAttribute("class", "article_title");
-    newTitle.innerText = "제목\n" + article.title;
+    newTitle.innerText = "제목 : " + article.title;
     article_list.appendChild(newTitle);
 
-    const newContent = document.createElement("li");
-    newContent.setAttribute("id", article.id);
-    newContent.setAttribute("class", "article_content");
-    newContent.innerText = "내용\n\n" + article.content;
-    article_list.appendChild(newContent);
+    // const newContent = document.createElement("li");
+    // newContent.setAttribute("id", article.id);
+    // newContent.setAttribute("class", "article_content");
+    // newContent.innerText = "내용 : " + article.content;
+    // article_list.appendChild(newContent);
   });
 }
 

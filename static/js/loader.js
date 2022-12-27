@@ -15,7 +15,7 @@ async function injectNavbar(){
         const payload_parse = JSON.parse(payload)
     
         const intro = document.getElementById("intro")
-        intro.innerText = `${payload_parse.email}님 안녕하세요`
+        intro.innerText = `${payload_parse.email}`
         // intro.setAttribute("onclick", "href='./myprofile.html'")
 
         let navbarRight = document.getElementById("navbar-right")

@@ -221,7 +221,8 @@ footer {
 }
 
 .social {
-  height: 150px;
+  /* height: 150px; */
+  height: 70px;
   display: grid;
 }
 .kakao {
@@ -240,6 +241,14 @@ footer {
   background-size: cover;
   margin: 0 auto;
   margin-top: 20px;
+
+  /* width: 230px;
+  border: none;
+  border-radius: 10px;
+  background: url(/static/img/google.png) no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 20px; */
 }
 .naver {
   width: 230px;

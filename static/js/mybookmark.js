@@ -5,7 +5,6 @@ if (!token) {
   // 아티클 리스트 보여주기
   async function GetMyBookmark() {
     articles = await loadGetMyBookmark();
-    console.log(articles)
     const article_list = document.getElementById("article_list");
     articles.forEach((article) => {
       const newImage = document.createElement("img");

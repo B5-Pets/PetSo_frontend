@@ -38,18 +38,19 @@
       <div class="detail-body">
         <!-- 여기에 본문 -->
         <div class="article_roundbox_1" >
-          <span>일상</span>
-          <button type="button" onclick="loadArticleEdit(this.id)">수정</button>
+          <span id="article-category"></span>
+
+          <button class="article-detail-buttons" id = "article-detail-buttons" type="button" onclick="loadArticleEdit(this.id)">수정</button>
         </div>
+
       
       <div class="article_roundbox_2">
         <div class="title-box">
           <div class="title-name-box" id="title">제목</div>
           
           <div class="title-user-box" id="user-name">
-            <sapn id="username" ></sapn>
-            <div id="profile-img"></div>           
-          작성자
+            <span id="username" ></span>
+            <div style="margin-left:1000px; margin-top:-30px;" id="profile_img"></div>           
         </div>
         </div>
 
@@ -60,9 +61,9 @@
         <div class="like-bookmark-box">
           <!-- <button class="tweet-heart" id="like"></button> -->
           <span id="dolike"></span>
-          <sapn id="likes"></sapn>
+          <span id="likes"></span>
           <span id="dobookmark"></span>
-          <sapn id="bookmarks"></sapn>
+          <span id="bookmarks"></span>
         </div>
         
         
@@ -72,7 +73,7 @@
         <div class="right_area">
 
 
-            <sapn id="created_at"></sapn>
+            <span id="created_at"></span>
 
         </div>
       </div>
@@ -83,8 +84,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">댓글 수정</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                🔖 댓글 수정하기
               </div>
               <div class="modal-body">
                 <div class="input-group mb-3">
@@ -104,6 +104,7 @@
             </div>
           </div>
         </div>
+
           <div class="comment_box">
 
             <div>
@@ -143,8 +144,14 @@
           2022 Team Rocket All Rights Reserved
           </p>
       </footer>
-      <script src="../static/js/api.js"></script>
-      <script src="../static/js/articledetail.js"></script>
+      
 </body>
+<script src="../static/js/api.js"></script>
+<script src="../static/js/articledetail.js"></script>
 <script src="../static/js/loader.js"></script>
+<script>
+  if (!token) {
+    window.location.replace(`${frontend_base_url}/login.html`);
+  }
+</script>
 </html>

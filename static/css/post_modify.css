@@ -1,22 +1,27 @@
 body {
   font-family: "Jua", sans-serif;
-  height: 110vh;
+  height: 180vh;
   color: black;
   position: relative;
   background: whitesmoke;
 }
-header {
-  position: fixed;
-  top: 0;
-}
-body.dark {
-  background: #1b1d25;
-  color: white;
-}
+  
+  body.dark {
+    background: #1b1d25;
+    color: white;
+  }
+  
+  nav.navbar {
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+  }
+
 
 .img_box {
   margin-top: 160px;
 }
+
 nav.navbar {
   width: 100%;
   justify-content: space-between;
@@ -46,51 +51,54 @@ div.space {
     color: grey;
   } */
 
-/* 버튼 */
-.underline-btn {
-  display: inline-block;
-  padding: 40px;
-  border-radius: 0;
-  color: #b2876f;
-  margin-top: 2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  position: relative;
-}
-.underline-btn:before,
-.underline-btn:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 1px;
-  width: 0;
-}
-.underline-btn:before {
-  transition: width 0s ease, background 0.4s ease;
-  left: 0;
-  right: 0;
-  bottom: 6px;
-}
-.underline-btn:after {
-  right: 2.2%;
-  bottom: 6px;
-  background: #b2876f;
-  transition: width 0.4s ease;
-}
-.underline-btn:hover:before {
-  width: 97.8%;
-  background: #b2876f;
-  transition: width 0.4s ease;
-}
-.underline-btn:hover:after {
-  width: 97.8%;
-  background: 0 0;
-  transition: all 0s ease;
-}
-/* 삭제버튼 */
+
+  /* 버튼 */
+  .underline-btn {
+    display: inline-block;
+    padding: 40px;
+    border-radius: 0;
+    color: #f3a47a;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1.rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    border: 0px;
+    background: none;
+
+  }
+  .underline-btn:before, .underline-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 0;
+  }
+  .underline-btn:before {
+    transition: width 0s ease, background 0.4s ease;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+  }
+  .underline-btn:after {
+    right: 2.2%;
+    bottom: 6px;
+    background: #ed8e5b;
+    transition: width 0.4s ease;
+  }
+  .underline-btn:hover:before {
+    width: 97.8%;
+    background: #e5986e;
+    transition: width 0.4s ease;
+  }
+  .underline-btn:hover:after {
+    width: 97.8%;
+    background: 0 0;
+    transition: all 0s ease;
+  }
+
 
 form {
   margin: auto;
@@ -115,9 +123,11 @@ div.main {
   margin: 100px auto;
 }
 
+
 button.exit {
   margin-top: 10px;
 }
+
 .create_box {
   display: grid;
   width: 500px;
@@ -242,6 +252,8 @@ footer {
   text-align: center;
   cursor: pointer;
   border-radius: 20px;
+  transition: 0.4s;
+  width: 80px;
 }
 
 .category-radio input[type="radio"]:checked + span {

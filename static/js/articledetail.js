@@ -4,13 +4,13 @@ if (!token) {
  }
 
  // 유저 정보 가져오기 //
-async function checkLogin() {
-   const name = await getMyProfile();
+// async function checkLogin() {
+//    const name = await getMyProfile();
  
-   const username = document.getElementById("username");
-   username.innerText = name.email
- }
- checkLogin();
+//    const username = document.getElementById("username");
+//    username.innerText = name.name
+//  }
+//  checkLogin();
  
 //  const urlParams = new URLSearchParams(window.location.search);
 //  const article_id = urlParams.get("id");
@@ -19,11 +19,12 @@ async function checkLogin() {
 
    // 개별 게시글 데이터 가져오기.
    const article = await getArticleDetail(article_id);
- 
+  
 
    const title = document.getElementById("title");
-   const user_name = document.getElementById("user-name")
+  //  const user_name = document.getElementById("user-name")
    const image = document.getElementById("article_imgs");
+   const category = document.getElementById("article-category");
 
   const content = document.getElementById("content");
   const likes = document.getElementById("likes");
@@ -35,16 +36,14 @@ async function checkLogin() {
   dolike_button.setAttribute("id", article_id);
   dolike_button.setAttribute("class", "btn btn-outline-danger");
   dolike_button.setAttribute("onclick", "DoLike(this.id)");
-  console.log(dolike_button)
   dolike.appendChild(dolike_button);
 
 
    let articleImage = document.createElement("img");
    articleImage.setAttribute("class","article_imgs2")
    articleImage.src = `${backend_base_url}${article.image}`;
-   console.log(articleImage)
    image.appendChild(articleImage);
- 
+  
    // 북마크
    const dobookmark = document.getElementById("dobookmark");
    const dobookmark_button = document.createElement("button");
@@ -55,36 +54,50 @@ async function checkLogin() {
    dobookmark.appendChild(dobookmark_button);
  
    title.innerText = article.title;
-   user_name.innerText = article.user;
+  //  user_name.innerText = article.user;
    content.innerText = article.content;
    likes.innerText = article.likes;
    bookmarks.innerText = article.bookmarks;
+   category.innerText = article.category;
   //  created_at.innerText = article.created_at.replace("T", " ").substr(0, 16);
+  const editbtn = document.getElementById("article-detail-buttons");
+  const userinfo = await getName();
+  console.log(article)
+  console.log(userinfo)
+  if (userinfo.name != article.user) {
+    editbtn.style.visibility ="hidden";
+    
+  }userinfo
+
+
  }
  
  loadArticle(article_id);
  
- // 아티클 유저 프로필 보여주기 //
+//유저 프로필 가져오기
  async function loadGetProfile(article_id) {
-   user = await getMyProfile(article_id);
-   console.log(user)
-   const profile = document.getElementById("profile-img");
-   console.log(profile)
+   user = await getProfile(article_id);
+   const username1 = document.getElementById("user-name");
+   username1.innerText = user.name;
    let profileImage = document.createElement("img");
    profileImage.src = `${backend_base_url}${user.profile_img}`;
-   console.log(profileImage)
+   
    profileImage.setAttribute("class", "profile_img");
-   profile.appendChild(profileImage);
+   profileImage.setAttribute("id", user.id);
+   profileImage.setAttribute("style", "cursor:pointer;");
+   profileImage.setAttribute("onclick", "userProfile(this.id)");
+
+
+   username1.appendChild(profileImage);
  }
 
- loadGetProfile(article_id)
+ loadGetProfile(article_id);
  
 //  // 댓글 리스트 보여주기 //
 
  async function loadGetComment(article_id) {
 
    comments = await GetComment(article_id);
-   console.log(comments)
    const userinfo = await getName();
 
    const user_list = document.getElementById("email");
@@ -94,33 +107,39 @@ async function checkLogin() {
 
    comments.forEach((comment) => {
 
-   console.log(user_list)
-   console.log(comment)
-   console.log(comment.user)
+  //  유저 아이디
+   const newUser = document.createElement("p");
+  //  유저가 남긴 댓글
+   const newComment = document.createElement("p");
 
-   const newUser = document.createElement("li");
-   const newComment = document.createElement("li");
    newUser.setAttribute("id", comment.id);
+   newUser.setAttribute("class", "comment-email")
+   console.log(comment)
+  //  user_list.setAttribute("id", "user"+comment.id)
    newUser.innerText = comment.user;
-   newComment.innerText = comment.content;
-   user_list.appendChild(newUser);
-   comment_list.appendChild(newComment);
+  //  user_list.innerText = comment.user;
 
+
+   newComment.innerText = comment.content;
+   comment_list.appendChild(newComment);
+   user_list.appendChild(newUser);
   
 
    const update_comment_button = document.createElement("button");
    const delete_comment_button = document.createElement("button");
  
-   update_comment_button.innerText = "수정";
-   delete_comment_button.innerText = "삭제";
+
+
+   update_comment_button.innerText = "🖋";
+   delete_comment_button.innerText = "❌";
  
    update_comment_button.setAttribute("id", comment.id);
-   update_comment_button.setAttribute("class", "btn btn-success create_button");
+   update_comment_button.setAttribute("class", "button-edit");
    update_comment_button.setAttribute("data-bs-toggle", "modal");
    update_comment_button.setAttribute("data-bs-target", "#exampleModal");
    
    delete_comment_button.setAttribute("id", comment.id);
-   delete_comment_button.setAttribute("class", "btn btn-danger create_button");
+   delete_comment_button.setAttribute("class", "button-delete");
    update_comment_button.setAttribute("onclick", "UpdateComment"+`(${comment.id})`);
 
    delete_comment_button.setAttribute("onclick", "DeleteComment"+`(${comment.id})`);
@@ -144,7 +163,6 @@ async function loadArticleEdit(article_id) {
 
   // 개별 게시글 데이터 가져오기.
   const article = await getArticleDetail(article_id);
-  console.log(article)
 
   ArticleEdit(article.id)
 
@@ -189,7 +207,6 @@ $like.addEventListener('click', () => {
  // 댓글 작성하기 //
  function CreateComment() {
   const comment = document.getElementById("comment-input").value;
-  console.log(comment)
   loadCreateComment(comment);
 }
 

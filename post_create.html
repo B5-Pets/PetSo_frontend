@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/post_create.css" />
+
+    <title>Post_create</title>
+  </head>
+
+  <body>
+  <header></header>
+
+    <!-- 게시글 작성페이지 -->
+    <form>
+
+      <div class="box">
+        <div class="category-radio-box">
+          <h5>게시글 작성</h5>
+          <br/>
+          <label class="category-radio">
+            <!-- <input id="category-radio-life" type="radio" name="category" value="일상" checked>
+            <span>일상</span>
+          </label>
+        
+          <label class="category-radio">
+            <input id="category-radio-community" type="radio" name="category" value="커뮤니티">
+            <span>커뮤니티</span>
+          </label> -->
+         
+          <label class="category-radio">
+            <input id="category-radio-QnA" type="radio" name="category" value="QnA" checked>
+            <span>QnA</span>
+          </label>
+
+        </div>
+
+        <textarea name="" placeholder=" 제목" id="title" class="title"></textarea>
+        <textarea name="" placeholder="게시물 내용" id="content"class="content" cols="50" rows="10"></textarea>
+
+        <div class="img_update_box">
+          <p>사진 업로드</p>
+          <img id="preview" style="width: 400px; height: 300px; margin-top: 20px; object-fit: cover;"/>
+          <input type="file" class="form-control" id="image" onchange="readURL(this);"/>
+        </div>
+
+      <br/>
+      <div>
+        <button id="edit-button" class="underline-btn" type="button" class="btn btn-primary" onclick="postArticle()">
+          작성하기
+        </button>
+        <button id="cancel-button" class="underline-btn" type="button" class="btn btn-primary" onclick="location.href='./myprofile.html'">
+          취소하기
+        </button>
+      </div>
+    </form>
+
+  </body>
+  <script src="../static/js/api.js"></script>
+  <script src="../static/js/post_create.js"></script>
+  <script src="../static/js/loader.js"></script>
+  <script>
+    if (!token) {
+      window.location.replace(`${frontend_base_url}/login.html`);
+    }
+  </script>
+</html>
