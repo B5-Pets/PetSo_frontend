@@ -1,35 +1,35 @@
 body {
-    font-family: "Jua", sans-serif;
-    height: 100vh;
-    background-color: whitesmoke;
-    color: black;
-  }
-  
+  font-family: "Jua", sans-serif;
+  height: 100vh;
+  background-color: whitesmoke;
+  color: black;
+}
+
 body.dark {
   background: #1b1d25;
   color: white;
 }
 
-.result-box{
+.result-box {
   padding-top: 150px;
 }
-.text{
+
+.text {
   margin-top: 20px;
   margin-left: 320px;
   margin-bottom: 20px;
   font-size: 20pt;
 }
 
-.inference{
+.inference {
   height: 100px;
   width: 100%;
   object-fit: cover;
   background-size: cover;
   padding-bottom: 50px;
   margin-left: -400px;
-
 }
-.result_3{
+.result_3 {
   width: 300px;
   height: 300px;
 }
@@ -40,7 +40,7 @@ nav.navbar {
   height: 100px;
 }
 
-.logo{
+.logo {
   width: 350px;
   margin-left: -50px;
 }
@@ -61,7 +61,6 @@ label {
   gap: 0.5rem;
   cursor: pointer;
 }
-
 
 [type="checkbox"] {
   appearance: none;
@@ -128,28 +127,27 @@ footer {
   text-align: center;
 }
 
-.inference-box1{
-padding-top: 10px;
-font-size: 40px;
-width: 30%;
-display: grid;
-text-align:center;
-margin: 0 auto;
-height:70px;
-width: 30%;
+.inference-box1 {
+  padding-top: 10px;
+  font-size: 40px;
+  width: 30%;
+  display: grid;
+  text-align: center;
+  margin: 0 auto;
+  height: 70px;
+  width: 30%;
 }
 
-.inference-box2{
-display: flex;
-text-align:center;
-height: 500px;
-margin: 0 auto;
-width: 700px;
-margin-left: 530px;
+.inference-box2 {
+  display: flex;
+  text-align: center;
+  height: 500px;
+  margin: 0 auto;
+  width: 700px;
+  margin-left: 530px;
 }
-.inference-box3{
+.inference-box3 {
   height: 455px;
   width: 900px;
   margin-left: -50px;
-  
 }

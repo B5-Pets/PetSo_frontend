@@ -51,17 +51,26 @@
           <button type="button" class="underline-btn" onclick="loadMyProfileUpdate()">변경하기</button>
           <button type="button" class="underline-btn" onclick="location.href='myprofile.html'">취소하기</button>
         </div>
+
+        <div class="signoutbox">
+          <button type="button" class="signout"  id="open" >회원 탈퇴</button>
+          <div class="modal hidden">
+            <div class="modal_overlay"></div>
+            <div class="modal_content">
+              <p>⚠️회원을 탈퇴하시면 계정에 관한 정보</p>
+              <p>또한 모두 삭제됩니다.</p>
+              <button type="button" class="signout_1" onclick="handleUnsignup()" >회원 탈퇴</button>
+            </div>
+          </div>
+        </div>
+
+        
+
+      
+
       </form>
-      <!-- footer -->
-      <footer class="footer">
-        <label>
-            <input role="switch" type="checkbox" onclick="darkmode()" />
-            <span>다크모드로 전환</span>
-          </label>
-          <p>
-          2022 Team Rocket All Rights Reserved
-          </p>
-      </footer>
+      
+      
       
 
 </body>

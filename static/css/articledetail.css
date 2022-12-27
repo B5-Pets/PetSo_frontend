@@ -190,7 +190,8 @@ footer {
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
-  margin-left: 300px;
+  margin-left: 310px;
+  margin-top: -50px;
 }
 
 .article_box2 {
@@ -402,3 +403,4 @@ footer {
 
   width: 780px;
 }
+

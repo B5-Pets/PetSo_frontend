@@ -1,7 +1,7 @@
 // 주소로 아티클 페이지받기 //
 const userurlParams = new URLSearchParams(window.location.search);
 const user_id = userurlParams.get("id");
-
+console.log(user_id)
 
 window.onload = async function loadProfile() {
     const response = await fetch(`${backend_base_url}/user/profile/${user_id}`, {
@@ -19,6 +19,7 @@ window.onload = async function loadProfile() {
   
     let image = document.createElement("img");
     image.setAttribute("class", "profile_image");
+    image.setAttribute("style", "width:250px; height:250px; object-fit:cover; border-radius:50%;")
     image.src = `${backend_base_url}${profile.profile_img}`;
     profile_img.appendChild(image);
     name.innerText = profile.name;

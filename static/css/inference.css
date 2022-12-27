@@ -124,7 +124,8 @@ footer {
 }
 
 .inference-box {
-  margin: 0 auto;
+  width: 40%;
+  margin-left: 15%;
 
 
 }
@@ -133,7 +134,6 @@ footer {
   display: inline-block;
   padding: 40px;
   color: #b2876f;
-  margin-top: 2rem;
   font-weight: bold;
   font-size: 1.rem;
   letter-spacing: 2px;
@@ -184,11 +184,12 @@ footer {
 
 .box-2 {
   display: flex;
+  height: 400px;
   margin-left: 100px;
 }
 
 .upload {
-  background-color: #dbe9f6;
+  background-color: #ffd5a1;
   width: 300px;
   height: 40px;
   margin-bottom: 10px;
@@ -199,7 +200,7 @@ footer {
 }
 
 .example {
-  background-color: #dbe9f6;
+  background-color: #ffd5a1;
   width: 300px;
   height: 40px;
   margin-bottom: 10px;

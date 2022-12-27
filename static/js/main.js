@@ -32,7 +32,6 @@ window.onload = async function loadArticleList() {
     const article_list = document.getElementById("article-list");
    
     articles.forEach(article=> {
-      console.log(article)
       const newCol = document.createElement("div");
       newCol.setAttribute("class", "col")
 
@@ -48,8 +47,9 @@ window.onload = async function loadArticleList() {
       articleImage.setAttribute("class", "card-img-top")
 
       if(article.image){
-
-        articleImage.setAttribute("src", `${article.image}`)
+        article_url = article.image.substr(19)
+        // article_url = article.image.substr(21) 로컬 개발환경
+        articleImage.setAttribute("src", `${backend_base_url}${article_url}`)
         articleImage.setAttribute("style", "width:150px; height:150px; object-fit:cover; margin-left:650px; margin-top:25px; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);  ")
 
       }else{
