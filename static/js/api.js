@@ -2,10 +2,10 @@
 // EC2 인스턴스 연결 시
 // const backend_base_url = "http://ec2인스턴스ip주소";
 // 백엔드 서버 연결 시
-// const backend_base_url = "http://127.0.0.1:8000";
-// const frontend_base_url = "http://127.0.0.1:5500";
-const backend_base_url = "https://api.pet-so.net";
-const frontend_base_url = "https://pet-so.net";
+const backend_base_url = "http://127.0.0.1:8000";
+const frontend_base_url = "http://127.0.0.1:5500";
+// const backend_base_url = "https://api.pet-so.net";
+// const frontend_base_url = "https://pet-so.net";
 
 
 const token = localStorage.getItem("access");
@@ -391,6 +391,7 @@ async function DeleteArticle(article_id) {
   });
   if (response.status == 204) {
     window.location.replace(`${frontend_base_url}/myprofile.html`);
+    alert("게시글이 삭제되었습니다.")
   } else {
     alert(response.status);
   }
@@ -461,7 +462,7 @@ async function handleUnsignup() {
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     localStorage.removeItem("payload"); 
-    alert("회원 탈퇴 완료!!")
+    alert("회원 탈퇴가 완료되었습니다.")
     window.location.replace(`${frontend_base_url}/index.html`)
   }else{
     alert("오류 : 회원 탈퇴 실패")
