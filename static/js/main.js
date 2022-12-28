@@ -104,7 +104,6 @@ window.onload = async function loadArticleList() {
   
     // 페이지네이션 바 현재 페이지 표시 //
     const NowPage = document.getElementById(page_id)
-    console.log(NowPage)
     NowPage.setAttribute("style", "background:#a55eea; color:#fff;")
 
   };
