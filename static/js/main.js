@@ -9,7 +9,7 @@ window.onload = async function loadArticleList() {
     // 페이지 수 가져오기 // 
     totalCount = viewset['count']
     
-    // 페이지네이션 연습중 //
+    // 페이지네이션 바 관련 //
     pageCount = 5
     pages = Math.ceil(Number(totalCount)/Number(pageCount))
     currentPage = new URL(window.location.href).searchParams.get('page')
@@ -94,13 +94,15 @@ window.onload = async function loadArticleList() {
     }
     );
 
-    // 페이지네이션 페이지 생성하기 //
+    // 페이지네이션 바 페이지 생성하기 //
     for (let i = firstNumber; i <= lastNumber; i++) {
       let temp_html = `
       <li class="page-item"><a id="${i}" class="page-link" href="?page=${i}">${i}</a></li>
       `
       $('#pagination').append(temp_html)
     }
+  
+    // 페이지네이션 바 현재 페이지 표시 //
     const NowPage = document.getElementById(page_id)
     console.log(NowPage)
     NowPage.setAttribute("style", "background:#a55eea; color:#fff;")
